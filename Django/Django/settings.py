@@ -39,6 +39,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles'
 )
 
+
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -88,3 +89,5 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
+
+LOGIN_URL = 'Nexquality/accounts/login/'

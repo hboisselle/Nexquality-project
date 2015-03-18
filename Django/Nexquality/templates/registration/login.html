@@ -22,5 +22,5 @@
 <input type="submit" value="login" />
 <input type="hidden" name="next" value="{% url 'Nexquality:user_profile' %}" />
 </form>
-
+<input type="button" name="subscribe" value="subscribe" onclick='window.location.replace("{% url 'Nexquality:subscription' %}");' />
 {% endblock %}

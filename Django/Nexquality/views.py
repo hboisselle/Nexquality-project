@@ -9,3 +9,7 @@ from django.contrib.auth.decorators import login_required
 @login_required
 def user_profile(request):
     return render(request, "accounts/profile.html")
+
+
+def subscription(request):
+    return render(request, "registration/subscription.html")
