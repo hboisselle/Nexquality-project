@@ -21,40 +21,36 @@ def user_profile(request):
 
 def subscription(request):
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
+        form = ExtendedUserCreationForm(request.POST)
         if form.is_valid():
-            user = create_basic_user(form.cleaned_data)
+            user = form.save()
+            username = form.cleaned_data['username']
+            password = form.cleaned_data['password1']
+            user = authenticate(username=username, password=password)
             login(request, user)
-            return user_profile
+            return HttpResponseRedirect(reverse('Nexquality:user_profile'))
     else:
-        form = UserCreationForm()
+        form = ExtendedUserCreationForm()
 
     return render(request, "registration/subscription.html", {
         'form': form
     })
 
 
-def create_basic_user(cleaned_data):
-    username = cleaned_data['username']
-    password = cleaned_data['password']
-    user = User.objects.create_user(username, password)
-    user.first_name = cleaned_data['first_name']
-    user.last_name = cleaned_data['last_name']
-    user.email = cleaned_data['email']
-    user.save()
-    return user
-
-
-class UserSubscriptionForm(forms.ModelForm):
-    username = forms.CharField(min_length=5, max_length=30)
-    password = forms.CharField(widget=forms.PasswordInput(), min_length=5, required=True)
-    confirm_password = forms.CharField(widget=forms.PasswordInput(), required=True)
-
-    def clean_password(self):
-        if self.data['password'] != self.data['confirm_password']:
-            raise forms.ValidationError(_('Password are not the same'))
-        return self.data['password']
+class ExtendedUserCreationForm(UserCreationForm):
+    email = forms.EmailField(required=True)
+    first_name = forms.CharField(required=True)
+    last_name = forms.CharField(required=True)
 
     class Meta:
         model = User
-        fields = ['username', 'password', 'confirm_password', 'first_name', 'last_name', 'email']
+        fields = ('username', 'email', 'password1', 'password2', 'first_name', 'last_name')
+
+    def save(self, commit=True):
+        user = super(ExtendedUserCreationForm, self).save(commit=False)
+        user.email = self.cleaned_data["email"]
+        user.first_name = self.cleaned_data['first_name']
+        user.last_name = self.cleaned_data['last_name']
+        if commit:
+            user.save()
+        return user
