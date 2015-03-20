@@ -12,8 +12,15 @@ class Project(models.Model):
     name = models.CharField(max_length=250)
     start_date = models.DateField(default=timezone.now())
     is_done = models.BooleanField(default=False)
+    users = models.ManyToManyField(User, through='ProjectTeam')
+
+
+class ProjectRole(models.Model):
+    name = models.CharField(max_length=250)
 
 
 class ProjectTeam(models.Model):
     user = models.ForeignKey(User)
     project = models.ForeignKey(Project)
+    role = models.ForeignKey(ProjectRole)
+    joined_date = models.DateField(default=timezone.now())
