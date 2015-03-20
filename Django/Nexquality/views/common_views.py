@@ -13,4 +13,7 @@ class LoginRequiredMixin(object):
 
 class ProjectListView(generic.ListView):
     model = Project
-    template_name = 'Nexquality/projects.html'
+
+
+class ProjectDetailView(generic.DetailView):
+    model = Project

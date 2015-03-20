@@ -1,4 +1,4 @@
 Project list
 {% for project in project_list %}
-    <h1>{{ project.name }}</h1>
+    <a href="{% url 'Nexquality:user_project_detail' project.id %}">{{ project.name }}</h1>
 {% endfor %}

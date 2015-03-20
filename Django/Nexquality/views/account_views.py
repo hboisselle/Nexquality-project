@@ -1,6 +1,5 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.models import User
 from common_views import ProjectListView, LoginRequiredMixin
 from Nexquality.models import Project
 
@@ -12,3 +11,6 @@ def user_profile(request):
 
 class UserProjectListView(LoginRequiredMixin, ProjectListView):
     context_object_name = 'project_list'
+
+    def get_queryset(self):
+        return Project.objects.filter(users=self.request.user)
