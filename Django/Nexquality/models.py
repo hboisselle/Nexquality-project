@@ -13,6 +13,7 @@ class Project(models.Model):
     start_date = models.DateField(default=timezone.now())
     is_done = models.BooleanField(default=False)
     users = models.ManyToManyField(User, through='ProjectTeam')
+    created_by = models.ForeignKey(User, related_name='project_starts')
 
 
 class ProjectRole(models.Model):
@@ -20,7 +21,10 @@ class ProjectRole(models.Model):
 
 
 class ProjectTeam(models.Model):
+    class Meta():
+        auto_created = True
+
     user = models.ForeignKey(User)
     project = models.ForeignKey(Project)
-    role = models.ForeignKey(ProjectRole)
+    role = models.ForeignKey(ProjectRole, default=1)
     joined_date = models.DateField(default=timezone.now())

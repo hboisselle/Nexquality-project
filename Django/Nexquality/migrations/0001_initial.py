@@ -2,8 +2,8 @@
 from __future__ import unicode_literals
 
 from django.db import models, migrations
-from django.utils.timezone import utc
 import datetime
+from django.utils.timezone import utc
 from django.conf import settings
 
 
@@ -30,19 +30,20 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('name', models.CharField(max_length=250)),
-                ('start_date', models.DateField(default=datetime.datetime(2015, 3, 18, 20, 18, 22, 57552, tzinfo=utc))),
+                ('start_date', models.DateField(default=datetime.datetime(2015, 3, 22, 3, 1, 54, 333897, tzinfo=utc))),
                 ('is_done', models.BooleanField(default=False)),
+                ('created_by', models.ForeignKey(related_name='project_starts', to=settings.AUTH_USER_MODEL)),
+                ('users', models.ManyToManyField(to=settings.AUTH_USER_MODEL)),
             ],
             options={
             },
             bases=(models.Model,),
         ),
         migrations.CreateModel(
-            name='ProjectTeam',
+            name='ProjectRole',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('project', models.ForeignKey(to='Nexquality.Project')),
-                ('user', models.ForeignKey(to=settings.AUTH_USER_MODEL)),
+                ('name', models.CharField(max_length=250)),
             ],
             options={
             },

@@ -1,4 +1,6 @@
-Project list
+<h1>{{ user }}'s projects</h1>
+<br/>
 {% for project in project_list %}
-    <a href="{% url 'Nexquality:user_project_detail' project.id %}">{{ project.name }}</h1>
+    <a href="{% url 'Nexquality:user_project_detail' project.id %}">{{ project.name }}</a><br/>
 {% endfor %}
+<a href="{% url 'Nexquality:user_project_create' %}">Create project</a>
