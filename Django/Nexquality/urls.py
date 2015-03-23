@@ -8,6 +8,6 @@ urlpatterns = patterns('',
     url(r'^accounts/profile/projects$', views.UserProjectListView.as_view(), name='user_project_list'),
     url(r'^accounts/profile/projects/(?P<pk>\d+)/$', views.ProjectDetailView.as_view(), name='user_project_detail'),
     url(r'^accounts/profile/projects/create/$', views.ProjectCreationView.as_view(), name='user_project_create'),
-    url(r'^accounts/profile/projects/(?P<pk>\d+)/update/$', views.ProjectUpdateView.as_view(), name='user_project_update'),
+    url(r'^accounts/profile/projects/update/(?P<pk>\d+)$', views.project_update, name='user_project_update'),
     url(r'^registration/subscription/$', views.subscription, name='subscription')
 )
