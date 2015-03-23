@@ -1,2 +1,6 @@
+{% extends "base.html" %}
+{% block content %}
 <h1>{{ project.name }}</h1>
-<a href="{% url 'Nexquality:user_project_update' project.id %}">Modifiy</a>
+<input type="button" onclick="location.replace('{% url 'Nexquality:project_update' project.id %}')" value="Update"/>
+<input type="button" onclick="ConfirmAndRedirect('{% url 'Nexquality:project_delete' project.id %}', 'Are you sure you want to delete this project?')" value="Delete"/>
+{% endblock %}

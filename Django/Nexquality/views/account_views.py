@@ -37,22 +37,32 @@ def project_update(request, pk):
 
         if project_form.is_valid() and project_user_formset.is_valid():
             project = project_form.save(commit=False)
-            for project_user_member in project_user_formset:
-                project_user_member.save()
+            for project_user in project_user_formset:
+                project_user.save()
 
             project.save()
-            return HttpResponseRedirect(reverse('Nexquality:user_project_list'))
-    else:
-        project_form = ProjectForm(instance=project)
-        project_user_formset = ProjectUserFormset(
-            instance=project,
-            prefix='project_user'
-        )
+
+    project_form = ProjectForm(instance=project)
+    project_user_formset = ProjectUserFormset(
+        instance=project,
+        prefix='project_user'
+    )
 
     return render(request, "Nexquality/project_form.html", {
+        'title': 'Modify project: '+project.name,
         'form': project_form,
-        'project_user_formset': project_user_formset
+        'project_user_formset': project_user_formset,
     })
+
+
+@login_required
+def project_delete(request, pk):
+    project = Project.objects.get(id=pk)
+    if project.created_by == request.user:
+        project.delete()
+        return HttpResponseRedirect(reverse('Nexquality:project_list'))
+    else:
+        return HttpResponseRedirect(reverse('Nexquality:project_update', args=(pk,)))
 
 
 class ProjectForm(forms.ModelForm):
@@ -70,7 +80,12 @@ class ProjectCreationView(LoginRequiredMixin, edit.CreateView):
         return super(ProjectCreationView, self).form_valid(form)
 
     def get_success_url(self):
-        return reverse('Nexquality:user_project_update', args=(self.object.id))
+        return reverse('Nexquality:project_update', args=(self.object.id,))
+
+    def get_context_data(self, **kwargs):
+        context = super(ProjectCreationView, self).get_context_data(**kwargs)
+        context['title'] = 'New project'
+        return context
 
 
 class UserProjectListView(LoginRequiredMixin, ProjectListView):
