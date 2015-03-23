@@ -1,7 +1,7 @@
 <h1>New project</h1>
 <form action="{{ request.path }}" method="post">{% csrf_token %}
     {{ form.as_p }}
-    {{ project_team_formset.as_p }}
+    {{ project_user_formset.as_p }}
     <input type="submit" value="Submit" />
     
 </form>

@@ -25,20 +25,29 @@ def project_update(request, pk):
 
     ProjectUserFormset = inlineformset_factory(Project, ProjectUser, extra=1)
     if request.method == 'POST':
-        project_form = ProjectForm(request.POST, instance=project)
-        project_user_formset = ProjectUserFormset(request.POST, instance=project, prefix='project_user')
+        project_form = ProjectForm(
+            request.POST,
+            instance=project
+        )
+        project_user_formset = ProjectUserFormset(
+            request.POST,
+            instance=project,
+            prefix='project_user'
+        )
 
         if project_form.is_valid() and project_user_formset.is_valid():
             project = project_form.save(commit=False)
             for project_user_member in project_user_formset:
-                new_member = project_user_member.save()
-                project.users.add(new_member)
+                project_user_member.save()
 
             project.save()
-            HttpResponseRedirect(reverse('user_project_list'))
+            return HttpResponseRedirect(reverse('Nexquality:user_project_list'))
     else:
         project_form = ProjectForm(instance=project)
-        project_user_formset = ProjectUserFormset(instance=project, prefix='project_user')
+        project_user_formset = ProjectUserFormset(
+            instance=project,
+            prefix='project_user'
+        )
 
     return render(request, "Nexquality/project_form.html", {
         'form': project_form,
@@ -61,11 +70,14 @@ class ProjectCreationView(LoginRequiredMixin, edit.CreateView):
         return super(ProjectCreationView, self).form_valid(form)
 
     def get_success_url(self):
-        return reverse('Nexquality:user_project_update', args=(self.object.id,))
+        return reverse('Nexquality:user_project_update', args=(self.object.id))
 
 
 class UserProjectListView(LoginRequiredMixin, ProjectListView):
     context_object_name = 'project_list'
 
     def get_queryset(self):
-        return Project.objects.filter(Q(users=self.request.user) | Q(created_by=self.request.user))
+        return Project.objects.filter(
+            users=self.request.user,
+            created_by=self.request.user
+        )
