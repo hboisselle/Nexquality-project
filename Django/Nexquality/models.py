@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils import timezone
+from django.core.exceptions import ValidationError
 
 
 class Profile(models.Model):
@@ -30,4 +31,8 @@ class ProjectUser(models.Model):
     user = models.ForeignKey(User)
     project = models.ForeignKey(Project)
     role = models.ForeignKey(ProjectUserRole, default=1)
-    joined_date = models.DateField(default=timezone.now())
+    in_date = models.DateField(default=timezone.now())
+    out_date = models.DateField(null=True, blank=True)
+
+    class Meta:
+        unique_together = ['user', 'project']

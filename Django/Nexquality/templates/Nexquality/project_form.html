@@ -1,8 +1,10 @@
 <h1>{{ title }}</h1>
 <form action="{{ request.path }}" method="post">{% csrf_token %}
     {{ form.as_p }}
-    {{ project_user_formset.as_p }}
-    <input type="submit" value="Save" />
+    <table>
+    {{ project_user_formset.as_table }}
+    </table>
+	<input type="submit" value="Save" />
     
 <a href="{% url 'Nexquality:project_list' %}">
 	<input type="button" value="Go back">
