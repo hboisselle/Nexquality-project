@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <script src="/static/Nexquality/javascript.js"></script>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
     <title>{% block title %}My amazing site{% endblock %}</title>
@@ -11,8 +12,9 @@
     <div id="sidebar">
         {% block sidebar %}
         <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/blog/">Blog</a></li>
+            <li><a href="{% url 'Nexquality:registration:logout' %}">Log out</a></li>
+            <li><a href="{% url 'Nexquality:registration:login' %}">Log in</a></li>
+            <li><a href="{% url 'Nexquality:registration:subscription' %}">Subscribe</a></li>
         </ul>
         {% endblock %}
     </div>

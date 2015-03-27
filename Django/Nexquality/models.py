@@ -10,7 +10,7 @@ class Profile(models.Model):
 
 
 class Project(models.Model):
-    name = models.CharField(max_length=250)
+    name = models.CharField(max_length=250, unique=True)
     start_date = models.DateField(default=timezone.now())
     is_done = models.BooleanField(default=False)
     users = models.ManyToManyField(User, through='ProjectUser')
