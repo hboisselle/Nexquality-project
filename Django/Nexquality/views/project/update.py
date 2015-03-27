@@ -1,4 +1,4 @@
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404, get_list_or_404, render
 from django.contrib.auth.decorators import login_required
 from Nexquality.models import Project, ProjectUser
 from django.contrib.auth.models import User
@@ -13,41 +13,24 @@ def update(request, pk):
     else:
         project = get_object_or_404(Project, pk=pk)
 
-    ProjectUserFormset = inlineformset_factory(Project, ProjectUser,
-        form=ProjectUserForm,
-        extra=0,
-        max_num=User.objects.count(),
-        fk_name='project',
-        can_delete=False,
-    )
+    project_users = ProjectUser.get(project.id=pk)
 
     if request.method == 'POST':
         project_form = ProjectForm(
             request.POST,
             instance=project
         )
-        project_user_formset = ProjectUserFormset(
-            request.POST,
-            instance=project,
-            prefix='project_user'
-        )
-        if project_form.is_valid() and project_user_formset.is_valid():
-            project = project_form.save(commit=False)
-            project_user_formset.save()
-            project.save()
+        if project_form.is_valid():
+            project = project_form.save()
 
     else:
         project_form = ProjectForm(instance=project)
-        project_user_formset = ProjectUserFormset(
-            instance=project,
-            prefix='project_user'
-        )
 
     return render(request, "project/update.html", {
         'title': 'Modify project: '+project.name,
         'project_id': pk,
         'form': project_form,
-        'project_user_formset': project_user_formset,
+        'users': users,
     })
 
 

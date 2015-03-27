@@ -8,11 +8,10 @@ class ProjectListView(generic.list.ListView):
 
 
 class UserProjectListView(LoginRequiredMixin, ProjectListView):
-    context_object_name = 'project_list'
+    context_object_name = 'projects'
     template_name = 'project/list.html'
 
     def get_queryset(self):
         return Project.objects.filter(
-            users=self.request.user,
             created_by=self.request.user
         )
