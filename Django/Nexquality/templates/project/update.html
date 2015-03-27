@@ -1,14 +1,29 @@
 {% extends "base.html" %}
 {% block content %}
 <h1>{{ title }}</h1>
-<form action="{{ request.path }}" method="post">{% csrf_token %}
-    {{ form.as_p }}
-    <table>
-    {{ project_user_formset.as_table }}
-    </table>
+<form class="form-control" action="{{ request.path }}" method="post">{% csrf_token %}
+    {{ form }}
 	<input type="submit" value="Save" />
 </form>
+<table class="table">
+    {% for project_user in form.instance.users.all %}
+	    <tr>
+		    <td>
+		    	<h4>{{ project_user.username }}</h4>
+		    </td>
+		    <td>
+		    	<input name="active_state_{{ project_user.id }}" type="button" value="Inactivate" />
+		    </td>
+		    <td>
+		    	<input name="delete_user_{{ project_user.id }}" type="button" value="Remove" />
+		    </td>
+	    </tr>
+    {% endfor %}
+    </table>
 <a href="{% url 'Nexquality:project:list' %}">
-	<input type="button" value="Go back">
+	<input type="button" value="Go back" />
+</a>
+<a href="{% url 'Nexquality:project:add_user' project_id %}">
+    <input type="button" value="Add user" />
 </a>
 {% endblock %}

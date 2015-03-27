@@ -7,7 +7,7 @@ from django.core.urlresolvers import reverse
 class ProjectCreationView(LoginRequiredMixin, edit.CreateView):
     model = Project
     fields = ['name']
-    template_name = 'project/update.html'
+    template_name = 'project/create.html'
 
     def form_valid(self, form):
         form.instance.created_by = self.request.user

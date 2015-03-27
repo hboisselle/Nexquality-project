@@ -4,6 +4,9 @@ from Nexquality.models import Project, ProjectUser
 from django.contrib.auth.models import User
 from django.forms.models import inlineformset_factory
 from django import forms
+from django.core.urlresolvers import reverse
+from django.views.generic.edit import CreateView
+from Nexquality.views.mixins import LoginRequiredMixin
 
 
 @login_required
@@ -13,7 +16,7 @@ def update(request, pk):
     else:
         project = get_object_or_404(Project, pk=pk)
 
-    project_users = ProjectUser.get(project.id=pk)
+    project_users = ProjectUser.objects.filter(project__id=pk)
 
     if request.method == 'POST':
         project_form = ProjectForm(
@@ -30,16 +33,26 @@ def update(request, pk):
         'title': 'Modify project: '+project.name,
         'project_id': pk,
         'form': project_form,
-        'users': users,
+        'project_users': project_users,
     })
 
 
 class ProjectUserForm(forms.ModelForm):
-    out_date = forms.DateField(required=False)
 
     class Meta:
         model = ProjectUser
-        fields = ['user', 'role', 'in_date', 'out_date']
+        fields = ['user', 'role']
+
+
+class ProjectUserCreateView(LoginRequiredMixin, CreateView):
+    model = ProjectUser
+    template_name = 'project/add_user.html'
+
+    def form_valid(self, form):
+        return super(ProjectUserCreateView, self).form_valid(form)
+
+    def get_success_url(self):
+        return reverse('Nexquality:project:update', args=(self.kwargs['pk'],))
 
 
 class ProjectForm(forms.ModelForm):
