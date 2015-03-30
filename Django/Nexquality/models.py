@@ -43,3 +43,36 @@ class ProjectUser(models.Model):
 
     def inactivate(self):
         self.out_date = timezone.now()
+
+
+class Commits(models.Model):
+    user = models.ForeignKey(User)
+    revision = models.IntegerField()
+    date = models.DateField()
+    comment = models.CharField(max_length=500)
+
+
+class ComplexityMetrics(models.Model):
+    complexity = models.FloatField()
+    average_by_class = models.FloatField()
+    average_by_method = models.FloatField()
+
+
+class CoverageMetrics(models.Model):
+    line_of_code = models.IntegerField()
+    number_of_tests = models.IntegerField()
+    number_of_failing_tests = models.IntegerField()
+    number_of_ignored_tests = models.IntegerField()
+    code_coverage = models.FloatField()
+
+
+class DuplicationMetrics(models.Model):
+    duplicated_blocks = models.IntegerField()
+    duplicated_lines = models.IntegerField()
+    duplicated_lines_density = models.IntegerField()
+
+
+class Metrics(models.Model):
+    complexity = models.ForeignKey(ComplexityMetrics)
+    coverage = models.ForeignKey(CoverageMetrics)
+    duplication = models.ForeignKey(DuplicationMetrics)
