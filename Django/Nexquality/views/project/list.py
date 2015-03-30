@@ -13,5 +13,6 @@ class UserProjectListView(LoginRequiredMixin, ProjectListView):
 
     def get_queryset(self):
         return Project.objects.filter(
-            created_by=self.request.user
+            created_by=self.request.user,
+            users=self.request.user,
         )

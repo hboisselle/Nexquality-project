@@ -1,29 +1,29 @@
 {% extends "base.html" %}
 {% block content %}
-<h1>{{ title }}</h1>
-<form class="form-control" action="{{ request.path }}" method="post">{% csrf_token %}
+<h1>Modify project - {{ form.instance.name }}</h1>
+<form class="form-inline" action="{{ request.path }}" method="post">{% csrf_token %}
     {{ form }}
-	<input type="submit" value="Save" />
+	<input class="btn btn-default" type="submit" value="Save" />
 </form>
+<br />
 <table class="table">
-    {% for project_user in form.instance.users.all %}
+	<thead>
+		<tr>
+			<th>Username</th>
+			<th>Joining date</th>
+			<th>Quitting date</th>
+			<th>Inactivate</th>
+		</tr>
+	<thead>
+    {% for project_user in form.instance.projectuser_set.all %}
 	    <tr>
-		    <td>
-		    	<h4>{{ project_user.username }}</h4>
-		    </td>
-		    <td>
-		    	<input name="active_state_{{ project_user.id }}" type="button" value="Inactivate" />
-		    </td>
-		    <td>
-		    	<input name="delete_user_{{ project_user.id }}" type="button" value="Remove" />
-		    </td>
+		    <td>{{ project_user.user.username }}</td>
+		    <td>{{ project_user.in_date }}</td>
+		    <td>{{ project_user.out_date }}</td>
+		    <td><input name="active_state_{{ project_user.user.id }}" type="button" value="Inactivate" /></td>
 	    </tr>
     {% endfor %}
     </table>
-<a href="{% url 'Nexquality:project:list' %}">
-	<input type="button" value="Go back" />
-</a>
-<a href="{% url 'Nexquality:project:add_user' project_id %}">
-    <input type="button" value="Add user" />
-</a>
+<a class="btn btn-default" href="{% url 'Nexquality:project:list' %}">Go back</a>
+<a class="btn btn-default" href="{% url 'Nexquality:project:add_user' form.instance.id %}">Add user</a>
 {% endblock %}

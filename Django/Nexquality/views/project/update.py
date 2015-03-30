@@ -16,8 +16,6 @@ def update(request, pk):
     else:
         project = get_object_or_404(Project, pk=pk)
 
-    project_users = ProjectUser.objects.filter(project__id=pk)
-
     if request.method == 'POST':
         project_form = ProjectForm(
             request.POST,
@@ -30,10 +28,7 @@ def update(request, pk):
         project_form = ProjectForm(instance=project)
 
     return render(request, "project/update.html", {
-        'title': 'Modify project: '+project.name,
-        'project_id': pk,
         'form': project_form,
-        'project_users': project_users,
     })
 
 
