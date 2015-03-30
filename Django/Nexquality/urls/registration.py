@@ -1,7 +1,8 @@
 from django.conf.urls import patterns, url, include
-from Nexquality import views
+from Nexquality.views import registration
+
 
 urlpatterns = patterns('',
     url(r'^', include('django.contrib.auth.urls')),
-    url(r'^accounts/profile/$', views.user_profile, name='user_profile'),
+    url(r'^subscription/$', registration.subscription, name='subscription'),
 )

@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>{{ user }}'s projects</h1>
+<br/>
+{% for project in projects %}
+    <a href="{% url 'Nexquality:project:detail' project.id %}">{{ project.name }}</a><br/>
+{% endfor %}
+<a href="{% url 'Nexquality:project:create' %}">Create project</a>
+{% endblock %}

@@ -39,6 +39,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles'
 )
 
+
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -60,7 +61,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'HOST': 'localhost',
-        'NAME': 'DB_Nexquality',
+        'NAME': 'db_nexquality',
         'HOST': '/Applications/MAMP/tmp/mysql/mysql.sock',
         'USER': 'root',
         'PORT': '8889',
@@ -88,3 +89,5 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
+
+LOGIN_URL = 'Nexquality:registration:login'

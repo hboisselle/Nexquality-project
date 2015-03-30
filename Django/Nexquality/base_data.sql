@@ -1,0 +1,1 @@
+INSERT INTO db_nexquality.Nexquality_projectuserrole (name) VALUES ("Developer");

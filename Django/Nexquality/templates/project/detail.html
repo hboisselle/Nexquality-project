@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>{{ project.name }}<br /></h1>
+<h3>
+{% if project.is_done %}
+    Done
+{% else %}
+	On going
+{% endif %}
+</h3>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>Username</th>
+			<th>Joining date</th>
+			<th>Quitting date</th>
+		</tr>
+	<thead>
+    {% for project_user in project.projectuser_set.all %}
+	    <tr>
+		    <td>{{ project_user.user.username }}</td>
+		    <td>{{ project_user.in_date }}</td>
+		    <td>{{ project_user.out_date }}</td>
+	    </tr>
+    {% endfor %}
+    </table>
+    <a class="btn btn-default" href="{% url 'Nexquality:project:list' %}">Go back</a>
+{% if project.created_by = user %}
+	<input type="button" class="btn btn-default" onclick="location.replace('{% url 'Nexquality:project:update' project.id %}')" value="Update"/>
+	<input type="button" class="btn btn-default" onclick="ConfirmAndRedirect('{% url 'Nexquality:project:delete' project.id %}', 'Are you sure you want to delete this project?')" value="Delete"/>
+{% endif %}
+{% endblock %}
