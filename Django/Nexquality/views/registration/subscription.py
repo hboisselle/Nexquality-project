@@ -5,6 +5,7 @@ from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
 from django.shortcuts import render
 from django import forms
+from django.core.exceptions import ValidationError
 
 
 def subscription(request):
@@ -29,10 +30,18 @@ class ExtendedUserCreationForm(UserCreationForm):
     email = forms.EmailField(required=True)
     first_name = forms.CharField(required=True)
     last_name = forms.CharField(required=True)
+    password1 = forms.CharField(required=True, widget=forms.PasswordInput, min_length=5, label='Password')
 
     class Meta:
         model = User
         fields = ('username', 'email', 'password1', 'password2', 'first_name', 'last_name')
+
+    def clean_email(self):
+        cleaned_email = self.cleaned_data['email']
+        if User.objects.get(email=cleaned_email):
+            raise ValidationError('A user with the same email already exists')
+
+        return cleaned_email
 
     def save(self, commit=True):
         user = super(ExtendedUserCreationForm, self).save(commit=False)
