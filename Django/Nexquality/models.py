@@ -1,13 +1,19 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils import timezone
+from django.utils.encoding import python_2_unicode_compatible
 
 
+@python_2_unicode_compatible
 class Profile(models.Model):
     user = models.OneToOneField(User)
     rank = models.IntegerField(default=1)
 
+    def __str__(self):
+        return self.user.name
 
+
+@python_2_unicode_compatible
 class Project(models.Model):
     name = models.CharField(max_length=250, unique=True)
     start_date = models.DateField(default=timezone.now())
@@ -27,6 +33,7 @@ class Project(models.Model):
         return self.name
 
 
+@python_2_unicode_compatible
 class ProjectUserRole(models.Model):
     name = models.CharField(max_length=250)
 
@@ -45,11 +52,16 @@ class ProjectUser(models.Model):
         self.out_date = timezone.now()
 
 
+@python_2_unicode_compatible
 class Commits(models.Model):
     user = models.ForeignKey(User)
     revision = models.IntegerField()
     date = models.DateField()
     comment = models.CharField(max_length=500)
+
+    #TODO
+    def __str__(self):
+        return self.user + '-' + self.revision
 
 
 class ComplexityMetrics(models.Model):

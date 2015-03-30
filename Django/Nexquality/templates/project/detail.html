@@ -8,7 +8,7 @@
 	On going
 {% endif %}
 </h3>
-{% if project.created_by = user %}
+
 <table class="table">
 	<thead>
 		<tr>
@@ -25,7 +25,9 @@
 	    </tr>
     {% endfor %}
     </table>
-<input type="button" class="btn btn-default" onclick="location.replace('{% url 'Nexquality:project:update' project.id %}')" value="Update"/>
-<input type="button" class="btn btn-default" onclick="ConfirmAndRedirect('{% url 'Nexquality:project:delete' project.id %}', 'Are you sure you want to delete this project?')" value="Delete"/>
+    <a class="btn btn-default" href="{% url 'Nexquality:project:list' %}">Go back</a>
+{% if project.created_by = user %}
+	<input type="button" class="btn btn-default" onclick="location.replace('{% url 'Nexquality:project:update' project.id %}')" value="Update"/>
+	<input type="button" class="btn btn-default" onclick="ConfirmAndRedirect('{% url 'Nexquality:project:delete' project.id %}', 'Are you sure you want to delete this project?')" value="Delete"/>
 {% endif %}
 {% endblock %}

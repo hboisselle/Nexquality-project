@@ -2,6 +2,7 @@
 {% block content %}
 <form action="{{ request.path }}" method="post">{% csrf_token %}
     {{ form.as_p }}
-    <input type="submit" value="Add user" />
+    <input class="btn btn-default" type="submit" value="Add user" />
 </form>
+
 {% endblock %}

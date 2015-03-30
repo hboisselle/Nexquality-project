@@ -61,7 +61,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'HOST': 'localhost',
-        'NAME': 'DB_Nexquality',
+        'NAME': 'db_nexquality',
         'HOST': '/Applications/MAMP/tmp/mysql/mysql.sock',
         'USER': 'root',
         'PORT': '8889',
