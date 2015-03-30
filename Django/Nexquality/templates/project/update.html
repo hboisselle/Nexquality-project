@@ -20,10 +20,10 @@
 		    <td>{{ project_user.user.username }}</td>
 		    <td>{{ project_user.in_date }}</td>
 		    <td>{{ project_user.out_date }}</td>
-		    <td><input name="active_state_{{ project_user.user.id }}" type="button" value="Inactivate" /></td>
+		    <td><a href="{% url 'Nexquality:project:inactivate_user' form.instance.id project_user.id %}" class="btn btn-default" {% if project_user.out_date %} disabled {% endif %} >Inactivate</a></td>
 	    </tr>
     {% endfor %}
     </table>
-<a class="btn btn-default" href="{% url 'Nexquality:project:list' %}">Go back</a>
+<a class="btn btn-default" href="{% url 'Nexquality:project:detail' form.instance.id%}">Go back</a>
 <a class="btn btn-default" href="{% url 'Nexquality:project:add_user' form.instance.id %}">Add user</a>
 {% endblock %}

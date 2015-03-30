@@ -15,6 +15,14 @@ class Project(models.Model):
     users = models.ManyToManyField(User, through='ProjectUser')
     created_by = models.ForeignKey(User, related_name='project_starts')
 
+    def save(self, *args, **kwargs):
+        if self.is_done is True:
+            for project_user in self.projectuser_set.all():
+                project_user.inactivate()
+                project_user.save()
+
+        super(Project, self).save(*args, **kwargs)
+
     def __str__(self):
         return self.name
 
@@ -25,13 +33,6 @@ class ProjectUserRole(models.Model):
     def __str__(self):
         return self.name
 
-    def inactivate(self):
-        self.out_date = timezone.now()
-
-
-def inactivate_user_from_project(user, project):
-    ProjectUser.objects.get(user=user, project=project).inactivate()
-
 
 class ProjectUser(models.Model):
     user = models.ForeignKey(User)
@@ -39,3 +40,6 @@ class ProjectUser(models.Model):
     role = models.ForeignKey(ProjectUserRole, default=1)
     in_date = models.DateField(default=timezone.now())
     out_date = models.DateField(null=True, blank=True)
+
+    def inactivate(self):
+        self.out_date = timezone.now()

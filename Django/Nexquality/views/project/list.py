@@ -1,6 +1,7 @@
 from Nexquality.views.mixins import LoginRequiredMixin
 from Nexquality.models import Project
 from django.views import generic
+from django.db.models import Q
 
 
 class ProjectListView(generic.list.ListView):
@@ -13,6 +14,6 @@ class UserProjectListView(LoginRequiredMixin, ProjectListView):
 
     def get_queryset(self):
         return Project.objects.filter(
-            created_by=self.request.user,
-            users=self.request.user,
-        )
+            Q(created_by=self.request.user) |
+            Q(users=self.request.user)
+        ).distinct()
