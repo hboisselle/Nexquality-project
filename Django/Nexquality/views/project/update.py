@@ -32,7 +32,6 @@ class ProjectUserForm(forms.ModelForm):
         if ProjectUser.objects.filter(project=cleaned_data['project'], user=cleaned_data['user'], out_date=None):
             raise ValidationError("User is already active in the same project")
             del cleaned_data['user']
-
         return cleaned_data
 
     class Meta:

@@ -1,7 +1,28 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils import timezone
 from django.utils.encoding import python_2_unicode_compatible
+from django_importer.importers.xml_importer import XMLImporter
+
+
+class UserXMLImporter(XMLImporter):
+    model = User
+
+    item_tag_name = 'user'
+    fields = {'name', 'email'}
+    field_map = {'first_name': 'name',
+                 'email': 'email'}
+
+    def save_item(self, item, data, instance, commit=True):
+        instance.password = '123123'
+        instance.first_name, instance.last_name = instance.first_name.split(' ')
+        instance.username = instance.email
+        if commit:
+            instance.save()
+        return instance
 
 
 @python_2_unicode_compatible
@@ -10,7 +31,7 @@ class Profile(models.Model):
     rank = models.IntegerField(default=1)
 
     def __str__(self):
-        return self.user.name
+        return self.user.first_name + ' ' + self.user.last_name
 
 
 @python_2_unicode_compatible
@@ -48,6 +69,9 @@ class ProjectUser(models.Model):
     in_date = models.DateField(default=timezone.now())
     out_date = models.DateField(null=True, blank=True)
 
+    class Meta:
+        ordering = ['out_date', 'in_date']
+
     def inactivate(self):
         self.out_date = timezone.now()
 
@@ -59,7 +83,7 @@ class Commits(models.Model):
     date = models.DateField()
     comment = models.CharField(max_length=500)
 
-    #TODO
+    # TODO
     def __str__(self):
         return self.user + '-' + self.revision
 

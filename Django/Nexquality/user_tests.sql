@@ -1,0 +1,15 @@
+/*
+-- Query: SELECT * FROM db_nexquality.auth_user
+LIMIT 0, 1000
+
+-- Date: 2015-03-31 08:56
+*/
+INSERT INTO `auth_user` (`id`,`password`,`last_login`,`is_superuser`,`username`,`first_name`,`last_name`,`email`,`is_staff`,`is_active`,`date_joined`) VALUES (1,'pbkdf2_sha256$15000$OnV3i5oOQ17n$VIit3Ca7zchgGkeqUlmdcQQ90KXBUlsXbHeoyQ+ZMeg=','2015-03-30 18:22:29',1,'admin','','','admin@admin.com',1,1,'2015-03-30 17:37:00');
+INSERT INTO `auth_user` (`id`,`password`,`last_login`,`is_superuser`,`username`,`first_name`,`last_name`,`email`,`is_staff`,`is_active`,`date_joined`) VALUES (2,'pbkdf2_sha256$15000$glanhobRsHGj$4BkhJQHfnEZmPuRirL/QQ+r6bbhzgnliZpRkJzc7EW8=','2015-03-30 17:56:15',0,'alexpoul','Alexandre','Poulin','',0,1,'2015-03-30 17:56:15');
+INSERT INTO `auth_user` (`id`,`password`,`last_login`,`is_superuser`,`username`,`first_name`,`last_name`,`email`,`is_staff`,`is_active`,`date_joined`) VALUES (3,'pbkdf2_sha256$15000$DRJXJy0qkn1K$liJTk0dddYZwqdxsZ8KwdPmC6kmGK14h97xrubyBSIk=','2015-03-30 17:56:39',0,'marcbouc','Marc','Boucher','',0,1,'2015-03-30 17:56:39');
+INSERT INTO `auth_user` (`id`,`password`,`last_login`,`is_superuser`,`username`,`first_name`,`last_name`,`email`,`is_staff`,`is_active`,`date_joined`) VALUES (4,'pbkdf2_sha256$15000$Ar6d0uUPFQud$c99mIr8I0jaZfhFdIRBwmTsiuUEuWApeKtdLr4b8Gw0=','2015-03-30 17:56:47',0,'raphveil','Raphael','Veilleux','',0,0,'2015-03-30 17:56:47');
+INSERT INTO `auth_user` (`id`,`password`,`last_login`,`is_superuser`,`username`,`first_name`,`last_name`,`email`,`is_staff`,`is_active`,`date_joined`) VALUES (5,'pbkdf2_sha256$15000$in4FWtwZ3sJV$gRgVpOtIoP/FwJgRo/eIyfxoMHnWt572PAaByZizY2o=','2015-03-30 17:57:07',0,'edoumori','Édouard','Morissette','',0,1,'2015-03-30 17:57:07');
+INSERT INTO `auth_user` (`id`,`password`,`last_login`,`is_superuser`,`username`,`first_name`,`last_name`,`email`,`is_staff`,`is_active`,`date_joined`) VALUES (6,'pbkdf2_sha256$15000$IXzdNtpQCTO7$rpUZVtCaY1KPon3Vv/B784M0WoxiJuC0Z1JJdhF6zVA=','2015-03-30 17:57:17',0,'vanegilb','Vanessa','Gilbert-Vermette','',0,1,'2015-03-30 17:57:17');
+INSERT INTO `auth_user` (`id`,`password`,`last_login`,`is_superuser`,`username`,`first_name`,`last_name`,`email`,`is_staff`,`is_active`,`date_joined`) VALUES (7,'pbkdf2_sha256$15000$6oZlKHVVf4sU$xn3OIUBqvWW8YHfeoqkxAsiNxLHcDyHG5YxcMP7aLl4=','2015-03-30 17:57:28',0,'marcmahe','Marc-Antoine','Maheux','',0,1,'2015-03-30 17:57:28');
+INSERT INTO `auth_user` (`id`,`password`,`last_login`,`is_superuser`,`username`,`first_name`,`last_name`,`email`,`is_staff`,`is_active`,`date_joined`) VALUES (8,'pbkdf2_sha256$15000$e1SfGzCgMWfE$7T8WFjPHHACnEcW3Zwi7+6R6LThE1izXkwY9gvX58NY=','2015-03-30 17:57:38',0,'willpoul','William','Poulin','',0,1,'2015-03-30 17:57:38');
+INSERT INTO `auth_user` (`id`,`password`,`last_login`,`is_superuser`,`username`,`first_name`,`last_name`,`email`,`is_staff`,`is_active`,`date_joined`) VALUES (9,'pbkdf2_sha256$15000$JBREZzPBXMmO$vXGib8GmwNaiAzJyehvzy6dl5PMx/2bpyTr/iqbvFPo=','2015-03-30 17:57:47',0,'hugobois','Hugo','Boisselle-Morin','',0,1,'2015-03-30 17:57:47');
