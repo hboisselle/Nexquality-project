@@ -20,7 +20,7 @@
 	<thead>
     {% for project_user in project.projectuser_set.all %}
 	    <tr {% if project_user.out_date %} bgcolor="#eee" {% endif %}>
-		    <td>{{ project_user.user.first_name }}&nbsp;{{ project_user.user.last_name }}</td>
+		    <td>{{ project_user.user.get_full_name }}</td>
 		    <td>{{ project_user.in_date }}</td>
 		    <td>{{ project_user.out_date }}</td>
 		    <td>{{ project_user.role.name }}</td>

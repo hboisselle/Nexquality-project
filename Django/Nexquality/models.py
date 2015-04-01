@@ -5,24 +5,6 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.utils import timezone
 from django.utils.encoding import python_2_unicode_compatible
-from django_importer.importers.xml_importer import XMLImporter
-
-
-class UserXMLImporter(XMLImporter):
-    model = User
-
-    item_tag_name = 'user'
-    fields = {'name', 'email'}
-    field_map = {'first_name': 'name',
-                 'email': 'email'}
-
-    def save_item(self, item, data, instance, commit=True):
-        instance.password = '123123'
-        instance.first_name, instance.last_name = instance.first_name.split(' ')
-        instance.username = instance.email
-        if commit:
-            instance.save()
-        return instance
 
 
 @python_2_unicode_compatible
@@ -76,18 +58,6 @@ class ProjectUser(models.Model):
         self.out_date = timezone.now()
 
 
-@python_2_unicode_compatible
-class Commits(models.Model):
-    user = models.ForeignKey(User)
-    revision = models.IntegerField()
-    date = models.DateField()
-    comment = models.CharField(max_length=500)
-
-    # TODO
-    def __str__(self):
-        return self.user + '-' + self.revision
-
-
 class ComplexityMetrics(models.Model):
     complexity = models.FloatField()
     average_by_class = models.FloatField()
@@ -109,6 +79,44 @@ class DuplicationMetrics(models.Model):
 
 
 class Metrics(models.Model):
-    complexity = models.ForeignKey(ComplexityMetrics)
-    coverage = models.ForeignKey(CoverageMetrics)
-    duplication = models.ForeignKey(DuplicationMetrics)
+    complexity = models.OneToOneField(ComplexityMetrics)
+    coverage = models.OneToOneField(CoverageMetrics)
+    duplication = models.OneToOneField(DuplicationMetrics)
+
+
+@python_2_unicode_compatible
+class Violation(models.Model):
+    name = models.CharField(max_length=255, unique=True)
+
+    def __str__(self):
+        return self.name
+
+
+@python_2_unicode_compatible
+class IssueLevel(models.Model):
+    name = models.CharField(max_length=255, unique=True)
+
+    def __str__(self):
+        return self.name
+
+
+@python_2_unicode_compatible
+class Issue(models.Model):
+    description = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.description
+
+
+@python_2_unicode_compatible
+class Commit(models.Model):
+    user = models.ForeignKey(User)
+    revision = models.IntegerField()
+    date = models.DateField()
+    comment = models.CharField(max_length=500)
+    project = models.ForeignKey(Project)
+    metrics = models.OneToOneField(Metrics)
+    issues = models.ManyToManyField(Issue)
+
+    def __str__(self):
+        return self.user + '-' + self.revision
