@@ -58,13 +58,13 @@ class ProjectUser(models.Model):
         self.out_date = timezone.now()
 
 
-class ComplexityMetrics(models.Model):
+class Complexity(models.Model):
     complexity = models.FloatField()
     average_by_class = models.FloatField()
     average_by_method = models.FloatField()
 
 
-class CoverageMetrics(models.Model):
+class Coverage(models.Model):
     line_of_code = models.IntegerField()
     number_of_tests = models.IntegerField()
     number_of_failing_tests = models.IntegerField()
@@ -72,16 +72,16 @@ class CoverageMetrics(models.Model):
     code_coverage = models.FloatField()
 
 
-class DuplicationMetrics(models.Model):
+class Duplication(models.Model):
     duplicated_blocks = models.IntegerField()
     duplicated_lines = models.IntegerField()
-    duplicated_lines_density = models.IntegerField()
+    duplicated_lines_density = models.FloatField()
 
 
 class Metrics(models.Model):
-    complexity = models.OneToOneField(ComplexityMetrics)
-    coverage = models.OneToOneField(CoverageMetrics)
-    duplication = models.OneToOneField(DuplicationMetrics)
+    complexity = models.OneToOneField(Complexity)
+    coverage = models.OneToOneField(Coverage)
+    duplication = models.OneToOneField(Duplication)
 
 
 @python_2_unicode_compatible
@@ -103,6 +103,8 @@ class IssueLevel(models.Model):
 @python_2_unicode_compatible
 class Issue(models.Model):
     description = models.CharField(max_length=255)
+    level = models.ForeignKey(IssueLevel)
+    violation = models.ForeignKey(Violation)
 
     def __str__(self):
         return self.description

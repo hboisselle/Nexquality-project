@@ -12,8 +12,7 @@ def import_users_view(request):
         form = DataImportationForm(request.POST, request.FILES)
         if form.is_valid():
             _file = form.cleaned_data['_file']
-            parser = parse_users(_file=_file)
-            parser.parse()
+            parse_users(_file=_file)
             return redirect(reverse('Nexquality:registration:login'))
     else:
         form = DataImportationForm()
@@ -26,8 +25,7 @@ def import_projects_view(request):
         form = DataImportationForm(request.POST, request.FILES)
         if form.is_valid():
             _file = form.cleaned_data['_file']
-            project = parse_project(request=request, _file=_file)
-            project.save()
+            parse_project(request=request, _file=_file)
             return redirect(reverse('Nexquality:registration:login'))
     else:
         form = DataImportationForm()
