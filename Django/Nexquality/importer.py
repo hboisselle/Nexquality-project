@@ -3,6 +3,20 @@ from django.contrib.auth.models import User
 from Nexquality import models
 
 
+def save_to_model(model, field_set, node, save=True, get_or_create=False):
+    result_set = {}
+    for model_field_name, source_field_name in field_set.items():
+        value = node.find(source_field_name).text
+        result_set[model_field_name] = value
+    if(get_or_create):
+        model, save = model.objects.get_or_create(**result_set)
+    else:
+        model = model(**result_set)
+    if(save):
+        model.save()
+    return model
+
+
 def parse_users(_file):
     tree = ET.parse(_file)
     root = tree.getroot()
@@ -18,47 +32,38 @@ def parse_users(_file):
 
 
 def parse_coverage(parent_node):
-    kwargs = {}
+    field_set = {'line_of_code': 'lineOfCode',
+        'number_of_tests': 'numberOfTests',
+        'number_of_failing_tests': 'numberOfFailingTests',
+        'number_of_ignored_tests': 'numberOfIgnoredTests',
+        'code_coverage': 'codeCoverage'}
     node = parent_node.find('coverage')
-    kwargs['line_of_code'] = node.find('lineOfCode').text
-    kwargs['number_of_tests'] = node.find('numberOfTests').text
-    kwargs['number_of_failing_tests'] = node.find('numberOfFailingTests').text
-    kwargs['number_of_ignored_tests'] = node.find('numberOfIgnoredTests').text
-    kwargs['code_coverage'] = node.find('codeCoverage').text
-    coverage = models.Coverage(**kwargs)
-    coverage.save()
-    return coverage
+    return save_to_model(models.Coverage, field_set, node)
 
 
 def parse_complexity(parent_node):
-    kwargs = {}
+    field_set = {'complexity': 'complexity',
+        'average_by_class': 'averageByClass',
+        'average_by_method': 'averageByMethod'}
     node = parent_node.find('complexity')
-    kwargs['complexity'] = node.find('complexity').text
-    kwargs['average_by_class'] = node.find('averageByClass').text
-    kwargs['average_by_method'] = node.find('averageByMethod').text
-    complexity = models.Complexity(**kwargs)
-    complexity.save()
-    return complexity
+    return save_to_model(models.Complexity, field_set, node)
 
 
 def parse_duplication(parent_node):
-    kwargs = {}
+    field_set = {'duplicated_blocks': 'duplicatedBlocks',
+        'duplicated_lines': 'duplicatedLines',
+        'duplicated_lines_density': 'duplicatedLinesDensity'}
     node = parent_node.find('duplication')
-    kwargs['duplicated_blocks'] = node.find('duplicatedBlocks').text
-    kwargs['duplicated_lines'] = node.find('duplicatedLines').text
-    kwargs['duplicated_lines_density'] = node.find('duplicatedLinesDensity').text
-    duplication = models.Duplication(**kwargs)
-    duplication.save()
-    return duplication
+    return save_to_model(models.Duplication, field_set, node)
 
 
 def parse_metrics(parent_node):
-    kwargs = {}
+    field_set = {}
     node = parent_node.find('metrics')
-    kwargs['complexity'] = parse_complexity(node)
-    kwargs['duplication'] = parse_duplication(node)
-    kwargs['coverage'] = parse_coverage(node)
-    metrics = models.Metrics(**kwargs)
+    field_set['complexity'] = parse_complexity(node)
+    field_set['duplication'] = parse_duplication(node)
+    field_set['coverage'] = parse_coverage(node)
+    metrics = models.Metrics(**field_set)
     metrics.duplication.save()
     metrics.complexity.save()
     metrics.coverage.save()
@@ -67,19 +72,13 @@ def parse_metrics(parent_node):
 
 
 def parse_violation(parent_node):
-    kwargs = {}
-    kwargs['name'] = parent_node.find('violation').text
-    violation, created = models.Violation.objects.get_or_create(**kwargs)
-    if created: violation.save()
-    return violation
+    field_set = {'name': 'violation'}
+    return save_to_model(models.Violation, field_set, parent_node, get_or_create=True)
 
 
 def parse_issue_level(parent_node):
-    kwargs = {}
-    kwargs['name'] = parent_node.find('level').text
-    issue_level, created = models.IssueLevel.objects.get_or_create(**kwargs)
-    if created: issue_level.save()
-    return issue_level
+    field_set = {'name': 'level'}
+    return save_to_model(models.IssueLevel, field_set, parent_node, get_or_create=True)
 
 
 def parse_issues(parent_node, commit):
@@ -98,35 +97,35 @@ def parse_issues(parent_node, commit):
 def parse_commits(parent_node, project):
     commits_node = parent_node.find('commits')
     for node in commits_node.findall('commit'):
-        kwargs = {}
+        field_set = {}
         date = node.find('date').text
-        kwargs['date'] = date[-4:]+"-"+date[3:5]+"-"+date[0:2]
-        kwargs['revision'] = node.find('revision').text
-        kwargs['user'] = User.objects.get(email=node.find('user').text)
-        kwargs['comment'] = node.find('comment').text
-        kwargs['metrics'] = parse_metrics(node)
-        kwargs['project'] = project
-        commit = models.Commit(**kwargs)
+        field_set['date'] = date[-4:]+"-"+date[3:5]+"-"+date[0:2]
+        field_set['revision'] = node.find('revision').text
+        field_set['user'] = User.objects.get(email=node.find('user').text)
+        field_set['comment'] = node.find('comment').text
+        field_set['metrics'] = parse_metrics(node)
+        field_set['project'] = project
+        commit = models.Commit(**field_set)
         commit.save()
         parse_issues(node, commit)
 
 
 def parse_project_users(parent_node, project):
     for user_email_node in parent_node.findall('.//user'):
-        kwargs = {}
-        kwargs['user'] = User.objects.get(email=user_email_node.text)
-        kwargs['project'] = project
-        project_user, created = models.ProjectUser.objects.get_or_create(**kwargs)
+        field_set = {}
+        field_set['user'] = User.objects.get(email=user_email_node.text)
+        field_set['project'] = project
+        project_user, created = models.ProjectUser.objects.get_or_create(**field_set)
         if created: project_user.save()
 
 
 def parse_project(request, _file):
     tree = ET.parse(_file)
     node = tree.getroot()
-    kwargs = {}
-    kwargs['name'] = node.find('name').text
-    kwargs['created_by'] = request.user
-    project, created = models.Project.objects.get_or_create(**kwargs)
+    field_set = {}
+    field_set['name'] = node.find('name').text
+    field_set['created_by'] = request.user
+    project, created = models.Project.objects.get_or_create(**field_set)
     if created: project.save()
     parse_project_users(node, project)
     parse_commits(node, project)
