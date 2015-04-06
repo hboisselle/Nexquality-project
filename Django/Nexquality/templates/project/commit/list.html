@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>{{ project }} commits</h1>
+<br/>
+<div id="commits">
+	<input class="search" placeholder="Search" />
+	<button class="sort btn btn-primary" data-sort="revision">
+	    Sort by revision
+	</button>
+	<table class="table">
+		<tbody class="list">
+		{% for commit in commits %}
+		    <tr>
+		    	<td class="revision"><a href="{% url 'Nexquality:project:commit:detail' project.id commit.id %}">{{ commit.revision }}</a></td>
+		    	<td class="date">{{ commit.date }}</td>
+		    	<td class="name">{{ commit.user.get_full_name }}</td>
+		    </tr>
+		{% endfor %}
+		</tbody>
+	</table>
+</div>
+<script>
+	var options = {
+	  valueNames: [ 'revision', 'date', 'name' ]
+	};
+
+    var commitList = new List('commits', options);
+</script>
+<a href="{% url 'Nexquality:project:detail' project.id %}">Go back</a>
+{% endblock %}

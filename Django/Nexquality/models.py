@@ -5,6 +5,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.utils import timezone
 from django.utils.encoding import python_2_unicode_compatible
+from time import strftime
 
 
 @python_2_unicode_compatible
@@ -23,6 +24,9 @@ class Project(models.Model):
     is_done = models.BooleanField(default=False)
     users = models.ManyToManyField(User, through='ProjectUser')
     created_by = models.ForeignKey(User, related_name='project_starts')
+
+    def get_latest_commit(self):
+        return self.commit_set.order_by('-date')[0]
 
     def save(self, *args, **kwargs):
         if self.is_done is True:
@@ -121,4 +125,4 @@ class Commit(models.Model):
     issues = models.ManyToManyField(Issue)
 
     def __str__(self):
-        return self.user + '-' + self.revision
+        return "Commit pushed on {1} by {2}".format(self.revision, self.date, self.user.get_full_name())

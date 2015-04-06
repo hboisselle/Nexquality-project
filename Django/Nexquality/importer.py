@@ -1,6 +1,7 @@
 from xml.etree import ElementTree as ET
 from django.contrib.auth.models import User
 from Nexquality import models
+from django.core.exceptions import ValidationError
 
 
 def save_to_model(model, field_set, node, save=True, get_or_create=False):
@@ -113,7 +114,10 @@ def parse_commits(parent_node, project):
 def parse_project_users(parent_node, project):
     for user_email_node in parent_node.findall('.//user'):
         field_set = {}
-        field_set['user'] = User.objects.get(email=user_email_node.text)
+        try:
+            field_set['user'] = User.objects.get(email=user_email_node.text)
+        except models.User.DoesNotExist:
+            raise ValidationError('Users in the project must exist to import the project.')
         field_set['project'] = project
         project_user, created = models.ProjectUser.objects.get_or_create(**field_set)
         if created: project_user.save()

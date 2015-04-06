@@ -9,8 +9,8 @@ from django.core.exceptions import ValidationError
 
 
 @login_required
-def update(request, pk):
-    project = get_object_or_404(Project, pk=pk)
+def update(request, project_id):
+    project = get_object_or_404(Project, pk=project_id)
     if request.method == 'POST':
         form = ProjectForm(request.POST, instance=project)
         if form.is_valid():
@@ -45,11 +45,11 @@ class ProjectUserCreateView(LoginRequiredMixin, CreateView):
     form_class = ProjectUserForm
 
     def get_initial(self):
-        project = get_object_or_404(Project, pk=self.kwargs['pk'])
+        project = get_object_or_404(Project, pk=self.kwargs['project_id'])
         return {'project': project}
 
     def get_success_url(self):
-        return reverse('Nexquality:project:update', args=(self.kwargs['pk'],))
+        return reverse('Nexquality:project:update', args=(self.kwargs['project_id'],))
 
 
 @login_required

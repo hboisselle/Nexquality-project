@@ -8,7 +8,19 @@
 	On going
 {% endif %}
 </h3>
-
+<table class="table">
+	<thead>
+	    <tr>
+	        <th>Latest Commit</th>
+	    </tr>
+    </thead>
+    <tr>
+        <td>
+            <a href="{% url 'Nexquality:project:commit:detail' project.id project.get_latest_commit.id %}">{{ project.get_latest_commit }}</a>
+        </td>
+    </tr> 
+</table>
+</div>
 <table class="table">
 	<thead>
 		<tr>
@@ -28,8 +40,9 @@
     {% endfor %}
     </table>
     <a class="btn btn-default" href="{% url 'Nexquality:project:list' %}">Go back</a>
+    <a class="btn btn-default" href="{% url 'Nexquality:project:commit:list' project.id %}">Commits</a>
 {% if project.created_by = user %}
-	<input type="button" class="btn btn-default" onclick="location.replace('{% url 'Nexquality:project:update' project.id %}')" value="Update"/>
-	<input type="button" class="btn btn-default" onclick="ConfirmAndRedirect('{% url 'Nexquality:project:delete' project.id %}', 'Are you sure you want to delete this project?')" value="Delete"/>
+	<a class="btn btn-default" href="{% url 'Nexquality:project:update' project.id %}">Update</a>
+	<a class="btn btn-default" onclick="ConfirmAndRedirect('{% url 'Nexquality:project:delete' project.id %}', 'Are you sure you want to delete this project?')"/>Delete</a>
 {% endif %}
 {% endblock %}
