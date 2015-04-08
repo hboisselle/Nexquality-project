@@ -8,26 +8,96 @@
 	On going
 {% endif %}
 </h3>
-
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingOne">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          Metrics
+        </a>
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+      <div class="panel-body">
+        
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingTwo">
+      <h4 class="panel-title">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          Active users
+        </a>
+      </h4>
+    </div>
+    <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
+      <div class="panel-body">
+        <table class="table">
+			<thead>
+				<tr>
+					<th>Username</th>
+					<th>Joining date</th>
+					<th>Quitting date</th>
+					<th>Role</th>
+				</tr>
+			<thead>
+		    {% for project_user in project.get_active_users %}
+			    <tr>
+				    <td>{{ project_user.user.get_full_name }}</td>
+				    <td>{{ project_user.in_date }}</td>
+				    <td>{{ project_user.out_date }}</td>
+				    <td>{{ project_user.role.name }}</td>
+			    </tr>
+		    {% endfor %}
+    	</table>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingThree">
+      <h4 class="panel-title">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          Inactive users
+        </a>
+      </h4>
+    </div>
+    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+      <div class="panel-body">
+        <table class="table">
+      <thead>
+        <tr>
+          <th>Username</th>
+          <th>Joining date</th>
+          <th>Quitting date</th>
+          <th>Role</th>
+        </tr>
+      <thead>
+        {% for project_user in project.get_inactive_users %}
+          <tr>
+            <td>{{ project_user.user.get_full_name }}</td>
+            <td>{{ project_user.in_date }}</td>
+            <td>{{ project_user.out_date }}</td>
+            <td>{{ project_user.role.name }}</td>
+          </tr>
+        {% endfor %}
+      </table>
+      </div>
+    </div>
+  </div>
+</div>
 <table class="table">
-	<thead>
-		<tr>
-			<th>Username</th>
-			<th>Joining date</th>
-			<th>Quitting date</th>
-		</tr>
-	<thead>
-    {% for project_user in project.projectuser_set.all %}
-	    <tr>
-		    <td>{{ project_user.user.username }}</td>
-		    <td>{{ project_user.in_date }}</td>
-		    <td>{{ project_user.out_date }}</td>
-	    </tr>
-    {% endfor %}
-    </table>
+    <tr>
+        <td>
+            <a href="{% url 'Nexquality:project:commit:detail' project.id project.get_latest_commit.id %}">{{ project.get_latest_commit }}</a>
+        </td>
+    </tr> 
+</table>
+</div>
     <a class="btn btn-default" href="{% url 'Nexquality:project:list' %}">Go back</a>
+    <a class="btn btn-default" href="{% url 'Nexquality:project:commit:list' project.id %}">Commits</a>
 {% if project.created_by = user %}
-	<input type="button" class="btn btn-default" onclick="location.replace('{% url 'Nexquality:project:update' project.id %}')" value="Update"/>
-	<input type="button" class="btn btn-default" onclick="ConfirmAndRedirect('{% url 'Nexquality:project:delete' project.id %}', 'Are you sure you want to delete this project?')" value="Delete"/>
+  	<a class="btn btn-default" href="{% url 'Nexquality:project:update' project.id %}">Update</a>
+  	<a class="btn btn-default" onclick="ConfirmAndRedirect('{% url 'Nexquality:project:delete' project.id %}', 'Are you sure you want to delete this project?')"/>Delete</a>
 {% endif %}
 {% endblock %}

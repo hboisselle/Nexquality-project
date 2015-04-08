@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>{{ commit }}</h1>
+<h3>Comment</h3>
+<p>
+{{ commit.comment }}
+</p>
+<table class="table" id="complexity">
+    <thead>
+        <tr><th>Complexity</th></tr>
+    </thead>
+    <tr>
+        <td>Complexity</td>
+        <td>{{ commit.metrics.complexity.complexity }}</td>
+    </tr>
+    <tr>
+        <td>Average by class</td>
+        <td>{{ commit.metrics.complexity.average_by_class }}</td>
+    </tr>
+    <tr>
+        <td>Average by method</td>
+        <td>{{ commit.metrics.complexity.average_by_method }}</td>
+    </tr>
+</table>
+<table class="table" id="coverage">
+    <thead>
+        <tr><th>Coverage</th></tr>
+    </thead>
+    <tr>
+        <td>Line of code</td>
+        <td>{{ commit.metrics.coverage.line_of_code }}</td>
+    </tr>
+    <tr>
+        <td>Number of tests</td>
+        <td>{{ commit.metrics.coverage.number_of_tests }}</td>
+    </tr>
+    <tr>
+        <td>Number of failing tests</td>
+        <td>{{ commit.metrics.coverage.number_of_failing_tests }}</td>
+    </tr>
+    <tr>
+        <td>Number of ignored tests</td>
+        <td>{{ commit.metrics.coverage.number_of_ignored_tests }}</td>
+    </tr>
+    <tr>
+        <td>Code coverage</td>
+        <td>{{ commit.metrics.coverage.code_coverage }}</td>
+    </tr>
+</table>
+<table class="table" id="duplication">
+    <thead>
+        <tr><th>Duplication</th></tr>
+    </thead>
+    <tr>
+        <td>Duplicated blocks</td>
+        <td>{{ commit.metrics.duplication.duplicated_blocks }}</td>
+    </tr>
+    <tr>
+        <td>Duplicated lines</td>
+        <td>{{ commit.metrics.duplication.duplicated_lines }}</td>
+    </tr>
+    <tr>
+        <td>Duplicated lines density</td>
+        <td>{{ commit.metrics.duplication.duplicated_lines_density }}</td>
+    </tr>
+</table>
+
+<table class="table" id="issues">
+    <thead>
+        <tr><th>Issues</th></tr>
+    </thead>
+    {% for issue in commit.issues.all %}
+    <tr>
+        <td>
+            {{ issue.description }}
+        </td>
+        <td>
+            {{ issue.violation.name }}
+        </td>
+        <td>
+            {{ issue.level.name }}
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+<a class="btn btn-default" href="{% url 'Nexquality:project:detail' commit.project.id %}">Go to project</a>
+{% endblock %}
