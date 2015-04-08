@@ -32,7 +32,10 @@ class Project(models.Model):
     created_by = models.ForeignKey(User, related_name='project_starts')
 
     def get_latest_commit(self):
-        return self.commit_set.order_by('-date')[0]
+        if self.commit_set.count() > 0:
+            return self.commit_set.order_by('-date')[0]
+        else:
+            return None
 
     def get_active_users(self):
         return self.projectuser_set.filter(out_date=None)
