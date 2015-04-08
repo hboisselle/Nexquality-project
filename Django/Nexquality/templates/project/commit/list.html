@@ -4,10 +4,13 @@
 <h1>{{ project }} commits</h1>
 <br/>
 <div id="commits">
-	<input class="search" placeholder="Search" />
-	<button class="sort btn btn-primary" data-sort="revision">
-	    Sort by revision
-	</button>
+	<form class="form-inline">
+		<input class="search form-control" placeholder="Search" />
+		<button class="sort btn btn-primary" data-sort="revision">
+		    Sort by revision
+		</button>
+	</form>
+	<br />
 	<table class="table">
 		<tbody class="list">
 		{% for commit in commits %}
@@ -19,13 +22,14 @@
 		{% endfor %}
 		</tbody>
 	</table>
+	<ul class="pagination"></ul>
 </div>
 <script>
-	var options = {
-	  valueNames: [ 'revision', 'date', 'name' ]
-	};
-
-    var commitList = new List('commits', options);
+	var commitsList = new List('commits', {
+	  valueNames: [ 'revision', 'date', 'name' ],
+	  page: 10,
+	  plugins: [ ListPagination({}) ]
+	});
 </script>
 <a href="{% url 'Nexquality:project:detail' project.id %}">Go back</a>
 {% endblock %}

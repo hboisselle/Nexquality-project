@@ -5,7 +5,6 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.utils import timezone
 from django.utils.encoding import python_2_unicode_compatible
-from time import strftime
 
 
 @python_2_unicode_compatible
@@ -27,6 +26,12 @@ class Project(models.Model):
 
     def get_latest_commit(self):
         return self.commit_set.order_by('-date')[0]
+
+    def get_active_users(self):
+        return self.projectuser_set.filter(out_date=None)
+
+    def get_inactive_users(self):
+        return self.projectuser_set.exclude(out_date=None)
 
     def save(self, *args, **kwargs):
         if self.is_done is True:
