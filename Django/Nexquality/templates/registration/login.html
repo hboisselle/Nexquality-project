@@ -6,18 +6,21 @@
 <p>Your username and password didn't match. Please try again.</p>
 {% endif %}
 
-<form class="form-inline" method="post" action="{% url 'Nexquality:registration:login' %}">
+<form method="post" action="{% url 'Nexquality:registration:login' %}">
 {% csrf_token %}
-<div class="form-group">
-    {{ form.username.label_tag }}
-    {{ form.username }}
-</div>
-<div class="form-group">
-    {{ form.password.label_tag }}
-    {{ form.password }}
-</div>
+<table>
+<tr>
+    <td>{{ form.username.label_tag }}</td>
+    <td>{{ form.username }}</td>
+</tr>
+<tr>
+    <td>{{ form.password.label_tag }}</td>
+    <td>{{ form.password }}</td>
+</tr>
+</table>
 
-<input class="btn btn-default" type="submit" value="login" />
-<input type="hidden" name="next" value="{% url 'Nexquality:profile' %}" />
+<input type="submit" value="login" />
+<input type="hidden" name="next" value="{% url 'Nexquality:profile:user_profile' %}" />
 </form>
+<input type="button" name="subscribe" value="subscribe" onclick='window.location.replace("{% url 'Nexquality:registration:subscription' %}");' />
 {% endblock %}

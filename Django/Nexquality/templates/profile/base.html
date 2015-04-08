@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+    <div>
+        <a href="{% url 'Nexquality:registration:logout'%}">Logout</a>
+        <a href="{% url 'Nexquality:registration:logout'%}">Badges</a>
+        <a href="{% url 'Nexquality:project:list'%}">Projects</a>
+    </div>
+    <div>
+        {% block profile_content %}
+        {% endblock %}
+    </div>
+{% endblock %}
