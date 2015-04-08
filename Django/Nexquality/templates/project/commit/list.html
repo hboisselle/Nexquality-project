@@ -1,35 +1,31 @@
 {% extends "base.html" %}
 {% block content %}
-
+<script>
+$(document).ready(function(){
+    $('#table').DataTable()
+});
+</script>
 <h1>{{ project }} commits</h1>
 <br/>
-<div id="commits">
-	<form class="form-inline">
-		<input class="search form-control" placeholder="Search" />
-		<button class="sort btn btn-primary" data-sort="revision">
-		    Sort by revision
-		</button>
-	</form>
 	<br />
-	<table class="table">
+	<table class="table table-condensed hover" id="table">
+        <thead>
+            <tr>
+                <th>Revision</th>
+                <th>Date</th>
+                <th>User</th>
+            </tr>
+        </thead>
 		<tbody class="list">
 		{% for commit in commits %}
 		    <tr>
-		    	<td class="revision"><a href="{% url 'Nexquality:project:commit:detail' project.id commit.id %}">{{ commit.revision }}</a></td>
-		    	<td class="date">{{ commit.date }}</td>
-		    	<td class="name">{{ commit.user.get_full_name }}</td>
+		    	<td><a href="{% url 'Nexquality:project:commit:detail' project.id commit.id %}">{{ commit.revision }}</a></td>
+		    	<td>{{ commit.date }}</td>
+		    	<td>{{ commit.user.get_full_name }}</td>
 		    </tr>
 		{% endfor %}
 		</tbody>
 	</table>
-	<ul class="pagination"></ul>
-</div>
-<script>
-	var commitsList = new List('commits', {
-	  valueNames: [ 'revision', 'date', 'name' ],
-	  page: 10,
-	  plugins: [ ListPagination({}) ]
-	});
-</script>
+
 <a href="{% url 'Nexquality:project:detail' project.id %}">Go back</a>
 {% endblock %}

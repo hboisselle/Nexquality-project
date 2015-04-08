@@ -1,12 +1,11 @@
-{% extends "base.html" %}
-
+{% extends "registration/base.html" %}
 {% block content %}
 
 {% if form.errors %}
 <p>Your username and password didn't match. Please try again.</p>
 {% endif %}
 
-<form class="form-inline" method="post" action="{% url 'Nexquality:registration:login' %}">
+<form id="form" class="form-inline" method="post" action="{% url 'Nexquality:registration:login' %}">
 {% csrf_token %}
 <div class="form-group">
     {{ form.username.label_tag }}
@@ -17,7 +16,12 @@
     {{ form.password }}
 </div>
 
-<input class="btn btn-default" type="submit" value="login" />
-<input type="hidden" name="next" value="{% url 'Nexquality:profile' %}" />
+<input id="submit_btn" class="btn btn-default" type="submit" value="login" />
+<input type="hidden" id="next" name="next" value="" />
 </form>
+<script>
+    $("form").submit(function(){
+        $("#next").val("{% url 'Nexquality:profile:list' %}"+$("#id_username").val());
+    });
+</script>
 {% endblock %}

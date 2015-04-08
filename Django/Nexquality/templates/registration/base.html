@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block logo %}
+<a style="margin: 0px; padding: 0px" class="navbar-brand" href="{% url 'Nexquality:registration:login' %}">
+  <img alt="brand" src="/static/Nexquality/logo.png" style="height: 50px; " />
+</a>
+{% endblock %}
+{% block navigation %}
+    <li><a href="{% url 'Nexquality:registration:login' %}">Log in</a></li>
+    <li><a href="{% url 'Nexquality:registration:subscription' %}">Subscribe</a></li>
+{% endblock %}

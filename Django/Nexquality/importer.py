@@ -30,6 +30,12 @@ def parse_users(_file):
         user.username = first_name[:4].lower() + last_name[:4].lower()
         user.email = node.find('email').text
         user.save()
+        parse_profile(user)
+
+
+def parse_profile(user):
+    profile = models.Profile(user=user)
+    profile.save()
 
 
 def parse_coverage(parent_node):

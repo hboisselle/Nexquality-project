@@ -1,19 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/plug-ins/1.10.6/integration/bootstrap/3/dataTables.bootstrap.css" />
+    <link rel="stylesheet" href="/static/font-awesome-4.3.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <script src="/static/Nexquality/javascript.js"></script>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
-    <script src="http://listjs.com/no-cdn/list.js"></script>
-    <script src="http://listjs.com/no-cdn/list.pagination.js"></script>
+    <script src="//cdn.datatables.net/1.10.6/js/jquery.dataTables.min.js"></script>
+    <script src="//cdn.datatables.net/plug-ins/1.10.6/integration/bootstrap/3/dataTables.bootstrap.js"></script>
+    
+  
     <title>{% block title %}Nexquality{% endblock %}</title>
 </head>
 
 <body>
 <nav class="navbar navbar-default">
     <div>
-        {% block navigation %}
+        
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1">
             <span class="sr-only">Toggle navigation</span>
@@ -21,18 +25,21 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="{% url 'Nexquality:profile' %}">Nexquality</a>
+          {% block logo %}
+          <a style="margin: 0px; padding: 0px" class="navbar-brand" href="{% url 'Nexquality:profile:detail' user.username %}">
+            <img alt="brand" src="/static/Nexquality/logo.png" style="height: 50px; " />
+          </a>
+          {% endblock logo %}
         </div>
         <div class="collapse navbar-collapse" id="navbar-collapse-1">
         <ul class="nav navbar-nav">
+        {% block navigation %}
             <li><a href="{% url 'Nexquality:registration:logout' %}">Log out</a></li>
-            <li><a href="{% url 'Nexquality:registration:login' %}">Log in</a></li>
-            <li><a href="{% url 'Nexquality:registration:subscription' %}">Subscribe</a></li>
             <li><a href="{% url 'Nexquality:project:list' %}">Projects</a></li>
             <li><a href="{% url 'Nexquality:data_importation:users' %}">Import users</a></li>
             <li><a href="{% url 'Nexquality:data_importation:projects' %}">Import projects</a></li>
-        </ul>
         {% endblock %}
+        </ul>
     </div>
 </nav>
     <div id="content" class="container">

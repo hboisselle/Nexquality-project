@@ -1,68 +1,169 @@
 {% extends "base.html" %}
 {% block content %}
-<h1>{{ project.name }}<br /></h1>
-<h3>
+<h1>
 {% if project.is_done %}
-    Done
+    <i class="fa fa-lock"></i>
 {% else %}
-	On going
+    <i class="fa fa-rocket"></i>
 {% endif %}
-</h3>
+{{ project.name }}</h1>
 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
   <div class="panel panel-default">
-    <div class="panel-heading" role="tab" id="headingOne">
+    <div class="panel-heading" role="tab" id="headingMetrics">
       <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseMetrics" aria-expanded="true" aria-controls="collapseMetrics">
           Metrics
         </a>
       </h4>
     </div>
-    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+    <div id="collapseMetrics" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingMetrics">
       <div class="panel-body">
-        
+        <div class="col-md-4">
+            <table class="table table-bordered table-condensed" id="complexity">
+                <thead>
+                    <tr><th colspan="2">Complexity</th></tr>
+                </thead>
+                <tr>
+                    <td>Complexity</td>
+                    <td>{{ metrics.complexity.complexity }}</td>
+                </tr>
+                <tr>
+                    <td>Average by class</td>
+                    <td>{{ metrics.complexity.average_by_class }}</td>
+                </tr>
+                <tr>
+                    <td>Average by method</td>
+                    <td>{{ metrics.complexity.average_by_method }}</td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-md-4">
+            <table class="table table-bordered table-condensed" id="coverage">
+                <thead>
+                    <tr><th colspan="2">Coverage</th></tr>
+                </thead>
+                <tr>
+                    <td>Line of code</td>
+                    <td>{{ metrics.coverage.line_of_code }}</td>
+                </tr>
+                <tr>
+                    <td>Number of tests</td>
+                    <td>{{ metrics.coverage.number_of_tests }}</td>
+                </tr>
+                <tr>
+                    <td>Number of failing tests</td>
+                    <td>{{ metrics.coverage.number_of_failing_tests }}</td>
+                </tr>
+                <tr>
+                    <td>Number of ignored tests</td>
+                    <td>{{ metrics.coverage.number_of_ignored_tests }}</td>
+                </tr>
+                <tr>
+                    <td>Code coverage</td>
+                    <td>{{ metrics.coverage.code_coverage }}</td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-md-4">
+            <table class="table table-bordered table-condensed" id="duplication">
+                <thead>
+                    <tr><th colspan="2">Duplication</th></tr>
+                </thead>
+                <tr>
+                    <td>Duplicated blocks</td>
+                    <td>{{ metrics.duplication.duplicated_blocks }}</td>
+                </tr>
+                <tr>
+                    <td>Duplicated lines</td>
+                    <td>{{ metrics.duplication.duplicated_lines }}</td>
+                </tr>
+                <tr>
+                    <td>Duplicated lines density</td>
+                    <td>{{ metrics.duplication.duplicated_lines_density }}</td>
+                </tr>
+            </table>
+        </div>
       </div>
     </div>
   </div>
+  {% if active_users %}
   <div class="panel panel-default">
-    <div class="panel-heading" role="tab" id="headingTwo">
+    <div class="panel-heading" role="tab" id="headingActiveUsers">
       <h4 class="panel-title">
-        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseActiveUsers" aria-expanded="false" aria-controls="collapseActiveUsers">
           Active users
         </a>
       </h4>
     </div>
-    <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
+    <div id="collapseActiveUsers" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingActiveUsers">
       <div class="panel-body">
         <table class="table">
-			<thead>
-				<tr>
-					<th>Username</th>
-					<th>Joining date</th>
-					<th>Quitting date</th>
-					<th>Role</th>
-				</tr>
-			<thead>
-		    {% for project_user in project.get_active_users %}
-			    <tr>
-				    <td>{{ project_user.user.get_full_name }}</td>
-				    <td>{{ project_user.in_date }}</td>
-				    <td>{{ project_user.out_date }}</td>
-				    <td>{{ project_user.role.name }}</td>
-			    </tr>
-		    {% endfor %}
-    	</table>
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Joining date</th>
+                    <th>Quitting date</th>
+                    <th>Role</th>
+                </tr>
+            <thead>
+            {% for project_user in active_users %}
+                <tr>
+                    <td>{{ project_user.user.get_full_name }}</td>
+                    <td>{{ project_user.in_date }}</td>
+                    <td>{{ project_user.out_date }}</td>
+                    <td>{{ project_user.role.name }}</td>
+                </tr>
+            {% endfor %}
+        </table>
       </div>
     </div>
   </div>
+  {% endif %}
   <div class="panel panel-default">
-    <div class="panel-heading" role="tab" id="headingThree">
+      <div class="panel-heading" role="tab" id="headingIssues">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapseIssues" aria-expanded="true" aria-controls="collapseIssues">
+            Issues
+          </a>
+        </h4>
+      </div>
+      <div id="collapseIssues" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingIssues">
+          <div class="panel-body">
+              <table class="table" id="issues">
+                  <thead>
+                      <tr>
+                          <th>Description</th>
+                          <th>Violation</th>
+                          <th>Level</th>
+                    </tr>
+                  </thead>
+                  {% for issue in issues %}
+                  <tr>
+                      <td>
+                          {{ issue.description }}
+                      </td>
+                      <td>
+                          {{ issue.violation.name }}
+                      </td>
+                      <td>
+                          {{ issue.level.name }}
+                      </td>
+                  </tr>
+                  {% endfor %}
+              </table>
+              </div>
+        </div>
+  </div>
+  {% if inactive_users %}
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingInactiveUsers">
       <h4 class="panel-title">
-        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseInactiveUsers" aria-expanded="false" aria-controls="collapseInactiveUsers">
           Inactive users
         </a>
       </h4>
     </div>
-    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+    <div id="collapseInactiveUsers" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingInactiveUsers">
       <div class="panel-body">
         <table class="table">
       <thead>
@@ -73,7 +174,7 @@
           <th>Role</th>
         </tr>
       <thead>
-        {% for project_user in project.get_inactive_users %}
+        {% for project_user in inactive_users %}
           <tr>
             <td>{{ project_user.user.get_full_name }}</td>
             <td>{{ project_user.in_date }}</td>
@@ -85,14 +186,7 @@
       </div>
     </div>
   </div>
-</div>
-<table class="table">
-    <tr>
-        <td>
-            <a href="{% url 'Nexquality:project:commit:detail' project.id project.get_latest_commit.id %}">{{ project.get_latest_commit }}</a>
-        </td>
-    </tr> 
-</table>
+  {% endif %}
 </div>
     <a class="btn btn-default" href="{% url 'Nexquality:project:list' %}">Go back</a>
     <a class="btn btn-default" href="{% url 'Nexquality:project:commit:list' project.id %}">Commits</a>

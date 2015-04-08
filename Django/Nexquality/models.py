@@ -5,6 +5,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.utils import timezone
 from django.utils.encoding import python_2_unicode_compatible
+from django.db.models import Q
 
 
 @python_2_unicode_compatible
@@ -14,6 +15,12 @@ class Profile(models.Model):
 
     def __str__(self):
         return self.user.first_name + ' ' + self.user.last_name
+
+    def get_recent_projects(self):
+        return Project.objects.filter(
+            Q(created_by=self.user) |
+            Q(users=self.user)
+        ).distinct()[:5]
 
 
 @python_2_unicode_compatible
