@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
 <h1>{{ title }}</h1>
-<form class="form-inline" action="{{ request.path }}" method="post">{% csrf_token %}
+<form action="{{ request.path }}" method="post">{% csrf_token %}
     {{ form.as_p }}
-    <input class="btn btn-default" type="submit" value="Create" />
+    <input type="submit" value="Create" />
 </form>
 {% endblock %}

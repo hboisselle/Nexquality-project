@@ -9,8 +9,8 @@ class ProjectListView(generic.list.ListView):
 
 
 class UserProjectListView(LoginRequiredMixin, ProjectListView):
-    context_object_name = "projects"
-    template_name = "project/list.html"
+    context_object_name = 'projects'
+    template_name = 'project/list.html'
 
     def get_queryset(self):
         return Project.objects.filter(

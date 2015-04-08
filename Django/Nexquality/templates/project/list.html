@@ -2,12 +2,8 @@
 {% block content %}
 <h1>{{ user }}'s projects</h1>
 <br/>
-
-<table class="table">
 {% for project in projects %}
-    <tr><td><a href="{% url 'Nexquality:project:detail' project.id %}">{{ project }}</a></td></tr>
+    <a href="{% url 'Nexquality:project:detail' project.id %}">{{ project.name }}</a><br/>
 {% endfor %}
-</table>
-
-<a class="btn btn-default" href="{% url 'Nexquality:project:create' %}">Create project</a>
+<a href="{% url 'Nexquality:project:create' %}">Create project</a>
 {% endblock %}
