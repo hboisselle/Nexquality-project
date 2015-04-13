@@ -5,22 +5,39 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.utils import timezone
 from django.utils.encoding import python_2_unicode_compatible
-from django.db.models import Q
+from django.db.models import Q, Avg, Max, Min
+import re
+
+
+@python_2_unicode_compatible
+class ProfileType(models.Model):
+    name = models.CharField(max_length=250)
+
+    def __str__(self):
+        return self.name
 
 
 @python_2_unicode_compatible
 class Profile(models.Model):
     user = models.OneToOneField(User)
     rank = models.IntegerField(default=1)
+    profiletype = models.ForeignKey(ProfileType, default=1)
 
     def __str__(self):
         return self.user.first_name + ' ' + self.user.last_name
 
     def get_recent_projects(self):
         return Project.objects.filter(
-            Q(created_by=self.user) |
-            Q(users=self.user)
-        ).distinct()[:5]
+                Q(created_by=self.user) |
+                Q(users=self.user)
+            ).exclude(
+                is_done=True
+            ).distinct()[:5]
+
+    def get_overall_metrics_averages(self):
+        return Metric.objects.filter(user=self.user).annotate(
+            average=Avg(("calculated"), output_field=models.FloatField())
+        )
 
 
 @python_2_unicode_compatible
@@ -42,6 +59,12 @@ class Project(models.Model):
 
     def get_inactive_users(self):
         return self.projectuser_set.exclude(out_date=None)
+
+    def calculate_metrics(project):
+        for commit in Commit.objects.filter(project=project):
+            for metric in commit.metric_set.all():
+                metric.calculated = metric.calculate()
+                metric.save()
 
     def save(self, *args, **kwargs):
         if self.is_done is True:
@@ -77,34 +100,8 @@ class ProjectUser(models.Model):
         self.out_date = timezone.now()
 
 
-class Complexity(models.Model):
-    complexity = models.FloatField()
-    average_by_class = models.FloatField()
-    average_by_method = models.FloatField()
-
-
-class Coverage(models.Model):
-    line_of_code = models.IntegerField()
-    number_of_tests = models.IntegerField()
-    number_of_failing_tests = models.IntegerField()
-    number_of_ignored_tests = models.IntegerField()
-    code_coverage = models.FloatField()
-
-
-class Duplication(models.Model):
-    duplicated_blocks = models.IntegerField()
-    duplicated_lines = models.IntegerField()
-    duplicated_lines_density = models.FloatField()
-
-
-class Metrics(models.Model):
-    complexity = models.OneToOneField(Complexity)
-    coverage = models.OneToOneField(Coverage)
-    duplication = models.OneToOneField(Duplication)
-
-
 @python_2_unicode_compatible
-class Violation(models.Model):
+class IssueLevel(models.Model):
     name = models.CharField(max_length=255, unique=True)
 
     def __str__(self):
@@ -112,7 +109,7 @@ class Violation(models.Model):
 
 
 @python_2_unicode_compatible
-class IssueLevel(models.Model):
+class Violation(models.Model):
     name = models.CharField(max_length=255, unique=True)
 
     def __str__(self):
@@ -133,11 +130,83 @@ class Issue(models.Model):
 class Commit(models.Model):
     user = models.ForeignKey(User)
     revision = models.IntegerField()
-    date = models.DateField()
+    date = models.DateTimeField()
     comment = models.CharField(max_length=500)
     project = models.ForeignKey(Project)
-    metrics = models.OneToOneField(Metrics)
     issues = models.ManyToManyField(Issue)
+
+    def get_preceding(self):
+        if not self.revision == 1:
+            return Commit.objects.get(project=self.project, revision=self.revision - 1)
+        else:
+            return None
 
     def __str__(self):
         return "Commit pushed on {1} by {2}".format(self.revision, self.date, self.user.get_full_name())
+
+
+class MetricCategory(models.Model):
+    name = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.name
+
+
+class MetricField(models.Model):
+    category = models.ForeignKey(MetricCategory)
+    name = models.CharField(max_length=50)
+    unit =  models.CharField(max_length=50, null=True, blank=True)
+    show_color = models.BooleanField(default=False)
+    show_plus_sign = models.BooleanField(default=False)
+    tolerance = models.FloatField(default=0)
+    reverse_tolerance = models.BooleanField(default=False)
+
+    def __str__(self):
+        return "{0} - {1}".format(self.category, self.name)
+
+
+class Metric(models.Model):
+    value = models.FloatField()
+    field = models.ForeignKey(MetricField)
+    commit = models.ForeignKey(Commit)
+    calculated = models.FloatField(null=True)
+
+
+    def get_preceding(self):
+        preceding_commit = self.commit.get_preceding()
+        if preceding_commit is not None:
+            return Metric.objects.get(commit=preceding_commit, field=self.field)
+        else:
+            return None
+
+    def calculate_code_coverage(self):
+        line_of_code_metric = Metric.objects.get(commit=self.commit, field__name="Line Of Code")
+        line_of_code = line_of_code_metric.value
+        preceding_line_of_code = line_of_code_metric.get_preceding().value
+
+        covered_lines = (line_of_code * self.value/100) - (preceding_line_of_code * self.get_preceding().value/100)
+        total_lines = line_of_code - preceding_line_of_code
+        return (covered_lines / total_lines) * 100 
+
+    def calculate_complexity(self):
+        return (self.value * 2) - self.get_preceding().value
+
+    def calculate_duplicated_line_density(self):
+        return (self.value * 2) - self.get_preceding().value
+
+    def calculation_factory(self): 
+        field_name = self.field.name
+        if(field_name == "Code Coverage"):
+            return self.calculate_code_coverage()
+        elif(field_name == "Complexity"):
+            return self.calculate_complexity()
+        elif(field_name == "Duplicated Lines Density"):
+            return self.calculate_duplicated_line_density()
+        else:
+            return self.value - self.get_preceding().value
+
+    def calculate(self):
+        if self.get_preceding() is not None:
+            return self.calculation_factory()
+        else:
+            return self.value

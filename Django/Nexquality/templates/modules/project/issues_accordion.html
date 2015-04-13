@@ -1,0 +1,23 @@
+{% extends "modules/accordion/accordion_table.html" %}
+{% block table_head %}
+    <tr>
+        <th>Description</th>
+        <th>Violation</th>
+        <th>Level</th>
+   </tr>
+{% endblock %}
+{% block table_body %}
+    {% for issue in issues %}
+    <tr>
+        <td>
+            {{ issue.description }}
+        </td>
+        <td>
+            {{ issue.violation.name }}
+        </td>
+        <td>
+            {{ issue.level.name }}
+        </td>
+    </tr>
+    {% endfor %}
+{% endblock %}

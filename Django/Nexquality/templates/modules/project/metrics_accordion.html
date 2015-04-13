@@ -1,0 +1,34 @@
+{% extends "modules/accordion/accordion_table.html" %}
+{% block table_head %}
+    <tr>
+        <th>Category</th>
+        <th>Field</th>
+        <th>Commit value</th>
+        <th>Project values</th>      
+    </tr>
+{% endblock %}
+{% block table_body %}
+    {% for metric in metrics %}
+        <tr>
+            <td>{{ metric.field.category.name }}</td>
+            <td>{{ metric.field.name }}</td>
+            <td class="
+            {% if metric.field.show_color %}
+                {% if metric.calculated >= metric.field.tolerance and not metric.field.reverse_tolerance or metric.calculated <= metric.field.tolerance and metric.field.reverse_tolerance %}
+                    success
+                {% else %}
+                    danger
+                {% endif %}
+            {% endif %}">{% if metric.calculated > 0 and metric.field.show_plus_sign %}+{% endif %}
+            {{ metric.calculated|floatformat }} {{ metric.field.unit|default:"" }}</td>
+            <td class="
+            {% if metric.field.show_color %}
+                {% if metric.value >= metric.field.tolerance and not metric.field.reverse_tolerance or metric.value <= metric.field.tolerance and metric.field.reverse_tolerance %}
+                    success
+                {% else %}
+                    danger
+                {% endif %}
+            {% endif %}">{{ metric.value|floatformat }} {{ metric.field.unit|default:"" }}</td>           
+        </tr>
+    {% endfor %}
+{% endblock %}

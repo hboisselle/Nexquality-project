@@ -1,0 +1,16 @@
+<div {% block panel_attributes %}class="panel panel-default" {% endblock %}>
+    <div class="panel-heading" role="tab" id="{{ accordion_title|slugify }}">
+        <h4 class="panel-title">
+            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse{{ accordion_title|slugify }}" aria-expanded="false" aria-controls="collapse{{ accordion_title|slugify }}">
+            {% block accordion_head %}
+                {{ accordion_title }}
+            {% endblock %}
+            </a>
+        </h4>
+    </div>
+    <div id="collapse{{ accordion_title|slugify }}" class="panel-collapse collapse {% if is_in %}in{% endif %}" role="tabpanel" aria-labelledby="heading{{ accordion_title|slugify }}">
+        <div class="panel-body">
+        {% block accordion_body %}{% endblock %}
+        </div>
+    </div>
+</div>

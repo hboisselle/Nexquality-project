@@ -19,46 +19,8 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('revision', models.IntegerField()),
-                ('date', models.DateField()),
+                ('date', models.DateTimeField()),
                 ('comment', models.CharField(max_length=500)),
-            ],
-            options={
-            },
-            bases=(models.Model,),
-        ),
-        migrations.CreateModel(
-            name='Complexity',
-            fields=[
-                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('complexity', models.FloatField()),
-                ('average_by_class', models.FloatField()),
-                ('average_by_method', models.FloatField()),
-            ],
-            options={
-            },
-            bases=(models.Model,),
-        ),
-        migrations.CreateModel(
-            name='Coverage',
-            fields=[
-                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('line_of_code', models.IntegerField()),
-                ('number_of_tests', models.IntegerField()),
-                ('number_of_failing_tests', models.IntegerField()),
-                ('number_of_ignored_tests', models.IntegerField()),
-                ('code_coverage', models.FloatField()),
-            ],
-            options={
-            },
-            bases=(models.Model,),
-        ),
-        migrations.CreateModel(
-            name='Duplication',
-            fields=[
-                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('duplicated_blocks', models.IntegerField()),
-                ('duplicated_lines', models.IntegerField()),
-                ('duplicated_lines_density', models.FloatField()),
             ],
             options={
             },
@@ -85,12 +47,33 @@ class Migration(migrations.Migration):
             bases=(models.Model,),
         ),
         migrations.CreateModel(
-            name='Metrics',
+            name='Metric',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('complexity', models.OneToOneField(to='Nexquality.Complexity')),
-                ('coverage', models.OneToOneField(to='Nexquality.Coverage')),
-                ('duplication', models.OneToOneField(to='Nexquality.Duplication')),
+                ('value', models.FloatField()),
+                ('commit', models.ForeignKey(to='Nexquality.Commit')),
+            ],
+            options={
+            },
+            bases=(models.Model,),
+        ),
+        migrations.CreateModel(
+            name='MetricCategory',
+            fields=[
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('name', models.CharField(max_length=50)),
+            ],
+            options={
+            },
+            bases=(models.Model,),
+        ),
+        migrations.CreateModel(
+            name='MetricField',
+            fields=[
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('name', models.CharField(max_length=50)),
+                ('unit', models.CharField(max_length=50, null=True)),
+                ('category', models.ForeignKey(to='Nexquality.MetricCategory')),
             ],
             options={
             },
@@ -101,7 +84,16 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('rank', models.IntegerField(default=1)),
-                ('user', models.OneToOneField(to=settings.AUTH_USER_MODEL)),
+            ],
+            options={
+            },
+            bases=(models.Model,),
+        ),
+        migrations.CreateModel(
+            name='ProfileType',
+            fields=[
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('name', models.CharField(max_length=250)),
             ],
             options={
             },
@@ -112,7 +104,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('name', models.CharField(unique=True, max_length=250)),
-                ('start_date', models.DateField(default=datetime.datetime(2015, 4, 4, 18, 40, 41, 287283, tzinfo=utc))),
+                ('start_date', models.DateField(default=datetime.datetime(2015, 4, 11, 21, 10, 3, 404304, tzinfo=utc))),
                 ('is_done', models.BooleanField(default=False)),
                 ('created_by', models.ForeignKey(related_name='project_starts', to=settings.AUTH_USER_MODEL)),
             ],
@@ -124,7 +116,7 @@ class Migration(migrations.Migration):
             name='ProjectUser',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('in_date', models.DateField(default=datetime.datetime(2015, 4, 4, 18, 40, 41, 288439, tzinfo=utc))),
+                ('in_date', models.DateField(default=datetime.datetime(2015, 4, 11, 21, 10, 3, 405353, tzinfo=utc))),
                 ('out_date', models.DateField(null=True, blank=True)),
                 ('project', models.ForeignKey(to='Nexquality.Project')),
             ],
@@ -172,6 +164,24 @@ class Migration(migrations.Migration):
             preserve_default=True,
         ),
         migrations.AddField(
+            model_name='profile',
+            name='profiletype',
+            field=models.ForeignKey(default=1, to='Nexquality.ProfileType'),
+            preserve_default=True,
+        ),
+        migrations.AddField(
+            model_name='profile',
+            name='user',
+            field=models.OneToOneField(to=settings.AUTH_USER_MODEL),
+            preserve_default=True,
+        ),
+        migrations.AddField(
+            model_name='metric',
+            name='field',
+            field=models.ForeignKey(to='Nexquality.MetricField'),
+            preserve_default=True,
+        ),
+        migrations.AddField(
             model_name='issue',
             name='level',
             field=models.ForeignKey(to='Nexquality.IssueLevel'),
@@ -187,12 +197,6 @@ class Migration(migrations.Migration):
             model_name='commit',
             name='issues',
             field=models.ManyToManyField(to='Nexquality.Issue'),
-            preserve_default=True,
-        ),
-        migrations.AddField(
-            model_name='commit',
-            name='metrics',
-            field=models.OneToOneField(to='Nexquality.Metrics'),
             preserve_default=True,
         ),
         migrations.AddField(

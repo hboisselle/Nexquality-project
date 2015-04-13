@@ -1,0 +1,23 @@
+{% extends "modules/accordion/accordion_table.html" %}
+{% block panel_attributes %} class="panel panel-primary" {% endblock %}
+{% block accordion_head %}
+    {% include "modules/accordion/head/thick_with_logo.html" with logo_class="fa-arrow-up" %}
+{% endblock %}
+{% block table_head %}
+    <tr>
+        <th>Project</th>
+        <th>Revision</th>
+        <th>Date</th> 
+        <th>Comment</th>     
+    </tr>
+{% endblock %}
+{% block table_body %}
+{% for commit in commits %}
+    <tr>
+        <td>{{ commit.project }}</td>
+        <td>{{ commit.revision }}</td>
+        <td>{{ commit.date }}</td>   
+        <td>{{ commit.comment | truncatewords:20 }}</td>    
+    </tr>
+    {% endfor %}
+{% endblock %}

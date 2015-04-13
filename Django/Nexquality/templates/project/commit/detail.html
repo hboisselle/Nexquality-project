@@ -1,94 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
+{% include "modules/datatable.html" with datatable_id="issues" %}
 <h1>{{ commit }}</h1>
 <h3>Comment</h3>
 <p>
 {{ commit.comment }}
 </p>
-<div class="col-md-4">
-    <table class="table table-bordered" id="complexity">
-        <thead>
-            <tr><th colspan="2">Complexity</th></tr>
-        </thead>
-        <tr>
-            <td>Complexity</td>
-            <td>{{ commit.metrics.complexity.complexity }}</td>
-        </tr>
-        <tr>
-            <td>Average by class</td>
-            <td>{{ commit.metrics.complexity.average_by_class }}</td>
-        </tr>
-        <tr>
-            <td>Average by method</td>
-            <td>{{ commit.metrics.complexity.average_by_method }}</td>
-        </tr>
-    </table>
-</div>
-<div class="col-md-4">
-    <table class="table table-bordered col-md-4" id="coverage">
-        <thead>
-            <tr><th colspan="2">Coverage</th></tr>
-        </thead>
-        <tr>
-            <td>Line of code</td>
-            <td>{{ commit.metrics.coverage.line_of_code }}</td>
-        </tr>
-        <tr>
-            <td>Number of tests</td>
-            <td>{{ commit.metrics.coverage.number_of_tests }}</td>
-        </tr>
-        <tr>
-            <td>Number of failing tests</td>
-            <td>{{ commit.metrics.coverage.number_of_failing_tests }}</td>
-        </tr>
-        <tr>
-            <td>Number of ignored tests</td>
-            <td>{{ commit.metrics.coverage.number_of_ignored_tests }}</td>
-        </tr>
-        <tr>
-            <td>Code coverage</td>
-            <td>{{ commit.metrics.coverage.code_coverage }}</td>
-        </tr>
-    </table>
-</div>
-<div class="col-md-4">
-    <table class="table table-bordered col-md-4" id="duplication">
-        <thead>
-            <tr><th colspan="2">Duplication</th></tr>
-        </thead>
-        <tr>
-            <td>Duplicated blocks</td>
-            <td>{{ commit.metrics.duplication.duplicated_blocks }}</td>
-        </tr>
-        <tr>
-            <td>Duplicated lines</td>
-            <td>{{ commit.metrics.duplication.duplicated_lines }}</td>
-        </tr>
-        <tr>
-            <td>Duplicated lines density</td>
-            <td>{{ commit.metrics.duplication.duplicated_lines_density }}</td>
-        </tr>
-    </table>
-</div>
-<div class="panel">
-    <table class="table" id="issues">
-        <thead>
-            <tr><th colspan="3">Issues</th></tr>
-        </thead>
-        {% for issue in commit.issues.all %}
-        <tr>
-            <td>
-                {{ issue.description }}
-            </td>
-            <td>
-                {{ issue.violation.name }}
-            </td>
-            <td>
-                {{ issue.level.name }}
-            </td>
-        </tr>
-        {% endfor %}
-    </table>
-</div>
+{% include "modules/project/metrics_accordion.html" with is_in=True accordion_title="Metrics" metrics=commit.metric_set.all %}
+{% include "modules/project/issues_accordion.html" with accordion_title="Issues" issues=commit.issues.all %}
 <a class="btn btn-default" href="{% url 'Nexquality:project:detail' commit.project.id %}">Go to project</a>
 {% endblock %}

@@ -2,6 +2,17 @@ from xml.etree import ElementTree as ET
 from django.contrib.auth.models import User
 from Nexquality import models
 from django.core.exceptions import ValidationError
+import re
+
+
+def split_on_caps(str):
+    rs = [a for a in re.split(r'([A-Z][a-z]*)', str) if a]
+    fs = ""
+    rs[0] = rs[0].capitalize()
+    for word in rs:
+        fs += " "+word
+
+    return fs.strip()
 
 
 def save_to_model(model, field_set, node, save=True, get_or_create=False):
@@ -38,44 +49,36 @@ def parse_profile(user):
     profile.save()
 
 
-def parse_coverage(parent_node):
-    field_set = {'line_of_code': 'lineOfCode',
-        'number_of_tests': 'numberOfTests',
-        'number_of_failing_tests': 'numberOfFailingTests',
-        'number_of_ignored_tests': 'numberOfIgnoredTests',
-        'code_coverage': 'codeCoverage'}
-    node = parent_node.find('coverage')
-    return save_to_model(models.Coverage, field_set, node)
-
-
-def parse_complexity(parent_node):
-    field_set = {'complexity': 'complexity',
-        'average_by_class': 'averageByClass',
-        'average_by_method': 'averageByMethod'}
-    node = parent_node.find('complexity')
-    return save_to_model(models.Complexity, field_set, node)
-
-
-def parse_duplication(parent_node):
-    field_set = {'duplicated_blocks': 'duplicatedBlocks',
-        'duplicated_lines': 'duplicatedLines',
-        'duplicated_lines_density': 'duplicatedLinesDensity'}
-    node = parent_node.find('duplication')
-    return save_to_model(models.Duplication, field_set, node)
-
-
-def parse_metrics(parent_node):
+def parse_metric_category(parent_node):
     field_set = {}
+    field_set['name'] = parent_node.tag.capitalize()
+    metric_category, created = models.MetricCategory.objects.get_or_create(**field_set)
+    if created: metric_category.save()
+    return metric_category
+
+
+def parse_metric_field(parent_node, category):
+    field_set = {}
+    name = split_on_caps(parent_node.tag)
+    field_set['category'] = category
+    field_set['name'] = name
+    metric_field, created = models.MetricField.objects.get_or_create(**field_set)
+    if created: metric_field.save()
+    return metric_field
+
+
+
+def parse_metrics(parent_node, commit):
     node = parent_node.find('metrics')
-    field_set['complexity'] = parse_complexity(node)
-    field_set['duplication'] = parse_duplication(node)
-    field_set['coverage'] = parse_coverage(node)
-    metrics = models.Metrics(**field_set)
-    metrics.duplication.save()
-    metrics.complexity.save()
-    metrics.coverage.save()
-    metrics.save()
-    return metrics
+    for metric_category_node in node:
+        category = parse_metric_category(metric_category_node)
+        for metric_field_node in metric_category_node:
+            field_set = {}
+            field_set['field'] = parse_metric_field(metric_field_node, category)
+            field_set['value'] = metric_field_node.text
+            field_set['commit'] = commit
+            metric = models.Metric(**field_set)
+            metric.save()
 
 
 def parse_violation(parent_node):
@@ -110,10 +113,10 @@ def parse_commits(parent_node, project):
         field_set['revision'] = node.find('revision').text
         field_set['user'] = User.objects.get(email=node.find('user').text)
         field_set['comment'] = node.find('comment').text
-        field_set['metrics'] = parse_metrics(node)
         field_set['project'] = project
         commit = models.Commit(**field_set)
         commit.save()
+        parse_metrics(node, commit)
         parse_issues(node, commit)
 
 
@@ -132,6 +135,7 @@ def parse_project_users(parent_node, project):
 def parse_project(request, _file):
     tree = ET.parse(_file)
     node = tree.getroot()
+    print('Importing project...')
     field_set = {}
     field_set['name'] = node.find('name').text
     field_set['created_by'] = request.user
@@ -139,3 +143,7 @@ def parse_project(request, _file):
     if created: project.save()
     parse_project_users(node, project)
     parse_commits(node, project)
+    print('Done!')
+    print('Calculating metrics...')
+    project.calculate_metrics()
+    print('Done!')

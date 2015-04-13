@@ -1,0 +1,11 @@
+{% extends "modules/accordion/accordion.html" %}
+{% block accordion_body %}   
+<table class="table table-hover" id="table{{ accordion_title|slugify }}">
+    <thead>
+        {% block table_head %}{% endblock %}
+    </thead>
+    <tbody>
+        {% block table_body %}{% endblock %}
+    </tbody>
+</table>
+{% endblock %}

@@ -12,6 +12,6 @@ def detail(request, project_id):
     latest_commit = project.get_latest_commit()
     if latest_commit:
         context['inactive_users'] = project.get_inactive_users()
-        context['metrics'] = latest_commit.metrics
+        context['metrics'] = latest_commit.metric_set.all()
         context['issues'] = latest_commit.issues.all()
     return render(request, "project/detail.html", context)
