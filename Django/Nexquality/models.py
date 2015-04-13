@@ -34,8 +34,8 @@ class Profile(models.Model):
                 is_done=True
             ).distinct()[:5]
 
-    def get_overall_metrics_averages(self):
-        return Metric.objects.filter(user=self.user).annotate(
+    def get_metrics_averages(self):
+        return Metric.objects.filter(commit__user=self.user).values('field').annotate(
             average=Avg(("calculated"), output_field=models.FloatField())
         )
 
@@ -135,6 +135,9 @@ class Commit(models.Model):
     project = models.ForeignKey(Project)
     issues = models.ManyToManyField(Issue)
 
+    class Meta:
+        ordering = ['-revision']
+
     def get_preceding(self):
         if not self.revision == 1:
             return Commit.objects.get(project=self.project, revision=self.revision - 1)
@@ -161,6 +164,9 @@ class MetricField(models.Model):
     tolerance = models.FloatField(default=0)
     reverse_tolerance = models.BooleanField(default=False)
 
+    class Meta:
+        ordering = ['category', 'name']
+
     def __str__(self):
         return "{0} - {1}".format(self.category, self.name)
 
@@ -171,6 +177,8 @@ class Metric(models.Model):
     commit = models.ForeignKey(Commit)
     calculated = models.FloatField(null=True)
 
+    class Meta:
+        ordering = ['field']
 
     def get_preceding(self):
         preceding_commit = self.commit.get_preceding()

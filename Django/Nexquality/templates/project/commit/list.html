@@ -1,31 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
-<script>
-$(document).ready(function(){
-    $('#table').DataTable()
-});
-</script>
+{% include "modules/datatable.html" with datatable_id="Commits" %}
 <h1>{{ project }} commits</h1>
-<br/>
-	<br />
-	<table class="table table-condensed hover" id="table">
-        <thead>
-            <tr>
-                <th>Revision</th>
-                <th>Date</th>
-                <th>User</th>
-            </tr>
-        </thead>
-		<tbody class="list">
-		{% for commit in commits %}
-		    <tr>
-		    	<td><a href="{% url 'Nexquality:project:commit:detail' project.id commit.id %}">{{ commit.revision }}</a></td>
-		    	<td>{{ commit.date }}</td>
-		    	<td>{{ commit.user.get_full_name }}</td>
-		    </tr>
-		{% endfor %}
-		</tbody>
-	</table>
-
-<a href="{% url 'Nexquality:project:detail' project.id %}">Go back</a>
+{% include "modules/project/commit/list_accordion.html" with is_in=True accordion_title="Commits" commits=commits %}
+<a class="btn btn-default" href="{% url 'Nexquality:project:detail' project.id %}">Go back</a>
 {% endblock %}

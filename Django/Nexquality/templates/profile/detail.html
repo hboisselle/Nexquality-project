@@ -1,8 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
-{% include "modules/datatable.html" with datatable_id="commits" %}
+{% include "modules/datatable.html" with datatable_id="Your commits" %}
 	<h3> {{ found_user.get_full_name }} - {{ found_user.profile.profiletype }}</h3>
     <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-    {% include "modules/profile/commits_accordion.html" with accordion_title="Your commits" accordion_id="commits"%}
+    {% include "modules/profile/metrics_accordion.html" with accordion_title="Your metrics"%}
+    {% include "modules/profile/commits_accordion.html" with accordion_title="Your commits"%}
 </div>
 {% endblock %}
