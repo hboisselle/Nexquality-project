@@ -152,16 +152,24 @@ class Commit(models.Model):
             return None
 
     def get_solved_issues(self):
-        current_issues_ids = [issue.id for issue in self.issues.all()]
-        return self.get_preceding().issues.exclude(id__in=current_issues_ids)
+        preceding_commit = self.get_preceding()
+        if preceding_commit:
+            current_issues_ids = [issue.id for issue in self.issues.all()]
+            return self.get_preceding().issues.exclude(id__in=current_issues_ids)
 
     def get_unsolved_issues(self):
-        preceding_issues_ids = [issue.id for issue in self.get_preceding().issues.all()]
-        return self.issues.filter(id__in=preceding_issues_ids)
+        preceding_commit = self.get_preceding()
+        if preceding_commit:
+            preceding_issues_ids = [issue.id for issue in preceding_commit.issues.all()]
+            return self.issues.filter(id__in=preceding_issues_ids)
 
     def get_new_issues(self):
-        preceding_issues_ids = [issue.id for issue in self.get_preceding().issues.all()]
-        return self.issues.exclude(id__in=preceding_issues_ids)
+        preceding_commit = self.get_preceding()
+        if preceding_commit:
+            preceding_issues_ids = [issue.id for issue in self.get_preceding().issues.all()]
+            return self.issues.exclude(id__in=preceding_issues_ids)
+        else:
+            return self.issues.all()
 
     def __str__(self):
         return "Commit pushed on {1} by {2}".format(self.revision, self.date, self.user.get_full_name())

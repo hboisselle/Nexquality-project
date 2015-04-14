@@ -13,7 +13,7 @@
     {% if active_users %}
         {% include "modules/project/projectuser_accordion.html" with accordion_title="Active users" project_users=active_users %}
     {% endif %}
-    {% include "modules/project/issues_accordion.html" with accordion_title="Issues" issues=project.get_latest_commit.get_unsolved_issues %}
+    {% include "modules/project/issues_accordion.html" with accordion_title="Issues" commit=project.get_latest_commit %}
     {% if inactive_users %}
       {% include "modules/project/projectuser_accordion.html" with accordion_title="Active users" project_users=inactive_users %}
     {% endif %}
