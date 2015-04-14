@@ -1,0 +1,20 @@
+{% extends "modules/accordion/accordion.html" %}
+{% block accordion_body %}
+{% include "modules/datatable.html" with datatable_id="new_issues" %}
+{% include "modules/datatable.html" with datatable_id="solved_issues" %}
+{% include "modules/datatable.html" with datatable_id="unsolved_issues" %}
+<div role="tabpanel">
+    <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#new_issues" aria-controls="new_issues" role="tab" data-toggle="tab">New issues</a></li>
+        <li role="presentation"><a href="#solved_issues" aria-controls="solved_issues" role="tab" data-toggle="tab">Solved issues</a></li>
+        <li role="presentation"><a href="#unsolved_issues" aria-controls="unsolved_issues" role="tab" data-toggle="tab">Unsolved issues</a></li>
+        <li role="presentation" ><a href="#chart" aria-controls="chart" role="tab" data-toggle="tab">Chart</a></li>
+    </ul>
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="new_issues">{% include "modules/project/issues_table.html" with issues=commit.get_new_issues table_id="new_issues" %}</div>
+        <div role="tabpanel" class="tab-pane" id="solved_issues">{% include "modules/project/issues_table.html" with issues=commit.get_solved_issues table_id="solved_issues"%}</div>
+        <div role="tabpanel" class="tab-pane" id="unsolved_issues">{% include "modules/project/issues_table.html" with issues=commit.get_unsolved_issues table_id="unsolved_issues" %}</div>
+        <div role="tabpanel" class="tab-pane" id="chart">Coming soon...</div>
+    </div>
+</div>
+{% endblock %}
