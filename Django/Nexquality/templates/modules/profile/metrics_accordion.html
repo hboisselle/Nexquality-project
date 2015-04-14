@@ -1,21 +1,20 @@
-{% extends "modules/accordion/accordion_table.html" %}
+{% extends "modules/accordion/accordion.html" %}
 {% block panel_attributes %} class="panel panel-primary" {% endblock %}
 {% block accordion_head %}
     {% include "modules/accordion/head/thick_with_logo.html" with logo_class="fa-bar-chart-o" %}
 {% endblock %}
-{% block table_head %}
-    <tr>
-        <th>Category</th>
-        <th>Field</th>
-        <th>Average</th>   
-    </tr>
-{% endblock %}
-{% block table_body %}
-    {% for metric in metrics %}
-        <tr>
-            <td>{{ metric.field.category.name}}</td>
-            <td>{{ metric.field.name }}</td>
-            <td>{{ metric.average|floatformat:2}}</td>        
-        </tr>
-    {% endfor %}
+{% block accordion_body %}
+<div role="tabpanel">
+    <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#averages" aria-controls="averages" role="tab" data-toggle="tab">Averages</a></li>
+        <li role="presentation"><a href="#sums" aria-controls="sums" role="tab" data-toggle="tab">Total</a></li>
+        <li role="presentation"><a href="#linechart" aria-controls="linechart" role="tab" data-toggle="tab">Line chart</a></li>
+
+    </ul>
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="averages">{% include "modules/profile/metrics_table.html" with metrics=metrics_averages %}</div>
+        <div role="tabpanel" class="tab-pane" id="sums">{% include "modules/profile/metrics_table.html" with metrics=metrics_sums %}</div>
+        <div role="tabpanel" class="tab-pane" id="linechart">Coming soon...</div>
+    </div>
+</div>
 {% endblock %}

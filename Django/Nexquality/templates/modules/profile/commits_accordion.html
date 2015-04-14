@@ -1,7 +1,7 @@
 {% extends "modules/accordion/accordion_table.html" %}
 {% block panel_attributes %} class="panel panel-primary" {% endblock %}
 {% block accordion_head %}
-    {% include "modules/accordion/head/thick_with_logo.html" with logo_class="fa-arrow-up" %}
+    {% include "modules/accordion/head/thick_with_logo.html" with logo_class="fa-check-circle-o" %}
 {% endblock %}
 {% block table_head %}
     <tr>
@@ -15,7 +15,7 @@
 {% for commit in commits %}
     <tr>
         <td>{{ commit.project }}</td>
-        <td>{{ commit.revision }}</td>
+        <td><a href="{% url 'Nexquality:project:commit:detail' commit.project.id commit.id %}">{{ commit.revision }}</a></td>
         <td>{{ commit.date }}</td>   
         <td>{{ commit.comment | truncatewords:20 }}</td>    
     </tr>

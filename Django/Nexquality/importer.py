@@ -98,8 +98,8 @@ def parse_issues(parent_node, commit):
         kwargs['description'] = node.find('description').text
         kwargs['violation'] = parse_violation(node)
         kwargs['level'] = parse_issue_level(node)
-        issue = models.Issue(**kwargs)
-        issue.save()
+        issue, created = models.Issue.objects.get_or_create(**kwargs)
+        if created: issue.save()
         commit.issues.add(issue)
     commit.save()
 

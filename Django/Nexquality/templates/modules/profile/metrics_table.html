@@ -1,0 +1,17 @@
+{% extends "modules/table/table.html" %}
+{% block table_head %}
+    <tr>
+        <th>Category</th>
+        <th>Field</th>
+        <th>Value</th>     
+    </tr>
+{% endblock %}
+{% block table_body %}
+    {% for metric in metrics %}
+        <tr>
+            <td>{{ metric.field.category.name}}</td>
+            <td>{{ metric.field.name }}</td>
+            <td>{{ metric.value|floatformat:-2}}</td>          
+        </tr>
+    {% endfor %}
+{% endblock %}

@@ -1,9 +1,9 @@
 from django.contrib import admin
-from Nexquality.models import Project, ProjectUser, ProjectUserRole, MetricField
+from Nexquality import models
 
 
 class ProjectUserInline(admin.TabularInline):
-    model = ProjectUser
+    model = models.ProjectUser
     extra = 0
 
 
@@ -13,10 +13,10 @@ class ProjectModelAdmin(admin.ModelAdmin):
     search_fields = ['name']
 
 
-class MetricFieldAmin(admin.ModelAdmin):
+class MetricFieldAdmin(admin.ModelAdmin):
     exclude = ('category', 'name')
 
 
-admin.site.register(Project, ProjectModelAdmin)
-admin.site.register(ProjectUserRole, admin.ModelAdmin)
-admin.site.register(MetricField, MetricFieldAmin)
+admin.site.register(models.Project, ProjectModelAdmin)
+admin.site.register(models.ProjectUserRole, admin.ModelAdmin)
+admin.site.register(models.MetricField, MetricFieldAdmin)

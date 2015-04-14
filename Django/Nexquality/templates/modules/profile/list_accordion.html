@@ -1,0 +1,17 @@
+{% extends "modules/accordion/accordion_table.html" %}
+{% block table_head %}
+    <tr>
+        <th>Name</th>
+        <th>Username</th>   
+    </tr>
+{% endblock %}
+{% block table_body %}
+{% for user in users %}
+    <tr>
+        <td>
+            <a href="{% url 'Nexquality:profile:detail' user.username %}">{{ user.get_full_name }}</a>
+        </td>
+        <td>{{ user.username }}</td>   
+    </tr>
+    {% endfor %}
+{% endblock %}

@@ -1,8 +1,8 @@
 {% extends "registration/base.html" %}
 
 {% block content %}
-<form action="{% url 'Nexquality:registration:subscription' %}" method='POST'>
+<form class="form" action="{% url 'Nexquality:registration:subscription' %}" method='POST'>
 	{{ form.as_p }}
-	<input type="submit" value="Subscribe">
+	<input class="btn btn-primary" type="submit" value="Subscribe">
 </form>
 {% endblock %}

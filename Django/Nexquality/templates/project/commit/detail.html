@@ -1,12 +1,20 @@
 {% extends "base.html" %}
 {% block content %}
-{% include "modules/datatable.html" with datatable_id="issues" %}
-<h1>{{ commit }}</h1>
-<h3>Comment</h3>
+{% include "modules/datatable.html" with datatable_id="Issues" %}
+{% include "modules/datatable.html" with datatable_id="Unsolved issues" %}
+{% include "modules/datatable.html" with datatable_id="Solved issues" %}
+{% include "modules/datatable.html" with datatable_id="New issues" %}
+<h3>{{ commit }}</h3>
+<h4>Comment</h4>
 <p>
 {{ commit.comment }}
 </p>
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 {% include "modules/project/metrics_accordion.html" with is_in=True accordion_title="Metrics" metrics=commit.metric_set.all %}
-{% include "modules/project/issues_accordion.html" with accordion_title="Issues" issues=commit.issues.all %}
+{% include "modules/project/issues_accordion.html" with accordion_title="Unsolved issues" issues=commit.get_unsolved_issues %}
+{% include "modules/project/issues_accordion.html" with accordion_title="Solved issues" issues=commit.get_solved_issues %}
+{% include "modules/project/issues_accordion.html" with accordion_title="New issues" issues=commit.get_new_issues %}
+</div>
+
 <a class="btn btn-default" href="{% url 'Nexquality:project:detail' commit.project.id %}">Go to project</a>
 {% endblock %}

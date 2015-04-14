@@ -5,7 +5,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.utils import timezone
 from django.utils.encoding import python_2_unicode_compatible
-from django.db.models import Q, Avg, Max, Min
+from django.db.models import Q, Avg, Max, Min, Sum
 import re
 
 
@@ -35,9 +35,16 @@ class Profile(models.Model):
             ).distinct()[:5]
 
     def get_metrics_averages(self):
-        return Metric.objects.filter(commit__user=self.user).values('field').annotate(
-            average=Avg(("calculated"), output_field=models.FloatField())
-        )
+        if Metric.objects.filter(commit__user=self.user).count() > 0:
+            return Metric.objects.filter(commit__user=self.user, field__show_average=True).values('field').annotate(average=Avg(("calculated"), output_field=models.FloatField()))
+        else:
+            return None
+
+    def get_metrics_sums(self):
+        if Metric.objects.filter(commit__user=self.user).count() > 0:
+            return Metric.objects.filter(commit__user=self.user, field__show_sum=True).values('field').annotate(sum=Sum(("calculated"), output_field=models.FloatField()))
+        else:
+            return None
 
 
 @python_2_unicode_compatible
@@ -144,6 +151,18 @@ class Commit(models.Model):
         else:
             return None
 
+    def get_solved_issues(self):
+        current_issues_ids = [issue.id for issue in self.issues.all()]
+        return self.get_preceding().issues.exclude(id__in=current_issues_ids)
+
+    def get_unsolved_issues(self):
+        preceding_issues_ids = [issue.id for issue in self.get_preceding().issues.all()]
+        return self.issues.filter(id__in=preceding_issues_ids)
+
+    def get_new_issues(self):
+        preceding_issues_ids = [issue.id for issue in self.get_preceding().issues.all()]
+        return self.issues.exclude(id__in=preceding_issues_ids)
+
     def __str__(self):
         return "Commit pushed on {1} by {2}".format(self.revision, self.date, self.user.get_full_name())
 
@@ -163,6 +182,8 @@ class MetricField(models.Model):
     show_plus_sign = models.BooleanField(default=False)
     tolerance = models.FloatField(default=0)
     reverse_tolerance = models.BooleanField(default=False)
+    show_average = models.BooleanField(default=True)
+    show_sum = models.BooleanField(default=True)
 
     class Meta:
         ordering = ['category', 'name']
@@ -202,6 +223,15 @@ class Metric(models.Model):
     def calculate_duplicated_line_density(self):
         return (self.value * 2) - self.get_preceding().value
 
+    def calculate_average_by_class(self):
+        return (self.value * 2) - self.get_preceding().value
+
+    def calculate_average_by_method(self):
+        return (self.value * 2) - self.get_preceding().value
+
+    def calculate_default(self):
+        return self.value - self.get_preceding().value
+
     def calculation_factory(self): 
         field_name = self.field.name
         if(field_name == "Code Coverage"):
@@ -210,8 +240,12 @@ class Metric(models.Model):
             return self.calculate_complexity()
         elif(field_name == "Duplicated Lines Density"):
             return self.calculate_duplicated_line_density()
+        elif(field_name == "Average By Class"):
+            return self.calculate_average_by_class()
+        elif(field_name == "Average By Method"):
+            return self.calculate_average_by_method()
         else:
-            return self.value - self.get_preceding().value
+            return self.calculate_default()
 
     def calculate(self):
         if self.get_preceding() is not None:

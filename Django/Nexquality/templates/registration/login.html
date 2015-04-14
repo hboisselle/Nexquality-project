@@ -1,11 +1,11 @@
 {% extends "registration/base.html" %}
 {% block content %}
-
+<p>Welcome to Nexquality! Please login or subscribe to our website (link above)</p>
 {% if form.errors %}
 <p>Your username and password didn't match. Please try again.</p>
 {% endif %}
 
-<form id="form" class="form-inline" method="post" action="{% url 'Nexquality:registration:login' %}">
+<form id="form" class="form" method="post" action="{% url 'Nexquality:registration:login' %}">
 {% csrf_token %}
 <div class="form-group">
     {{ form.username.label_tag }}
@@ -16,7 +16,7 @@
     {{ form.password }}
 </div>
 
-<input id="submit_btn" class="btn btn-default" type="submit" value="login" />
+<input id="submit_btn" class="btn btn-primary" type="submit" value="login" />
 <input type="hidden" id="next" name="next" value="" />
 </form>
 <script>

@@ -1,7 +1,5 @@
 {% extends "base.html" %}
 {% block content %}
-
-{% for user in users %}
-<a href="{% url 'Nexquality:profile:detail' user.username %}">{{ user.get_full_name }}</a>
-{% endfor %}
+{% include "modules/datatable.html" with datatable_id="Users" %}
+{% include "modules/profile/list_accordion.html" with is_in=True accordion_title="Users" %}
 {% endblock %}

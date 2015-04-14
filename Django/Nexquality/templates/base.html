@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="//bootswatch.com/paper/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/plug-ins/1.10.6/integration/bootstrap/3/dataTables.bootstrap.css" />
     <link rel="stylesheet" href="{% static "Nexquality/font-awesome-4.3.0/css/font-awesome.min.css" %}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -10,7 +10,10 @@
     <script src="{% static "Nexquality/javascript.js" %}"></script>
     <script src="//cdn.datatables.net/1.10.6/js/jquery.dataTables.min.js"></script>
     <script src="//cdn.datatables.net/plug-ins/1.10.6/integration/bootstrap/3/dataTables.bootstrap.js"></script>
-  
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+        google.load("visualization", "1", {packages:["corechart"]});
+    </script>
     <title>{% block title %}Nexquality{% endblock %}</title>
 </head>
 <body>
@@ -25,14 +28,14 @@
           </button>
           {% block logo %}
           <a style="margin: 0px; padding: 0px" class="navbar-brand" href="{% url 'Nexquality:profile:detail' user.username %}">
-            <img alt="brand" src="{% static "Nexquality/logo.png" %}" style="height: 50px; " />
+            <img alt="brand" src="{% static "Nexquality/logo.png" %}" style="height: 100%; " />
           </a>
           {% endblock logo %}
         </div>
         <div class="collapse navbar-collapse" id="navbar-collapse-1">
         <ul class="nav navbar-nav">
         {% block navigation %}
-            <li><a href="{% url 'Nexquality:registration:logout' %}">Log out</a></li>
+            <li><a href="{% url 'Nexquality:profile:list' %}">Users</a></li>   
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Project<span class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu">
@@ -49,6 +52,7 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="{% url 'Nexquality:profile:detail' user.username %}"><i class="fa fa-user fa-lg" style="margin-right: 10px"></i>{{ user.first_name }}</a></li>
+                <li><a href="{% url 'Nexquality:registration:logout' %}">Log out</a></li>
             </ul>
         {% endblock %}
         </ul>
