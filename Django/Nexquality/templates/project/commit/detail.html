@@ -2,14 +2,11 @@
 {% block content %}
 
 <h4>{{ commit }}</h4>
-<h5>Comment</h5>
-<p>
-{{ commit.comment }}
-</p>
+<p><em>{{ commit.comment }}</em></p>
 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-{% include "modules/project/metrics_accordion.html" with is_in=True accordion_title="Metrics" metrics=commit.metric_set.all %}
-{% include "modules/project/issues_accordion.html" with accordion_title="Issues" %}
+    {% include "modules/project/metrics_accordion.html" with is_in=True accordion_title="Metrics" metrics=commit.metric_set.all %}
+    {% include "modules/project/issues_accordion.html" with accordion_title="Issues" %}
 </div>
-
+<a class="btn btn-default" href="{% url 'Nexquality:project:commit:list' commit.project.id %}">Go to project commits</a>
 <a class="btn btn-default" href="{% url 'Nexquality:project:detail' commit.project.id %}">Go to project</a>
 {% endblock %}

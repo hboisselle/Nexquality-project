@@ -10,6 +10,7 @@
         <li role="presentation"><a href="#unsolved_issues" aria-controls="unsolved_issues" role="tab" data-toggle="tab">Unsolved issues</a></li>
         <li role="presentation" ><a href="#chart" aria-controls="chart" role="tab" data-toggle="tab">Chart</a></li>
     </ul>
+    <br />
     <div class="tab-content">
         <div role="tabpanel" class="tab-pane active" id="new_issues">{% include "modules/project/issues_table.html" with issues=commit.get_new_issues table_id="new_issues" %}</div>
         <div role="tabpanel" class="tab-pane" id="solved_issues">{% include "modules/project/issues_table.html" with issues=commit.get_solved_issues table_id="solved_issues"%}</div>

@@ -1,8 +1,9 @@
 {% extends "base.html" %}
+{% load bootstrap %}
 {% block content %}
-<h1>Project importation</h1>
+<h2>Project importation</h2>
 <form method="POST" enctype="multipart/form-data" action="{% url 'Nexquality:data_importation:projects' %}">
-{{ form }}
-<input type="submit" />
+{{ form|bootstrap }}
+<input class="btn btn-default" type="submit" />
 </form>
 {% endblock %}

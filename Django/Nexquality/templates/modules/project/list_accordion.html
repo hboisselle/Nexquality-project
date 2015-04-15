@@ -1,0 +1,17 @@
+{% extends "modules/table/table.html" %}
+{% block table_head %}
+    <tr>
+        <th>Name</th>
+        <th>Creation date</th>
+        <th>Status</th>
+    </tr>
+{% endblock %}
+{% block table_body %}
+    {% for project in projects %}
+    <tr>
+        <td><a href="{% url 'Nexquality:project:detail' project.id %}">{{ project.name }}</a></td>
+        <td>{{ project.start_date }}</td>
+        <td>{% if project.is_done %}<i class="fa fa-lock"></i> Done{% else %}<i class="fa fa-rocket"></i> On going{% endif %}</td>
+    </tr>
+    {% endfor %}
+{% endblock %}

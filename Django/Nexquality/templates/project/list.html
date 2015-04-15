@@ -1,14 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
-<h1>{{ user }}'s projects</h1>
+<h2>{{ user.get_full_name }}'s projects</h2>
 <br/>
-<div class="panel">
-    <table class="table">
-    {% for project in projects %}
-        <tr><td><a href="{% url 'Nexquality:project:detail' project.id %}">{{ project }}</a></td></tr>
-    {% endfor %}
-    </table>
-</div>
-
+{% include "modules/project/list_accordion.html" %}
 <a class="btn btn-default" href="{% url 'Nexquality:project:create' %}">Create project</a>
 {% endblock %}

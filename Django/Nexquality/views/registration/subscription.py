@@ -6,6 +6,7 @@ from django.core.urlresolvers import reverse
 from django.shortcuts import render
 from django import forms
 from django.core.exceptions import ValidationError
+from Nexquality.models import Profile
 
 
 def subscription(request):
@@ -17,7 +18,7 @@ def subscription(request):
             password = form.cleaned_data['password1']
             user = authenticate(username=username, password=password)
             login(request, user)
-            return HttpResponseRedirect(reverse('Nexquality:profile:user_profile'))
+            return HttpResponseRedirect(reverse('Nexquality:profile:detail', args=[username]))
     else:
         form = ExtendedUserCreationForm()
 
@@ -38,7 +39,7 @@ class ExtendedUserCreationForm(UserCreationForm):
 
     def clean_email(self):
         cleaned_email = self.cleaned_data['email']
-        if User.objects.get(email=cleaned_email):
+        if User.objects.filter(email=cleaned_email).count() > 0:
             raise ValidationError('A user with the same email already exists')
 
         return cleaned_email
@@ -50,4 +51,6 @@ class ExtendedUserCreationForm(UserCreationForm):
         user.last_name = self.cleaned_data['last_name']
         if commit:
             user.save()
+            profile = Profile(user=user)
+            profile.save()
         return user

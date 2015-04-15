@@ -1,8 +1,9 @@
 {% extends "base.html" %}
+{% load bootstrap %}
 {% block content %}
-<h1>{{ title }}</h1>
-<form class="form-inline" action="{{ request.path }}" method="post">{% csrf_token %}
-    {{ form.as_p }}
+<h2>New project</h2>
+<form action="{{ request.path }}" method="post">{% csrf_token %}
+    {{ form|bootstrap }}
     <input class="btn btn-default" type="submit" value="Create" />
 </form>
 {% endblock %}
