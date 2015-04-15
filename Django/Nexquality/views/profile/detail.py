@@ -7,31 +7,22 @@ from Nexquality.models import Commit, MetricField
 
 @login_required
 def profile_detail(request, username):
-    kwargs = {}
+    context = {}
     found_user = get_object_or_404(User, username=username)
     if found_user:
         average_metrics = []
-        kwargs['found_user'] = found_user
-        kwargs['commits'] = Commit.objects.filter(user=found_user)
+        context['found_user'] = found_user
+        context['commits'] = Commit.objects.filter(user=found_user)
         print(found_user.profile.rank)
-        averages = found_user.profile.get_metrics_averages()
-        if averages:
-            for average in averages:
+        metrics_average_sum = found_user.profile.get_metrics_average_and_sum()
+        if metrics_average_sum:
+            for metric_average_sum in metrics_average_sum:
                 metric = {}
-                field_pk = average['field']
+                field_pk = metric_average_sum['field']
                 metric['field'] = MetricField.objects.get(pk=field_pk)
-                metric['value'] = average['average']
+                metric['average'] = metric_average_sum['average']
+                metric['sum'] = metric_average_sum['sum']
                 average_metrics.append(metric)
-            kwargs['metrics_averages'] = average_metrics
-        sums = found_user.profile.get_metrics_sums()
-        sum_metrics = []
-        if sums:
-            for _sum in sums:
-                metric = {}
-                field_pk = _sum['field']
-                metric['field'] = MetricField.objects.get(pk=field_pk)
-                metric['value'] = _sum['sum']
-                sum_metrics.append(metric)
-            kwargs['metrics_sums'] = sum_metrics
+            context['metrics'] = average_metrics
 
-        return render(request, "profile/detail.html", kwargs)
+        return render(request, "profile/detail.html", context)

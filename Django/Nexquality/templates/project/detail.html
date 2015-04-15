@@ -9,19 +9,14 @@
 {% endif %}
 {{ project.name }}</h1>
 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-    {% include "modules/project/metrics_accordion.html" with is_in=True accordion_title="Metrics" metrics=metrics %}
-    {% if active_users %}
-        {% include "modules/project/projectuser_accordion.html" with accordion_title="Active users" project_users=active_users %}
-    {% endif %}
+    {% include "modules/project/metrics_accordion.html" with is_in=True accordion_title="Metrics" %}
+    {% include "modules/project/projectuser_accordion.html" with accordion_title="Users" %}
     {% include "modules/project/issues_accordion.html" with accordion_title="Issues" commit=project.get_latest_commit %}
-    {% if inactive_users %}
-      {% include "modules/project/projectuser_accordion.html" with accordion_title="Active users" project_users=inactive_users %}
-    {% endif %}
 </div>
     <a class="btn btn-default" href="{% url 'Nexquality:project:list' %}">Go back</a>
     <a class="btn btn-default" href="{% url 'Nexquality:project:commit:list' project.id %}">Commits</a>
     {% if project.created_by = user %}
-      	<a class="btn btn-default" href="{% url 'Nexquality:project:update' project.id %}">Update</a>
-      	<a class="btn btn-default" onclick="ConfirmAndRedirect('{% url 'Nexquality:project:delete' project.id %}', 'Are you sure you want to delete this project?')"/>Delete</a>
+      	<a class="btn btn-success" href="{% url 'Nexquality:project:update' project.id %}">Update</a>
+      	<a class="btn btn-danger" onclick="ConfirmAndRedirect('{% url 'Nexquality:project:delete' project.id %}', 'Are you sure you want to delete this project?')"/>Delete</a>
     {% endif %}
 {% endblock %}

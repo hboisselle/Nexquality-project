@@ -1,0 +1,16 @@
+{% extends "modules/panel/panel.html" %}
+{% load static %}
+{% block panel_body %}
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('#score_div').raty({
+            {% if score %}score: {{ score }},{% endif %}
+            starOff: '{% static "Nexquality/star-off.jpg" %}',
+            starOn: '{% static "Nexquality/star-on.jpg" %}',
+            targetScore: '{{ form_input_accessor }}',
+            hints: '#hints'
+        });
+    });
+</script>
+<div name="score_div" id="score_div"></div><p class="help-block" id="hints"></p>
+{% endblock %}

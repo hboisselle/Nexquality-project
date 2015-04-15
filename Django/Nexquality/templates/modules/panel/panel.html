@@ -1,0 +1,12 @@
+<div {% block panel_attributes %}class="panel panel-success" {% endblock %}>
+    <div class="panel-heading" role="tab">
+    {% block panel_head %}
+        <h4 class="panel-title">
+            {{ panel_title }}
+        </h4>
+    {% endblock %}
+    </div>
+    <div class="panel-body">
+    {% block panel_body %}{% endblock %}
+    </div>
+</div>

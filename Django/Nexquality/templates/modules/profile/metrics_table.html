@@ -3,7 +3,8 @@
     <tr>
         <th>Category</th>
         <th>Field</th>
-        <th>Value</th>     
+        <th>Average</th> 
+        <th>Total</th>       
     </tr>
 {% endblock %}
 {% block table_body %}
@@ -11,7 +12,8 @@
         <tr>
             <td>{{ metric.field.category.name}}</td>
             <td>{{ metric.field.name }}</td>
-            <td>{{ metric.value|floatformat:-2}} {{metric.field.unit }}</td>          
+            <td>{% if metric.field.show_average %}{{ metric.average|floatformat:-2}} {{metric.field.unit }}{% endif %}</td>
+            <td>{% if metric.field.show_sum %}{{ metric.sum|floatformat:-2}} {{metric.field.unit }}{% endif %}</td>          
         </tr>
     {% endfor %}
 {% endblock %}

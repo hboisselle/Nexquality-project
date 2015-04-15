@@ -1,0 +1,19 @@
+{% extends "modules/table/table.html" %}
+{% block table_head %}
+    <tr>
+        <th>Username</th>
+        <th>Joining date</th>
+        <th>Quitting date</th>
+        <th>Role</th>
+    </tr>
+{% endblock %}
+{% block table_body %}
+    {% for project_user in project_users %}
+        <tr>
+            <td>{{ project_user.user.get_full_name }}</td>
+            <td>{{ project_user.in_date }}</td>
+            <td>{{ project_user.out_date }}</td>
+            <td>{{ project_user.role.name }}</td>
+        </tr>
+    {% endfor %}
+{% endblock %}

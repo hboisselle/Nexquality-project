@@ -1,12 +1,20 @@
 {% extends "base.html" %}
+{% load static %}
 {% block content %}
 
-<h4>{{ commit }}</h4>
+<h4>Commit pushed on {{commit.date|date:"F j, Y"}} at {{commit.date|date:"h:i"}} by {{ commit.user.get_full_name }}</h4>
+<h5>Project: {{commit.project.name}}</h5>
 <p><em>{{ commit.comment }}</em></p>
 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-    {% include "modules/project/metrics_accordion.html" with is_in=True accordion_title="Metrics" metrics=commit.metric_set.all %}
-    {% include "modules/project/issues_accordion.html" with accordion_title="Issues" %}
+    {% include "modules/project/metrics_accordion.html" with accordion_title="Metrics" metrics=commit.metric_set.all %}
+    {% include "modules/project/issues_accordion.html" with issues=commit.issues accordion_title="Issues" %}
 </div>
-<a class="btn btn-default" href="{% url 'Nexquality:project:commit:list' commit.project.id %}">Go to project commits</a>
-<a class="btn btn-default" href="{% url 'Nexquality:project:detail' commit.project.id %}">Go to project</a>
+{% include "modules/rating/rating.html" with form_input_accessor="#score_input" panel_title=message score=commit.code_review_score %}
+<form id="form" class="form-inline" action="{% url 'Nexquality:project:commit:detail' commit.project.id commit.id %}" method="POST">
+    <input name="score" id="score_input" type="hidden"/>
+    <a class="btn btn-default" href="{% url 'Nexquality:project:commit:list' commit.project.id %}">Go to project commits</a>
+    <a class="btn btn-default" href="{% url 'Nexquality:project:detail' commit.project.id %}">Go to project</a>
+    <input class="btn btn-primary" type="submit" value="Submit score"/>
+</form>
+
 {% endblock %}
