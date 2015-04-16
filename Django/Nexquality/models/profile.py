@@ -3,7 +3,9 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.utils.encoding import python_2_unicode_compatible
 from django.db.models import Q, Avg, Sum
-from Nexquality.models import ProfileType
+from Nexquality.models.profile_type import ProfileType
+from Nexquality.models.project import Project
+from Nexquality.models.metric import Metric
 
 
 @python_2_unicode_compatible

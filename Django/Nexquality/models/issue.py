@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils.encoding import python_2_unicode_compatible
-from Nexquality.models import Violation, IssueLevel
+from Nexquality.models.violation import Violation
+from Nexquality.models.issue_level import IssueLevel
 
 
 @python_2_unicode_compatible

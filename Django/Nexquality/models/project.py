@@ -2,7 +2,6 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.utils import timezone
 from django.utils.encoding import python_2_unicode_compatible
-from Nexquality.models import Commit
 
 
 @python_2_unicode_compatible
@@ -25,8 +24,8 @@ class Project(models.Model):
     def get_inactive_users(self):
         return self.projectuser_set.exclude(out_date=None)
 
-    def calculate_metrics(project):
-        for commit in Commit.objects.filter(project=project):
+    def calculate_metrics(self):
+        for commit in self.commit_set.all():
             for metric in commit.metric_set.all():
                 metric.calculated = metric.calculate()
                 metric.save()

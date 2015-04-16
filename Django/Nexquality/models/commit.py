@@ -1,7 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils.encoding import python_2_unicode_compatible
-from Nexquality.models import Project, Issue
+from Nexquality.models.project import Project
+from Nexquality.models.issue import Issue
 
 
 @python_2_unicode_compatible

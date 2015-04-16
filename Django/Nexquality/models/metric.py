@@ -1,5 +1,6 @@
 from django.db import models
-from Nexquality.models import Commit, MetricField
+from Nexquality.models.commit import Commit
+from Nexquality.models.metric_field import MetricField
 
 
 class Metric(models.Model):
@@ -41,7 +42,7 @@ class Metric(models.Model):
     def calculate_default(self):
         return self.value - self.get_preceding().value
 
-    def calculation_factory(self): 
+    def calculation_factory(self):
         field_name = self.field.name
         if(field_name == "Code Coverage"):
             return self.calculate_code_coverage()

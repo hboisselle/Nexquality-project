@@ -1,7 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils import timezone
-from Nexquality.models import Project, ProjectUserRole
+from Nexquality.models.project import Project
+from Nexquality.models.project_user_role import ProjectUserRole
 
 
 class ProjectUser(models.Model):

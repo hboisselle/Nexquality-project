@@ -1,5 +1,4 @@
 from .commit import *
-from .commit_issue import *
 from .issue import *
 from .issue_level import *
 from .metric import *

@@ -1,11 +1,11 @@
 from django.db import models
-from Nexquality.models import MetricCategory
+from Nexquality.models.metric_category import MetricCategory
 
 
 class MetricField(models.Model):
     category = models.ForeignKey(MetricCategory)
     name = models.CharField(max_length=50)
-    unit =  models.CharField(max_length=50, null=True, blank=True)
+    unit = models.CharField(max_length=50, null=True, blank=True)
     show_color = models.BooleanField(default=False)
     show_plus_sign = models.BooleanField(default=False)
     tolerance = models.FloatField(default=0)
