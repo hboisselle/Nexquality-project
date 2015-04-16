@@ -10,3 +10,5 @@ from .project import *
 from .project_user import *
 from .project_user_role import *
 from .violation import *
+from .badge import *
+from .badge_user import *

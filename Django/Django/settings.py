@@ -84,6 +84,8 @@ USE_L10N = True
 
 USE_TZ = True
 
+MEDIA_ROOT = os.path.join(BASE_DIR, 'uploaded_files') + "/"
+
 STATIC_URL = os.path.join(BASE_DIR, 'static') + "/"
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
