@@ -10,3 +10,6 @@ class BadgeUser(models.Model):
     attributed_by = models.ForeignKey(User, related_name='badge_attributed_by')
     attribution_date = models.DateField(default=timezone.now())
     removal_date = models.DateField(null=True, blank=True)
+
+    def __str__(self):
+        return "{0} - {1} - {2}".format(self.attribution_date, self.user.get_full_name(), self.badge.name)

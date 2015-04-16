@@ -2,8 +2,7 @@
 {% load static %}
 {% block content %}
 
-<h4>Commit pushed on {{commit.date|date:"F j, Y"}} at {{commit.date|date:"h:i"}} by {{ commit.user.get_full_name }}</h4>
-<h5>Project: {{commit.project.name}}</h5>
+<h4>{{commit.project.name}} - Commit pushed on {{commit.date|date:"F j, Y"}} at {{commit.date|date:"h:i"}} by {{ commit.user.get_full_name }}</h4>
 <p><em>{{ commit.comment }}</em></p>
 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
     {% include "modules/project/metrics_accordion.html" with accordion_title="Metrics" metrics=commit.metric_set.all %}

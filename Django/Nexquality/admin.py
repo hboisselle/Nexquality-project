@@ -20,3 +20,5 @@ class MetricFieldAdmin(admin.ModelAdmin):
 admin.site.register(models.Project, ProjectModelAdmin)
 admin.site.register(models.ProjectUserRole, admin.ModelAdmin)
 admin.site.register(models.MetricField, MetricFieldAdmin)
+admin.site.register(models.Badge, admin.ModelAdmin)
+admin.site.register(models.BadgeUser, admin.ModelAdmin)
