@@ -13,7 +13,7 @@
     {% include "modules/project/projectuser_accordion.html" with accordion_title="Users" %}
     {% include "modules/project/issues_accordion.html" with accordion_title="Issues" commit=project.get_latest_commit %}
 </div>
-    <a class="btn btn-default" href="{% url 'Nexquality:project:list' %}">Go back</a>
+    <a class="btn btn-default" href="{% url 'Nexquality:project:list' %}"><i class="fa fa-angle-double-left"></i> Go back</a>
     <a class="btn btn-default" href="{% url 'Nexquality:project:commit:list' project.id %}">Commits</a>
     {% if project.created_by = user %}
       	<a class="btn btn-success" href="{% url 'Nexquality:project:update' project.id %}">Update</a>

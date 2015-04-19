@@ -17,8 +17,19 @@ class MetricFieldAdmin(admin.ModelAdmin):
     exclude = ('category', 'name')
 
 
+class ProfileModelAdmin(admin.ModelAdmin):
+    exclude = ('user',)
+
+
+class BadgeModelAdmin(admin.ModelAdmin):
+    fields = ('name', 'description', 'category', 'score', 'image', 'conditions', 'given_once')
+
+
 admin.site.register(models.Project, ProjectModelAdmin)
 admin.site.register(models.ProjectUserRole, admin.ModelAdmin)
 admin.site.register(models.MetricField, MetricFieldAdmin)
-admin.site.register(models.Badge, admin.ModelAdmin)
+admin.site.register(models.Badge, BadgeModelAdmin)
 admin.site.register(models.BadgeUser, admin.ModelAdmin)
+admin.site.register(models.BadgeCategory, admin.ModelAdmin)
+admin.site.register(models.Profile, ProfileModelAdmin)
+admin.site.register(models.ProfileType, admin.ModelAdmin)

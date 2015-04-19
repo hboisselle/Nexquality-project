@@ -1,0 +1,2003 @@
+An exception occurred while processing a condition: global name 'calculation' is not defined
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/badge_conditions/condition_types.py", line 11, in eval_operand
+    if calculation['field'] == target_field:
+NameError: global name 'calculation' is not defined
+An exception occurred while processing a condition: float() argument must be a string or a number
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+TypeError: float() argument must be a string or a number
+An exception occurred while processing a condition: float() argument must be a string or a number
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+TypeError: float() argument must be a string or a number
+An exception occurred while processing a condition: float() argument must be a string or a number
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+TypeError: float() argument must be a string or a number
+An exception occurred while processing a condition: 'unicode' object has no attribute 'trim'
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/badge_conditions/condition_types.py", line 8, in eval_operand
+    target_field = self.key.replace('_', ' ').trim()
+AttributeError: 'unicode' object has no attribute 'trim'
+An exception occurred while processing a condition: float() argument must be a string or a number
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+TypeError: float() argument must be a string or a number
+An exception occurred while processing a condition: The field Code Coverage doesn't exist
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/badge_conditions/condition_types.py", line 15, in eval_operand
+    raise ValueError("The field " + target_field + " doesn't exist")
+ValueError: The field Code Coverage doesn't exist
+An exception occurred while processing a condition: float() argument must be a string or a number
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+TypeError: float() argument must be a string or a number
+An exception occurred while processing a condition: get_field_calculation_value() takes exactly 3 arguments (4 given)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/badge_conditions/condition_types.py", line 20, in eval_operand
+    return self.get_field_calculation_value(user, self.key, 'average')
+TypeError: get_field_calculation_value() takes exactly 3 arguments (4 given)
+An exception occurred while processing a condition: get_field_calculation_value() takes exactly 3 arguments (4 given)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/badge_conditions/condition_types.py", line 20, in eval_operand
+    return self.get_field_calculation_value(user, self.key, 'average')
+TypeError: get_field_calculation_value() takes exactly 3 arguments (4 given)
+An exception occurred while processing a condition: get_field_calculation_value() takes exactly 3 arguments (4 given)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/badge_conditions/condition_types.py", line 20, in eval_operand
+    return self.get_field_calculation_value(user, self.key, 'average')
+TypeError: get_field_calculation_value() takes exactly 3 arguments (4 given)
+An exception occurred while processing a condition: get_field_calculation_value() takes exactly 3 arguments (4 given)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/badge_conditions/condition_types.py", line 20, in eval_operand
+    return self.get_field_calculation_value(user, self.key, 'average')
+TypeError: get_field_calculation_value() takes exactly 3 arguments (4 given)
+An exception occurred while processing a condition: get_field_calculation_value() takes exactly 3 arguments (4 given)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/badge_conditions/condition_types.py", line 20, in eval_operand
+    return self.get_field_calculation_value(user, self.key, 'average')
+TypeError: get_field_calculation_value() takes exactly 3 arguments (4 given)
+An exception occurred while processing a condition: get_field_calculation_value() takes exactly 3 arguments (4 given)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/badge_conditions/condition_types.py", line 20, in eval_operand
+    return self.get_field_calculation_value(user, self.key, 'average')
+TypeError: get_field_calculation_value() takes exactly 3 arguments (4 given)
+An exception occurred while processing a condition: get_field_calculation_value() takes exactly 3 arguments (4 given)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/badge_conditions/condition_types.py", line 20, in eval_operand
+    return self.get_field_calculation_value(user, self.key, 'average')
+TypeError: get_field_calculation_value() takes exactly 3 arguments (4 given)
+An exception occurred while processing a condition: get_field_calculation_value() takes exactly 3 arguments (4 given)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/badge_conditions/condition_types.py", line 20, in eval_operand
+    return self.get_field_calculation_value(user, self.key, 'average')
+TypeError: get_field_calculation_value() takes exactly 3 arguments (4 given)
+An exception occurred while processing a condition: get_field_calculation_value() takes exactly 3 arguments (4 given)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/badge_conditions/condition_types.py", line 20, in eval_operand
+    return self.get_field_calculation_value(user, self.key, 'average')
+TypeError: get_field_calculation_value() takes exactly 3 arguments (4 given)
+An exception occurred while processing a condition: get_field_calculation_value() takes exactly 3 arguments (4 given)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/badge_conditions/condition_types.py", line 20, in eval_operand
+    return self.get_field_calculation_value(user, self.key, 'average')
+TypeError: get_field_calculation_value() takes exactly 3 arguments (4 given)
+An exception occurred while processing a condition: get_field_calculation_value() takes exactly 3 arguments (4 given)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/badge_conditions/condition_types.py", line 20, in eval_operand
+    return self.get_field_calculation_value(user, self.key, 'average')
+TypeError: get_field_calculation_value() takes exactly 3 arguments (4 given)
+An exception occurred while processing a condition: get_field_calculation_value() takes exactly 3 arguments (4 given)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/badge_conditions/condition_types.py", line 20, in eval_operand
+    return self.get_field_calculation_value(user, self.key, 'average')
+TypeError: get_field_calculation_value() takes exactly 3 arguments (4 given)
+An exception occurred while processing a condition: get_field_calculation_value() takes exactly 3 arguments (4 given)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/badge_conditions/condition_types.py", line 20, in eval_operand
+    return self.get_field_calculation_value(user, self.key, 'average')
+TypeError: get_field_calculation_value() takes exactly 3 arguments (4 given)
+An exception occurred while processing a condition: get_field_calculation_value() takes exactly 3 arguments (4 given)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/badge_conditions/condition_types.py", line 20, in eval_operand
+    return self.get_field_calculation_value(user, self.key, 'average')
+TypeError: get_field_calculation_value() takes exactly 3 arguments (4 given)
+An exception occurred while processing a condition: get_field_calculation_value() takes exactly 3 arguments (4 given)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/badge_conditions/condition_types.py", line 20, in eval_operand
+    return self.get_field_calculation_value(user, self.key, 'average')
+TypeError: get_field_calculation_value() takes exactly 3 arguments (4 given)
+An exception occurred while processing a condition: get_field_calculation_value() takes exactly 3 arguments (4 given)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/badge_conditions/condition_types.py", line 20, in eval_operand
+    return self.get_field_calculation_value(user, self.key, 'average')
+TypeError: get_field_calculation_value() takes exactly 3 arguments (4 given)
+An exception occurred while processing a condition: get_field_calculation_value() takes exactly 3 arguments (4 given)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/badge_conditions/condition_types.py", line 20, in eval_operand
+    return self.get_field_calculation_value(user, self.key, 'average')
+TypeError: get_field_calculation_value() takes exactly 3 arguments (4 given)
+An exception occurred while processing a condition: get_field_calculation_value() takes exactly 3 arguments (4 given)
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/badge_conditions/condition_types.py", line 20, in eval_operand
+    return self.get_field_calculation_value(user, self.key, 'average')
+TypeError: get_field_calculation_value() takes exactly 3 arguments (4 given)
+An exception occurred while processing a condition: 'AverageMetricCondition' object has no attribute 'get_field_calculation_value'
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/badge_conditions/condition_types.py", line 19, in eval_operand
+    return self.get_field_calculation_value(user, self.key, 'average')
+AttributeError: 'AverageMetricCondition' object has no attribute 'get_field_calculation_value'
+An exception occurred while processing a condition: 'AverageMetricCondition' object has no attribute 'get_field_calculation_value'
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/badge_conditions/condition_types.py", line 19, in eval_operand
+    return self.get_field_calculation_value(user, self.key, 'average')
+AttributeError: 'AverageMetricCondition' object has no attribute 'get_field_calculation_value'
+An exception occurred while processing a condition: 'AverageMetricCondition' object has no attribute 'get_field_calculation_value'
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/badge_conditions/condition_types.py", line 19, in eval_operand
+    return self.get_field_calculation_value(user, self.key, 'average')
+AttributeError: 'AverageMetricCondition' object has no attribute 'get_field_calculation_value'
+An exception occurred while processing a condition: 'AverageMetricCondition' object has no attribute 'get_field_calculation_value'
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/badge_conditions/condition_types.py", line 19, in eval_operand
+    return self.get_field_calculation_value(user, self.key, 'average')
+AttributeError: 'AverageMetricCondition' object has no attribute 'get_field_calculation_value'
+An exception occurred while processing a condition: 'AverageMetricCondition' object has no attribute 'get_field_calculation_value'
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/badge_conditions/condition_types.py", line 19, in eval_operand
+    return self.get_field_calculation_value(user, self.key, 'average')
+AttributeError: 'AverageMetricCondition' object has no attribute 'get_field_calculation_value'
+An exception occurred while processing a condition: 'AverageMetricCondition' object has no attribute 'get_field_calculation_value'
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/badge_conditions/condition_types.py", line 19, in eval_operand
+    return self.get_field_calculation_value(user, self.key, 'average')
+AttributeError: 'AverageMetricCondition' object has no attribute 'get_field_calculation_value'
+An exception occurred while processing a condition: 'AverageMetricCondition' object has no attribute 'get_field_calculation_value'
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/badge_conditions/condition_types.py", line 19, in eval_operand
+    return self.get_field_calculation_value(user, self.key, 'average')
+AttributeError: 'AverageMetricCondition' object has no attribute 'get_field_calculation_value'
+An exception occurred while processing a condition: 'AverageMetricCondition' object has no attribute 'get_field_calculation_value'
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/badge_conditions/condition_types.py", line 19, in eval_operand
+    return self.get_field_calculation_value(user, self.key, 'average')
+AttributeError: 'AverageMetricCondition' object has no attribute 'get_field_calculation_value'
+An exception occurred while processing a condition: 'AverageMetricCondition' object has no attribute 'get_field_calculation_value'
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/badge_conditions/condition_types.py", line 19, in eval_operand
+    return self.get_field_calculation_value(user, self.key, 'average')
+AttributeError: 'AverageMetricCondition' object has no attribute 'get_field_calculation_value'
+An exception occurred while processing a condition: 'AverageMetricCondition' object has no attribute 'get_field_calculation_value'
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/badge_conditions/condition_types.py", line 19, in eval_operand
+    return self.get_field_calculation_value(user, self.key, 'average')
+AttributeError: 'AverageMetricCondition' object has no attribute 'get_field_calculation_value'
+An exception occurred while processing a condition: 'AverageMetricCondition' object has no attribute 'get_field_calculation_value'
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/badge_conditions/condition_types.py", line 19, in eval_operand
+    return self.get_field_calculation_value(user, self.key, 'average')
+AttributeError: 'AverageMetricCondition' object has no attribute 'get_field_calculation_value'
+An exception occurred while processing a condition: 'AverageMetricCondition' object has no attribute 'get_field_calculation_value'
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/badge_conditions/condition_types.py", line 19, in eval_operand
+    return self.get_field_calculation_value(user, self.key, 'average')
+AttributeError: 'AverageMetricCondition' object has no attribute 'get_field_calculation_value'
+An exception occurred while processing a condition: 'AverageMetricCondition' object has no attribute 'get_field_calculation_value'
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/badge_conditions/condition_types.py", line 19, in eval_operand
+    return self.get_field_calculation_value(user, self.key, 'average')
+AttributeError: 'AverageMetricCondition' object has no attribute 'get_field_calculation_value'
+An exception occurred while processing a condition: 'AverageMetricCondition' object has no attribute 'get_field_calculation_value'
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/badge_conditions/condition_types.py", line 19, in eval_operand
+    return self.get_field_calculation_value(user, self.key, 'average')
+AttributeError: 'AverageMetricCondition' object has no attribute 'get_field_calculation_value'
+An exception occurred while processing a condition: 'AverageMetricCondition' object has no attribute 'get_field_calculation_value'
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/badge_conditions/condition_types.py", line 19, in eval_operand
+    return self.get_field_calculation_value(user, self.key, 'average')
+AttributeError: 'AverageMetricCondition' object has no attribute 'get_field_calculation_value'
+An exception occurred while processing a condition: 'AverageMetricCondition' object has no attribute 'get_field_calculation_value'
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/badge_conditions/condition_types.py", line 19, in eval_operand
+    return self.get_field_calculation_value(user, self.key, 'average')
+AttributeError: 'AverageMetricCondition' object has no attribute 'get_field_calculation_value'
+An exception occurred while processing a condition: 'AverageMetricCondition' object has no attribute 'get_field_calculation_value'
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/badge_conditions/condition_types.py", line 19, in eval_operand
+    return self.get_field_calculation_value(user, self.key, 'average')
+AttributeError: 'AverageMetricCondition' object has no attribute 'get_field_calculation_value'
+An exception occurred while processing a condition: 'AverageMetricCondition' object has no attribute 'get_field_calculation_value'
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/badge_conditions/condition_types.py", line 19, in eval_operand
+    return self.get_field_calculation_value(user, self.key, 'average')
+AttributeError: 'AverageMetricCondition' object has no attribute 'get_field_calculation_value'
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/badge_conditions/condition_types.py", line 19, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/badge_conditions/condition_types.py", line 10, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/badge_conditions/condition_types.py", line 19, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/badge_conditions/condition_types.py", line 10, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/badge_conditions/condition_types.py", line 19, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/badge_conditions/condition_types.py", line 10, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/badge_conditions/condition_types.py", line 19, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/badge_conditions/condition_types.py", line 10, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/badge_conditions/condition_types.py", line 19, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/badge_conditions/condition_types.py", line 10, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/badge_conditions/condition_types.py", line 19, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/badge_conditions/condition_types.py", line 10, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/badge_conditions/condition_types.py", line 19, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/badge_conditions/condition_types.py", line 10, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/badge_conditions/condition_types.py", line 19, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/badge_conditions/condition_types.py", line 10, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/badge_conditions/condition_types.py", line 19, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/badge_conditions/condition_types.py", line 10, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/badge_conditions/condition_types.py", line 19, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/badge_conditions/condition_types.py", line 10, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/badge_conditions/condition_types.py", line 19, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/badge_conditions/condition_types.py", line 10, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/badge_conditions/condition_types.py", line 19, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/badge_conditions/condition_types.py", line 10, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/badge_conditions/condition_types.py", line 19, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/badge_conditions/condition_types.py", line 10, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/badge_conditions/condition_types.py", line 19, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/badge_conditions/condition_types.py", line 10, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/badge_conditions/condition_types.py", line 19, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/badge_conditions/condition_types.py", line 10, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/badge_conditions/condition_types.py", line 19, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/badge_conditions/condition_types.py", line 10, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/badge_conditions/condition_types.py", line 19, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/badge_conditions/condition_types.py", line 10, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/badge_conditions/condition_types.py", line 19, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/badge_conditions/condition_types.py", line 10, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/badge_conditions/condition_types.py", line 19, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/badge_conditions/condition_types.py", line 10, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/badge_conditions/condition_types.py", line 19, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/badge_conditions/condition_types.py", line 10, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/badge_conditions/condition_types.py", line 19, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/badge_conditions/condition_types.py", line 10, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/badge_conditions/condition_types.py", line 19, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/badge_conditions/condition_types.py", line 10, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/badge_conditions/condition_types.py", line 19, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/badge_conditions/condition_types.py", line 10, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/badge_conditions/condition_types.py", line 19, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/badge_conditions/condition_types.py", line 10, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/badge_conditions/condition_types.py", line 19, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/badge_conditions/condition_types.py", line 10, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/badge_conditions/condition_types.py", line 19, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/badge_conditions/condition_types.py", line 10, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/badge_conditions/condition_types.py", line 19, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/badge_conditions/condition_types.py", line 10, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 26, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 33, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 26, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 33, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 26, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 33, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 26, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 33, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 26, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 33, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 26, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 33, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 26, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 33, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 26, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 33, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 26, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 33, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 26, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 33, in eval_operand
+    return get_field_calculation_value(user, self.key, 'sum')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 26, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 33, in eval_operand
+    return get_field_calculation_value(user, self.key, 'sum')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 26, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 33, in eval_operand
+    return get_field_calculation_value(user, self.key, 'sum')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 26, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 33, in eval_operand
+    return get_field_calculation_value(user, self.key, 'sum')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 26, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 33, in eval_operand
+    return get_field_calculation_value(user, self.key, 'sum')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 26, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 33, in eval_operand
+    return get_field_calculation_value(user, self.key, 'sum')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 26, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 33, in eval_operand
+    return get_field_calculation_value(user, self.key, 'sum')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 26, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 33, in eval_operand
+    return get_field_calculation_value(user, self.key, 'sum')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 26, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 33, in eval_operand
+    return get_field_calculation_value(user, self.key, 'sum')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 26, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 33, in eval_operand
+    return get_field_calculation_value(user, self.key, 'sum')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 26, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 33, in eval_operand
+    return get_field_calculation_value(user, self.key, 'sum')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 26, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 33, in eval_operand
+    return get_field_calculation_value(user, self.key, 'sum')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 26, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 33, in eval_operand
+    return get_field_calculation_value(user, self.key, 'sum')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 26, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 33, in eval_operand
+    return get_field_calculation_value(user, self.key, 'sum')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 26, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 33, in eval_operand
+    return get_field_calculation_value(user, self.key, 'sum')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 26, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 33, in eval_operand
+    return get_field_calculation_value(user, self.key, 'sum')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 26, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 33, in eval_operand
+    return get_field_calculation_value(user, self.key, 'sum')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 26, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 33, in eval_operand
+    return get_field_calculation_value(user, self.key, 'sum')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 26, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 33, in eval_operand
+    return get_field_calculation_value(user, self.key, 'sum')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 26, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 33, in eval_operand
+    return get_field_calculation_value(user, self.key, 'sum')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 26, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 33, in eval_operand
+    return get_field_calculation_value(user, self.key, 'sum')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 26, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 33, in eval_operand
+    return get_field_calculation_value(user, self.key, 'sum')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 26, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 33, in eval_operand
+    return get_field_calculation_value(user, self.key, 'sum')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 26, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 33, in eval_operand
+    return get_field_calculation_value(user, self.key, 'sum')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 26, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 33, in eval_operand
+    return get_field_calculation_value(user, self.key, 'sum')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 26, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 33, in eval_operand
+    return get_field_calculation_value(user, self.key, 'sum')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 26, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 33, in eval_operand
+    return get_field_calculation_value(user, self.key, 'sum')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 26, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 33, in eval_operand
+    return get_field_calculation_value(user, self.key, 'sum')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 26, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 33, in eval_operand
+    return get_field_calculation_value(user, self.key, 'sum')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 26, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 33, in eval_operand
+    return get_field_calculation_value(user, self.key, 'sum')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 26, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 33, in eval_operand
+    return get_field_calculation_value(user, self.key, 'sum')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 26, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 33, in eval_operand
+    return get_field_calculation_value(user, self.key, 'sum')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 26, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 33, in eval_operand
+    return get_field_calculation_value(user, self.key, 'sum')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 26, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 33, in eval_operand
+    return get_field_calculation_value(user, self.key, 'sum')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 26, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 33, in eval_operand
+    return get_field_calculation_value(user, self.key, 'sum')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 26, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 33, in eval_operand
+    return get_field_calculation_value(user, self.key, 'sum')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 26, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 33, in eval_operand
+    return get_field_calculation_value(user, self.key, 'sum')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 26, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 33, in eval_operand
+    return get_field_calculation_value(user, self.key, 'sum')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 26, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 33, in eval_operand
+    return get_field_calculation_value(user, self.key, 'sum')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 26, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 33, in eval_operand
+    return get_field_calculation_value(user, self.key, 'sum')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 26, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 33, in eval_operand
+    return get_field_calculation_value(user, self.key, 'sum')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 26, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 33, in eval_operand
+    return get_field_calculation_value(user, self.key, 'sum')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 26, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 33, in eval_operand
+    return get_field_calculation_value(user, self.key, 'sum')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 26, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 33, in eval_operand
+    return get_field_calculation_value(user, self.key, 'sum')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 26, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 33, in eval_operand
+    return get_field_calculation_value(user, self.key, 'sum')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 26, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 33, in eval_operand
+    return get_field_calculation_value(user, self.key, 'sum')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 26, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 33, in eval_operand
+    return get_field_calculation_value(user, self.key, 'sum')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 26, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 33, in eval_operand
+    return get_field_calculation_value(user, self.key, 'sum')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 26, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 33, in eval_operand
+    return get_field_calculation_value(user, self.key, 'sum')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 26, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 33, in eval_operand
+    return get_field_calculation_value(user, self.key, 'sum')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 26, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 33, in eval_operand
+    return get_field_calculation_value(user, self.key, 'sum')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 17, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable

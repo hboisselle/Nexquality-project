@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = (
     'Nexquality',
     'bootstrapform',
+    'conditions',
     'data_importer.models',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -39,6 +40,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.humanize',
 )
 
 
@@ -84,6 +86,7 @@ USE_L10N = True
 
 USE_TZ = True
 
+MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'uploaded_files') + "/"
 
 STATIC_URL = os.path.join(BASE_DIR, 'static') + "/"
@@ -93,3 +96,26 @@ STATIC_URL = os.path.join(BASE_DIR, 'static') + "/"
 TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
 
 LOGIN_URL = 'Nexquality:registration:login'
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': os.path.join(BASE_DIR, 'log') + "/"
+        },
+    },
+    'loggers': {
+        'django.request': {
+            'handlers': ['file'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+        'condition': {
+            'handlers': ['file'],
+            'level': 'DEBUG',
+        }
+    },
+}

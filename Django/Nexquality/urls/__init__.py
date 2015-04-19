@@ -1,5 +1,6 @@
 from django.conf.urls import patterns, url, include
-from Nexquality.views import index, profile
+from Nexquality.views import index
+from django.conf import settings
 
 
 urlpatterns = patterns('',
@@ -9,3 +10,10 @@ urlpatterns = patterns('',
     url(r'^registration/', include('Nexquality.urls.registration', namespace="registration")),
     url(r'^data-importation/', include('Nexquality.urls.data_import', namespace="data_importation")),
 )
+
+if settings.DEBUG:
+    urlpatterns += patterns('',
+        url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {
+            'document_root': settings.MEDIA_ROOT,
+        }),
+   )

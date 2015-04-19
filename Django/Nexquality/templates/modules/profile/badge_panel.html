@@ -1,0 +1,15 @@
+{% load humanize %}
+<div class="media">
+  <div class="media-left">
+      <img class="media-object" src="{{ badgeuser.badge.image.url }}" height="80px">
+  </div>
+  <div class="media-body">
+    <h4 class="media-heading">{{ badgeuser.badge.name }}</h4>
+    <p>{{ badgeuser.badge.description }}</p>
+    <em>{{ badgeuser.attribution_date|naturaltime }}</em>
+  </div>
+  <div class="media-right" style="text-align: center">
+    <i class="fa fa-2x fa-trophy"></i>
+    <h4>{{ badgeuser.badge.score }}</h4>
+  </div>
+</div>

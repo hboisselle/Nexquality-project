@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.shortcuts import get_object_or_404
-from Nexquality.models import Commit, MetricField
+from Nexquality.models import Commit, MetricField, Badge
 
 
 @login_required
@@ -13,15 +13,16 @@ def profile_detail(request, username):
         average_metrics = []
         context['found_user'] = found_user
         context['commits'] = Commit.objects.filter(user=found_user)
+        context['badge_count'] = Badge.objects.all().count()
         print(found_user.profile.rank)
-        metrics_average_sum = found_user.profile.get_metrics_average_and_sum()
-        if metrics_average_sum:
-            for metric_average_sum in metrics_average_sum:
+        calculations = found_user.profile.get_metrics_calculations()
+        if calculations:
+            for calculation in calculations:
                 metric = {}
-                field_pk = metric_average_sum['field']
+                field_pk = calculation['field']
                 metric['field'] = MetricField.objects.get(pk=field_pk)
-                metric['average'] = metric_average_sum['average']
-                metric['sum'] = metric_average_sum['sum']
+                metric['average'] = calculation['average']
+                metric['sum'] = calculation['sum']
                 average_metrics.append(metric)
             context['metrics'] = average_metrics
 

@@ -1,0 +1,22 @@
+{% extends "modules/accordion/accordion.html" %}
+{% block accordion_head %}
+    {% include "modules/accordion/head/thick_with_logo.html" with logo_class="fa-trophy" panel_right_text=found_user.profile.get_total_badge_score.sum %}
+{% endblock %}
+{% block accordion_body %}
+    <div role="tabpanel">
+        <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a href="#overview" aria-controls="overview" role="tab" data-toggle="tab">Overview</a></li>
+            <li role="presentation"><a href="#solved_issues" aria-controls="solved_issues" role="tab" data-toggle="tab">{{ badge_percentage }}</a></li>
+        </ul>
+        <br />
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="overview">
+                <h5>Total rewarded</h5>
+                {% include "modules/progress_bar/progress_bar.html" with current_value=found_user.profile.get_distinct_badge_count max_value=badge_count %}
+                {% include "modules/profile/recent_badges_panel.html" with panel_title="Recent badges" %}
+            </div>
+            <div role="tabpanel" class="tab-pane" id="solved_issues"></div>
+        </div>
+    </div>
+    
+{% endblock %}

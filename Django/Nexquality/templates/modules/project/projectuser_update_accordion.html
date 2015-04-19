@@ -1,0 +1,4 @@
+{% extends "modules/project/projectuser_accordion.html" %}
+{% block active_users_tab %}
+    {% include "modules/project/projectuser_update_table.html" with project_users=project.get_active_users table_id="active_users" %}
+{% endblock %}

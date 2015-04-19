@@ -10,7 +10,11 @@
     </ul>
     <br />
     <div class="tab-content">
-        <div role="tabpanel" class="tab-pane active" id="pane_active_users">{% include "modules/project/projectuser_table.html" with project_users=project.get_active_users table_id="active_users" %}</div>
+        <div role="tabpanel" class="tab-pane active" id="pane_active_users">
+        {% block active_users_tab %}
+            {% include "modules/project/projectuser_table.html" with project_users=project.get_active_users table_id="active_users" %}
+        {% endblock %}
+        </div>
         <div role="tabpanel" class="tab-pane" id="pane_inactive_users">{% include "modules/project/projectuser_table.html" with project_users=project.get_inactive_users table_id="inactive_users"%}</div>
     </div>
 </div>

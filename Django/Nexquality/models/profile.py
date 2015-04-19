@@ -25,9 +25,18 @@ class Profile(models.Model):
                 is_done=True
             ).distinct()[:5]
 
-    def get_metrics_average_and_sum(self):
+    def get_metrics_calculations(self):
         if Metric.objects.filter(commit__user=self.user).count() > 0:
             return Metric.objects.filter(commit__user=self.user).values('field').annotate(
                     sum=Sum("calculated"), 
                     average=Avg("calculated")
                 )
+
+    def get_recent_badges(self):
+        return self.user.badgeuser_set.all().order_by('-attribution_date')[:5]
+
+    def get_distinct_badge_count(self):
+        return self.user.badgeuser_set.all().values('badge').distinct().count()
+
+    def get_total_badge_score(self):
+        return self.user.badgeuser_set.all().aggregate(sum=Sum('badge__score'))

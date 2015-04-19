@@ -5,6 +5,7 @@ from django.db import models, migrations
 import datetime
 from django.utils.timezone import utc
 from django.conf import settings
+import conditions.fields
 
 
 class Migration(migrations.Migration):
@@ -15,14 +16,55 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
+            name='Badge',
+            fields=[
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('name', models.CharField(max_length=50)),
+                ('description', models.CharField(max_length=250)),
+                ('conditions', conditions.fields.ConditionsField(default=dict)),
+                ('image', models.ImageField(upload_to=b'images/badges')),
+                ('score', models.IntegerField(default=0)),
+                ('given_once', models.BooleanField(default=False)),
+            ],
+            options={
+            },
+            bases=(models.Model,),
+        ),
+        migrations.CreateModel(
+            name='BadgeCategory',
+            fields=[
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('name', models.CharField(max_length=50)),
+            ],
+            options={
+            },
+            bases=(models.Model,),
+        ),
+        migrations.CreateModel(
+            name='BadgeUser',
+            fields=[
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('attribution_date', models.DateTimeField(default=datetime.datetime(2015, 4, 19, 3, 50, 48, 222563, tzinfo=utc))),
+                ('removal_date', models.DateField(null=True, blank=True)),
+                ('badge', models.ForeignKey(to='Nexquality.Badge')),
+                ('user', models.ForeignKey(to=settings.AUTH_USER_MODEL)),
+            ],
+            options={
+                'ordering': ['-attribution_date'],
+            },
+            bases=(models.Model,),
+        ),
+        migrations.CreateModel(
             name='Commit',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('revision', models.IntegerField()),
                 ('date', models.DateTimeField()),
                 ('comment', models.CharField(max_length=500)),
+                ('code_review_score', models.FloatField(null=True)),
             ],
             options={
+                'ordering': ['-revision'],
             },
             bases=(models.Model,),
         ),
@@ -51,9 +93,11 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('value', models.FloatField()),
+                ('calculated', models.FloatField(null=True)),
                 ('commit', models.ForeignKey(to='Nexquality.Commit')),
             ],
             options={
+                'ordering': ['field'],
             },
             bases=(models.Model,),
         ),
@@ -72,10 +116,17 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('name', models.CharField(max_length=50)),
-                ('unit', models.CharField(max_length=50, null=True)),
+                ('unit', models.CharField(max_length=50, null=True, blank=True)),
+                ('show_color', models.BooleanField(default=False)),
+                ('show_plus_sign', models.BooleanField(default=False)),
+                ('tolerance', models.FloatField(default=0)),
+                ('reverse_tolerance', models.BooleanField(default=False)),
+                ('show_average', models.BooleanField(default=True)),
+                ('show_sum', models.BooleanField(default=True)),
                 ('category', models.ForeignKey(to='Nexquality.MetricCategory')),
             ],
             options={
+                'ordering': ['category', 'name'],
             },
             bases=(models.Model,),
         ),
@@ -104,7 +155,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('name', models.CharField(unique=True, max_length=250)),
-                ('start_date', models.DateField(default=datetime.datetime(2015, 4, 11, 21, 10, 3, 404304, tzinfo=utc))),
+                ('start_date', models.DateField(default=datetime.datetime(2015, 4, 19, 3, 50, 48, 213756, tzinfo=utc))),
                 ('is_done', models.BooleanField(default=False)),
                 ('created_by', models.ForeignKey(related_name='project_starts', to=settings.AUTH_USER_MODEL)),
             ],
@@ -116,7 +167,7 @@ class Migration(migrations.Migration):
             name='ProjectUser',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('in_date', models.DateField(default=datetime.datetime(2015, 4, 11, 21, 10, 3, 405353, tzinfo=utc))),
+                ('in_date', models.DateField(default=datetime.datetime(2015, 4, 19, 3, 50, 48, 224462, tzinfo=utc))),
                 ('out_date', models.DateField(null=True, blank=True)),
                 ('project', models.ForeignKey(to='Nexquality.Project')),
             ],
@@ -209,6 +260,12 @@ class Migration(migrations.Migration):
             model_name='commit',
             name='user',
             field=models.ForeignKey(to=settings.AUTH_USER_MODEL),
+            preserve_default=True,
+        ),
+        migrations.AddField(
+            model_name='badge',
+            name='category',
+            field=models.ForeignKey(default=1, to='Nexquality.BadgeCategory'),
             preserve_default=True,
         ),
     ]
