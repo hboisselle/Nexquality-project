@@ -1,6 +1,6 @@
 {% extends "modules/panel/panel.html" %}
 {% block panel_body %}
-{% for badgeuser in found_user.profile.get_recent_badges %}
+{% for badgeuser in profile.get_recent_badges %}
     {% include "modules/profile/badge_panel.html" with panel_title=badgeuser.badge.name %}
 {% endfor %}
 {% endblock %}

@@ -1,5 +1,4 @@
 from conditions import CompareCondition, Condition
-from Nexquality.models import MetricField
 
 
 class UnconditionalCondition(Condition):
@@ -12,10 +11,9 @@ class UnconditionalCondition(Condition):
 def get_field_calculation_value(user, field_name, calculation_field):
     field_name = field_name.replace('_', ' ').strip()
     calculations = user.profile.get_metrics_calculations()
-    field_id = MetricField.objects.get(name=field_name).id
 
     for calculation in calculations:
-        if calculation['field'] == field_id:
+        if calculation['field'] == field_name:
             return calculation[calculation_field]
 
 
@@ -31,3 +29,21 @@ class SumMetricCondition(CompareCondition):
 
     def eval_operand(self, user, **kwargs):
         return get_field_calculation_value(user, self.key, 'sum')
+
+
+class SumSolvedIssuesCondition(CompareCondition):
+    condstr = 'SUM_SOLVED_ISSUES'
+
+    def eval_operand(self, user, **kwargs):
+        solved_issues_count = 0
+        for commit in user.profile.get_commits():
+            solved_issues_count += commit.get_solved_issues().count()
+
+        return solved_issues_count
+
+
+class SumProjectCondition(CompareCondition):
+    condstr = 'SUM_PROJECT'
+
+    def eval_operand(self, user, **kwargs):
+        return user.projectuser_set.all().count()

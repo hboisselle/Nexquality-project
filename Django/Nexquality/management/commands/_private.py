@@ -17,3 +17,5 @@ def attribute_badge_to_user(user):
                 badge_user = BadgeUser(badge=badge, user=user)
                 badge_user.save()
                 print('Attributed badge {0} to {1}'.format(badge.name, user.get_full_name()))
+            except:
+                print('Error importing badge' + badge.name)

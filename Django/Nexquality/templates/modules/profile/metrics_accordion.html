@@ -6,11 +6,11 @@
 {% block accordion_body %}
 <div role="tabpanel">
     <ul class="nav nav-tabs" role="tablist">
-        <li role="presentation" class="active"><a href="#averages" aria-controls="averages" role="tab" data-toggle="tab">Numbers</a></li>
+        <li role="presentation" class="active"><a href="#calculations" aria-controls="calculations" role="tab" data-toggle="tab">Numbers</a></li>
         <li role="presentation"><a href="#linechart" aria-controls="linechart" role="tab" data-toggle="tab">Line chart</a></li>
     </ul>
     <div class="tab-content">
-        <div role="tabpanel" class="tab-pane active" id="averages">{% include "modules/profile/metrics_table.html" %}</div>
+        <div role="tabpanel" class="tab-pane active" id="calculations">{% include "modules/profile/metrics_table.html" with calculations=profile.get_metrics_calculations %}</div>
         <div role="tabpanel" class="tab-pane" id="linechart">Coming soon...</div>
     </div>
 </div>

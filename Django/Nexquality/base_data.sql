@@ -26,4 +26,5 @@ INSERT INTO `db_nexquality`.`Nexquality_badgecategory` (`name`) VALUES ('Metrics
 INSERT INTO `Nexquality_badge` (`id`,`name`,`description`,`conditions`,`image`,`score`,`category_id`, `given_once`) VALUES (1,'Labatt 50','Over 50% code coverage','{\"all\": [\"AVG_METRIC Code_Coverage > 40\"]}','images/badges/badge3_8JwDknM.png',25,2, 1);
 INSERT INTO `Nexquality_badge` (`id`,`name`,`description`,`conditions`,`image`,`score`,`category_id`, `given_once`) VALUES (2,'Employee of the month','You were elected employee of the month','{\"all\": [\"UNCONDITIONAL\"]}','images/badges/badge3_N0JJEAb.png',50,1);
 INSERT INTO `Nexquality_badge` (`id`,`name`,`description`,`conditions`,`image`,`score`,`category_id`, `given_once`) VALUES (3,'Hard coder','Over 1000 lines of code','{\"all\": [\"SUM_METRIC Line_Of_Code > 1000\"]}','images/badges/badge1_iBLyKNU.png',10,2, 1);
-
+INSERT INTO `db_nexquality`.`Nexquality_badgecategory` (`id`, `name`) VALUES ('3', 'Commits');
+INSERT INTO `db_nexquality`.`Nexquality_badgecategory` (`name`) VALUES ('Issues');

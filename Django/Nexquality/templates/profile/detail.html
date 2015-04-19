@@ -1,11 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
 {% include "modules/datatable.html" with datatable_id="Commits" %}
-	<h3> {{ found_user.get_full_name }}</h3>
-    <h4>{{ found_user.profile.profiletype }} - Rank {{found_user.profile.rank }}</h4>
+	<h3> {{ profile.user.get_full_name }}</h3>
+    <h4>{{ profile.profiletype }} - Rank {{profile.rank }}</h4>
     <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
     {% include "modules/profile/metrics_accordion.html" with accordion_title="Metrics" %}
-    {% include "modules/profile/commits_accordion.html" with accordion_title="Commits" %}
+    {% include "modules/profile/commits_accordion.html" with commits=profile.get_commits accordion_title="Commits" %}
     {% include "modules/profile/badges_accordion.html" with accordion_title="Badges" %}
 </div>
 {% endblock %}

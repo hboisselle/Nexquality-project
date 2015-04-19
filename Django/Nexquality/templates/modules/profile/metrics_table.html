@@ -8,12 +8,12 @@
     </tr>
 {% endblock %}
 {% block table_body %}
-    {% for metric in metrics %}
+    {% for calculation in calculations %}
         <tr>
-            <td>{{ metric.field.category.name}}</td>
-            <td>{{ metric.field.name }}</td>
-            <td>{% if metric.field.show_average %}{{ metric.average|floatformat:-2}} {{metric.field.unit }}{% endif %}</td>
-            <td>{% if metric.field.show_sum %}{{ metric.sum|floatformat:-2}} {{metric.field.unit }}{% endif %}</td>          
+            <td>{{ calculation.field__category__name}}</td>
+            <td>{{ calculation.field__name }}</td>
+            <td>{% if calculation.field__show_average %}{{ calculation.average|floatformat:-2}} {{calculation.field__unit }}{% endif %}</td>
+            <td>{% if calculation.field__show_sum %}{{ calculation.sum|floatformat:-2}} {{calculation.field__unit }}{% endif %}</td>          
         </tr>
     {% endfor %}
 {% endblock %}
