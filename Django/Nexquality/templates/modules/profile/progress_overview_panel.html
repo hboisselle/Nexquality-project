@@ -1,0 +1,11 @@
+{% extends "modules/panel/panel.html" %}
+{% block panel_body %}
+    <h5>Total rewarded</h5>
+    {% include "modules/progress_bar/progress_bar.html" with current_value=profile.get_distinct_badge_count     max_value=badge_count %}
+    {% for badge_count in profile.get_distinct_badge_count_by_category %}
+        <div class="col-md-4">
+        <h5>{{badge_count.category__name}}</h5>
+            {% include "modules/progress_bar/progress_bar.html" with current_value=badge_count.count    max_value=badge_count.total_badge_count %}
+        </div>
+    {% endfor %}
+{% endblock %}

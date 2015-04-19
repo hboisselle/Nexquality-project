@@ -4,6 +4,7 @@
         <th>Name</th>
         <th>Email</th>
         <th>Username</th>   
+        <th>Badge score</th>
     </tr>
 {% endblock %}
 {% block table_body %}
@@ -11,7 +12,8 @@
     <tr>
         <td><a href="{% url 'Nexquality:profile:detail' user.username %}">{{ user.get_full_name }}</a></td>
         <td>{{ user.email }}</td>   
-        <td>{{ user.username }}</td>   
+        <td>{{ user.username }}</td>  
+        <td><i class="fa fa-trophy"></i>{{ user.profile.get_badge_score }}</td> 
     </tr>
     {% endfor %}
 {% endblock %}

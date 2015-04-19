@@ -3,27 +3,20 @@
     {% include "modules/accordion/head/thick_with_logo.html" with logo_class="fa-trophy" %}
 {% endblock %}
 {% block accordion_body %}
+    
     <div role="tabpanel">
         <ul class="nav nav-tabs" role="tablist">
             <li role="presentation" class="active"><a href="#overview" aria-controls="overview" role="tab" data-toggle="tab">Overview</a></li>
-            <li role="presentation"><a href="#solved_issues" aria-controls="solved_issues" role="tab" data-toggle="tab">{{ badge_percentage }}</a></li>
+            <li role="presentation"><a href="#solved_issues" aria-controls="solved_issues" role="tab" data-toggle="tab">All badges</a></li>
         </ul>
         <br />
         <div class="tab-content">
             <div role="tabpanel" class="tab-pane active" id="overview">
-                <h5>Total rewarded</h5>
-                {% include "modules/progress_bar/progress_bar.html" with current_value=profile.get_distinct_badge_count max_value=badge_count %}
-                <table class="table"><tr><td>
-                {% for badge_count in profile.get_distinct_badge_count_by_category %}
-                    <div class="col-md-4">
-                    <h5>{{badge_count.category__name}}</h5>
-                        {% include "modules/progress_bar/progress_bar.html" with current_value=badge_count.count max_value=badge_count.total_badge_count %}
-                    </div>
-                {% endfor %}
-                </td></tr></table>
-                {% include "modules/profile/recent_badges_panel.html" with panel_title="Recent badges" %}
+                {% include "modules/profile/progress_overview_panel.html" with panel_title="Progress overview" %}
+                {% include "modules/profile/recent_badges_panel.html" with panel_title="Recently earned" %}
             </div>
-            <div role="tabpanel" class="tab-pane" id="solved_issues"></div>
+            {% include "modules/datatable.html" with datatable_id="badges" %}
+            <div role="tabpanel" class="tab-pane" id="solved_issues">{% include "modules/profile/badge_table.html" with table_id="badges" %}</div>
         </div>
     </div> 
 {% endblock %}

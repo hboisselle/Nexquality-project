@@ -3,6 +3,7 @@
 {% include "modules/datatable.html" with datatable_id="Commits" %}
 	<h3> {{ profile.user.get_full_name }}</h3>
     <h4>{{ profile.profiletype }} - Rank {{profile.rank }}</h4>
+    <h4><i class="fa fa-trophy"></i>  {{ profile.get_badge_score }}</h4>
     <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
     {% include "modules/profile/metrics_accordion.html" with accordion_title="Metrics" %}
     {% include "modules/profile/commits_accordion.html" with commits=profile.get_commits accordion_title="Commits" %}

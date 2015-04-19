@@ -9221,3 +9221,1051 @@ Traceback (most recent call last):
     solved_issues_count += commit.get_solved_issues().count()
 AttributeError: 'NoneType' object has no attribute 'count'
 Not Found: /favicon.ico
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 24, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 15, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 31, in eval_operand
+    return get_field_calculation_value(user, self.key, 'sum')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 15, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 24, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 15, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 31, in eval_operand
+    return get_field_calculation_value(user, self.key, 'sum')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 15, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 24, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 15, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 31, in eval_operand
+    return get_field_calculation_value(user, self.key, 'sum')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 15, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'field'
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 24, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 16, in get_field_calculation_value
+    if calculation['field'] == field_name:
+KeyError: 'field'
+An exception occurred while processing a condition: 'field'
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 31, in eval_operand
+    return get_field_calculation_value(user, self.key, 'sum')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 16, in get_field_calculation_value
+    if calculation['field'] == field_name:
+KeyError: 'field'
+An exception occurred while processing a condition: 'NoneType' object has no attribute 'count'
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 40, in eval_operand
+    solved_issues_count += commit.get_solved_issues().count()
+AttributeError: 'NoneType' object has no attribute 'count'
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 24, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 15, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 31, in eval_operand
+    return get_field_calculation_value(user, self.key, 'sum')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 15, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'field'
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 24, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 16, in get_field_calculation_value
+    if calculation['field'] == field_name:
+KeyError: 'field'
+An exception occurred while processing a condition: 'field'
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 31, in eval_operand
+    return get_field_calculation_value(user, self.key, 'sum')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 16, in get_field_calculation_value
+    if calculation['field'] == field_name:
+KeyError: 'field'
+An exception occurred while processing a condition: 'NoneType' object has no attribute 'count'
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 40, in eval_operand
+    solved_issues_count += commit.get_solved_issues().count()
+AttributeError: 'NoneType' object has no attribute 'count'
+An exception occurred while processing a condition: 'field'
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 24, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 16, in get_field_calculation_value
+    if calculation['field'] == field_name:
+KeyError: 'field'
+An exception occurred while processing a condition: 'field'
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 31, in eval_operand
+    return get_field_calculation_value(user, self.key, 'sum')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 16, in get_field_calculation_value
+    if calculation['field'] == field_name:
+KeyError: 'field'
+An exception occurred while processing a condition: 'NoneType' object has no attribute 'count'
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 40, in eval_operand
+    solved_issues_count += commit.get_solved_issues().count()
+AttributeError: 'NoneType' object has no attribute 'count'
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 24, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 15, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 31, in eval_operand
+    return get_field_calculation_value(user, self.key, 'sum')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 15, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'field'
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 24, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 16, in get_field_calculation_value
+    if calculation['field'] == field_name:
+KeyError: 'field'
+An exception occurred while processing a condition: 'field'
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 31, in eval_operand
+    return get_field_calculation_value(user, self.key, 'sum')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 16, in get_field_calculation_value
+    if calculation['field'] == field_name:
+KeyError: 'field'
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 24, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 15, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 31, in eval_operand
+    return get_field_calculation_value(user, self.key, 'sum')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 15, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 24, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 15, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 31, in eval_operand
+    return get_field_calculation_value(user, self.key, 'sum')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 15, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'field'
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 24, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 16, in get_field_calculation_value
+    if calculation['field'] == field_name:
+KeyError: 'field'
+An exception occurred while processing a condition: 'field'
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 31, in eval_operand
+    return get_field_calculation_value(user, self.key, 'sum')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 16, in get_field_calculation_value
+    if calculation['field'] == field_name:
+KeyError: 'field'
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 24, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 15, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 31, in eval_operand
+    return get_field_calculation_value(user, self.key, 'sum')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 15, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'field'
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 24, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 16, in get_field_calculation_value
+    if calculation['field'] == field_name:
+KeyError: 'field'
+An exception occurred while processing a condition: 'field'
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 31, in eval_operand
+    return get_field_calculation_value(user, self.key, 'sum')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 16, in get_field_calculation_value
+    if calculation['field'] == field_name:
+KeyError: 'field'
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 24, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 15, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 31, in eval_operand
+    return get_field_calculation_value(user, self.key, 'sum')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 15, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'field'
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 24, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 16, in get_field_calculation_value
+    if calculation['field'] == field_name:
+KeyError: 'field'
+An exception occurred while processing a condition: 'field'
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 31, in eval_operand
+    return get_field_calculation_value(user, self.key, 'sum')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 16, in get_field_calculation_value
+    if calculation['field'] == field_name:
+KeyError: 'field'
+An exception occurred while processing a condition: 'field'
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 24, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 16, in get_field_calculation_value
+    if calculation['field'] == field_name:
+KeyError: 'field'
+An exception occurred while processing a condition: 'field'
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 31, in eval_operand
+    return get_field_calculation_value(user, self.key, 'sum')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 16, in get_field_calculation_value
+    if calculation['field'] == field_name:
+KeyError: 'field'
+An exception occurred while processing a condition: 'field'
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 24, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 16, in get_field_calculation_value
+    if calculation['field'] == field_name:
+KeyError: 'field'
+An exception occurred while processing a condition: 'field'
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 31, in eval_operand
+    return get_field_calculation_value(user, self.key, 'sum')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 16, in get_field_calculation_value
+    if calculation['field'] == field_name:
+KeyError: 'field'
+An exception occurred while processing a condition: 'NoneType' object has no attribute 'count'
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 40, in eval_operand
+    solved_issues_count += commit.get_solved_issues().count()
+AttributeError: 'NoneType' object has no attribute 'count'
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 24, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 15, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 31, in eval_operand
+    return get_field_calculation_value(user, self.key, 'sum')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 15, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 24, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 15, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 31, in eval_operand
+    return get_field_calculation_value(user, self.key, 'sum')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 15, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 24, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 15, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 31, in eval_operand
+    return get_field_calculation_value(user, self.key, 'sum')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 15, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object has no attribute 'count'
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 40, in eval_operand
+    solved_issues_count += commit.get_solved_issues().count()
+AttributeError: 'NoneType' object has no attribute 'count'
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 24, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 15, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 31, in eval_operand
+    return get_field_calculation_value(user, self.key, 'sum')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 15, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object has no attribute 'count'
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 40, in eval_operand
+    solved_issues_count += commit.get_solved_issues().count()
+AttributeError: 'NoneType' object has no attribute 'count'
+An exception occurred while processing a condition: 'NoneType' object has no attribute 'count'
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 40, in eval_operand
+    solved_issues_count += commit.get_solved_issues().count()
+AttributeError: 'NoneType' object has no attribute 'count'
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 24, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 15, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 31, in eval_operand
+    return get_field_calculation_value(user, self.key, 'sum')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 15, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 24, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 15, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 31, in eval_operand
+    return get_field_calculation_value(user, self.key, 'sum')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 15, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 24, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 15, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 31, in eval_operand
+    return get_field_calculation_value(user, self.key, 'sum')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 15, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 24, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 15, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 31, in eval_operand
+    return get_field_calculation_value(user, self.key, 'sum')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 15, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 24, in eval_operand
+    return get_field_calculation_value(user, self.key, 'average')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 15, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 31, in eval_operand
+    return get_field_calculation_value(user, self.key, 'sum')
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 15, in get_field_calculation_value
+    for calculation in calculations:
+TypeError: 'NoneType' object is not iterable
+An exception occurred while processing a condition: 'NoneType' object has no attribute 'count'
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 156, in eval
+    evaluation = self.eval_bool(user, **kwargs)
+  File "/Library/Python/2.7/site-packages/conditions/conditions.py", line 229, in eval_bool
+    return self.operator(self.cast_operand(self.eval_operand(user, **kwargs)), self.operand)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/condition_types/badge_conditions.py", line 40, in eval_operand
+    solved_issues_count += commit.get_solved_issues().count()
+AttributeError: 'NoneType' object has no attribute 'count'
+Internal Server Error: /nexquality/profile/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/views/profile/list.py", line 9, in profile_list
+    return render(request, "profile/list.html", {'users': users})
+  File "/Library/Python/2.7/site-packages/django/shortcuts.py", line 50, in render
+    return HttpResponse(loader.render_to_string(*args, **kwargs),
+  File "/Library/Python/2.7/site-packages/django/template/loader.py", line 178, in render_to_string
+    return t.render(context_instance)
+  File "/Library/Python/2.7/site-packages/django/template/base.py", line 148, in render
+    return self._render(context)
+  File "/Library/Python/2.7/site-packages/django/template/base.py", line 142, in _render
+    return self.nodelist.render(context)
+  File "/Library/Python/2.7/site-packages/django/template/base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "/Library/Python/2.7/site-packages/django/template/debug.py", line 80, in render_node
+    return node.render(context)
+  File "/Library/Python/2.7/site-packages/django/template/loader_tags.py", line 126, in render
+    return compiled_parent._render(context)
+  File "/Library/Python/2.7/site-packages/django/template/base.py", line 142, in _render
+    return self.nodelist.render(context)
+  File "/Library/Python/2.7/site-packages/django/template/base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "/Library/Python/2.7/site-packages/django/template/debug.py", line 80, in render_node
+    return node.render(context)
+  File "/Library/Python/2.7/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/Library/Python/2.7/site-packages/django/template/base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "/Library/Python/2.7/site-packages/django/template/debug.py", line 80, in render_node
+    return node.render(context)
+  File "/Library/Python/2.7/site-packages/django/template/loader_tags.py", line 150, in render
+    return template.render(context)
+  File "/Library/Python/2.7/site-packages/django/template/base.py", line 148, in render
+    return self._render(context)
+  File "/Library/Python/2.7/site-packages/django/template/base.py", line 142, in _render
+    return self.nodelist.render(context)
+  File "/Library/Python/2.7/site-packages/django/template/base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "/Library/Python/2.7/site-packages/django/template/debug.py", line 80, in render_node
+    return node.render(context)
+  File "/Library/Python/2.7/site-packages/django/template/loader_tags.py", line 126, in render
+    return compiled_parent._render(context)
+  File "/Library/Python/2.7/site-packages/django/template/base.py", line 142, in _render
+    return self.nodelist.render(context)
+  File "/Library/Python/2.7/site-packages/django/template/base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "/Library/Python/2.7/site-packages/django/template/debug.py", line 80, in render_node
+    return node.render(context)
+  File "/Library/Python/2.7/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/Library/Python/2.7/site-packages/django/template/base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "/Library/Python/2.7/site-packages/django/template/debug.py", line 80, in render_node
+    return node.render(context)
+  File "/Library/Python/2.7/site-packages/django/template/defaulttags.py", line 201, in render
+    nodelist.append(node.render(context))
+  File "/Library/Python/2.7/site-packages/django/template/debug.py", line 90, in render
+    output = self.filter_expression.resolve(context)
+  File "/Library/Python/2.7/site-packages/django/template/base.py", line 596, in resolve
+    obj = self.var.resolve(context)
+  File "/Library/Python/2.7/site-packages/django/template/base.py", line 734, in resolve
+    value = self._resolve_lookup(context)
+  File "/Library/Python/2.7/site-packages/django/template/base.py", line 788, in _resolve_lookup
+    current = current()
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/profile.py", line 56, in get_badge_score
+    return self.user.badgeuser_set.all().aggregate(sum=Sum('badge__score')).sum or 0
+AttributeError: 'dict' object has no attribute 'sum'
+Internal Server Error: /nexquality/profile/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/views/profile/list.py", line 9, in profile_list
+    return render(request, "profile/list.html", {'users': users})
+  File "/Library/Python/2.7/site-packages/django/shortcuts.py", line 50, in render
+    return HttpResponse(loader.render_to_string(*args, **kwargs),
+  File "/Library/Python/2.7/site-packages/django/template/loader.py", line 178, in render_to_string
+    return t.render(context_instance)
+  File "/Library/Python/2.7/site-packages/django/template/base.py", line 148, in render
+    return self._render(context)
+  File "/Library/Python/2.7/site-packages/django/template/base.py", line 142, in _render
+    return self.nodelist.render(context)
+  File "/Library/Python/2.7/site-packages/django/template/base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "/Library/Python/2.7/site-packages/django/template/debug.py", line 80, in render_node
+    return node.render(context)
+  File "/Library/Python/2.7/site-packages/django/template/loader_tags.py", line 126, in render
+    return compiled_parent._render(context)
+  File "/Library/Python/2.7/site-packages/django/template/base.py", line 142, in _render
+    return self.nodelist.render(context)
+  File "/Library/Python/2.7/site-packages/django/template/base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "/Library/Python/2.7/site-packages/django/template/debug.py", line 80, in render_node
+    return node.render(context)
+  File "/Library/Python/2.7/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/Library/Python/2.7/site-packages/django/template/base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "/Library/Python/2.7/site-packages/django/template/debug.py", line 80, in render_node
+    return node.render(context)
+  File "/Library/Python/2.7/site-packages/django/template/loader_tags.py", line 150, in render
+    return template.render(context)
+  File "/Library/Python/2.7/site-packages/django/template/base.py", line 148, in render
+    return self._render(context)
+  File "/Library/Python/2.7/site-packages/django/template/base.py", line 142, in _render
+    return self.nodelist.render(context)
+  File "/Library/Python/2.7/site-packages/django/template/base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "/Library/Python/2.7/site-packages/django/template/debug.py", line 80, in render_node
+    return node.render(context)
+  File "/Library/Python/2.7/site-packages/django/template/loader_tags.py", line 126, in render
+    return compiled_parent._render(context)
+  File "/Library/Python/2.7/site-packages/django/template/base.py", line 142, in _render
+    return self.nodelist.render(context)
+  File "/Library/Python/2.7/site-packages/django/template/base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "/Library/Python/2.7/site-packages/django/template/debug.py", line 80, in render_node
+    return node.render(context)
+  File "/Library/Python/2.7/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/Library/Python/2.7/site-packages/django/template/base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "/Library/Python/2.7/site-packages/django/template/debug.py", line 80, in render_node
+    return node.render(context)
+  File "/Library/Python/2.7/site-packages/django/template/defaulttags.py", line 201, in render
+    nodelist.append(node.render(context))
+  File "/Library/Python/2.7/site-packages/django/template/debug.py", line 90, in render
+    output = self.filter_expression.resolve(context)
+  File "/Library/Python/2.7/site-packages/django/template/base.py", line 596, in resolve
+    obj = self.var.resolve(context)
+  File "/Library/Python/2.7/site-packages/django/template/base.py", line 734, in resolve
+    value = self._resolve_lookup(context)
+  File "/Library/Python/2.7/site-packages/django/template/base.py", line 788, in _resolve_lookup
+    current = current()
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/profile.py", line 56, in get_badge_score
+    return self.user.badgeuser_set.all().aggregate(sum=Sum('badge__score')).sum or 0
+AttributeError: 'dict' object has no attribute 'sum'
+Internal Server Error: /nexquality/profile/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/views/profile/list.py", line 9, in profile_list
+    return render(request, "profile/list.html", {'users': users})
+  File "/Library/Python/2.7/site-packages/django/shortcuts.py", line 50, in render
+    return HttpResponse(loader.render_to_string(*args, **kwargs),
+  File "/Library/Python/2.7/site-packages/django/template/loader.py", line 178, in render_to_string
+    return t.render(context_instance)
+  File "/Library/Python/2.7/site-packages/django/template/base.py", line 148, in render
+    return self._render(context)
+  File "/Library/Python/2.7/site-packages/django/template/base.py", line 142, in _render
+    return self.nodelist.render(context)
+  File "/Library/Python/2.7/site-packages/django/template/base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "/Library/Python/2.7/site-packages/django/template/debug.py", line 80, in render_node
+    return node.render(context)
+  File "/Library/Python/2.7/site-packages/django/template/loader_tags.py", line 126, in render
+    return compiled_parent._render(context)
+  File "/Library/Python/2.7/site-packages/django/template/base.py", line 142, in _render
+    return self.nodelist.render(context)
+  File "/Library/Python/2.7/site-packages/django/template/base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "/Library/Python/2.7/site-packages/django/template/debug.py", line 80, in render_node
+    return node.render(context)
+  File "/Library/Python/2.7/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/Library/Python/2.7/site-packages/django/template/base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "/Library/Python/2.7/site-packages/django/template/debug.py", line 80, in render_node
+    return node.render(context)
+  File "/Library/Python/2.7/site-packages/django/template/loader_tags.py", line 150, in render
+    return template.render(context)
+  File "/Library/Python/2.7/site-packages/django/template/base.py", line 148, in render
+    return self._render(context)
+  File "/Library/Python/2.7/site-packages/django/template/base.py", line 142, in _render
+    return self.nodelist.render(context)
+  File "/Library/Python/2.7/site-packages/django/template/base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "/Library/Python/2.7/site-packages/django/template/debug.py", line 80, in render_node
+    return node.render(context)
+  File "/Library/Python/2.7/site-packages/django/template/loader_tags.py", line 126, in render
+    return compiled_parent._render(context)
+  File "/Library/Python/2.7/site-packages/django/template/base.py", line 142, in _render
+    return self.nodelist.render(context)
+  File "/Library/Python/2.7/site-packages/django/template/base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "/Library/Python/2.7/site-packages/django/template/debug.py", line 80, in render_node
+    return node.render(context)
+  File "/Library/Python/2.7/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/Library/Python/2.7/site-packages/django/template/base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "/Library/Python/2.7/site-packages/django/template/debug.py", line 80, in render_node
+    return node.render(context)
+  File "/Library/Python/2.7/site-packages/django/template/defaulttags.py", line 201, in render
+    nodelist.append(node.render(context))
+  File "/Library/Python/2.7/site-packages/django/template/debug.py", line 90, in render
+    output = self.filter_expression.resolve(context)
+  File "/Library/Python/2.7/site-packages/django/template/base.py", line 596, in resolve
+    obj = self.var.resolve(context)
+  File "/Library/Python/2.7/site-packages/django/template/base.py", line 734, in resolve
+    value = self._resolve_lookup(context)
+  File "/Library/Python/2.7/site-packages/django/template/base.py", line 788, in _resolve_lookup
+    current = current()
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/profile.py", line 56, in get_badge_score
+    return self.user.badgeuser_set.all().aggregate(sum=Sum('badge__score')).sum or 0
+AttributeError: 'dict' object has no attribute 'sum'
+Not Found: /nexquality/profile/igor/
+Internal Server Error: /nexquality/profile/alexwals/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/views/profile/detail.py", line 14, in profile_detail
+    return render(request, "profile/detail.html", context)
+  File "/Library/Python/2.7/site-packages/django/shortcuts.py", line 50, in render
+    return HttpResponse(loader.render_to_string(*args, **kwargs),
+  File "/Library/Python/2.7/site-packages/django/template/loader.py", line 178, in render_to_string
+    return t.render(context_instance)
+  File "/Library/Python/2.7/site-packages/django/template/base.py", line 148, in render
+    return self._render(context)
+  File "/Library/Python/2.7/site-packages/django/template/base.py", line 142, in _render
+    return self.nodelist.render(context)
+  File "/Library/Python/2.7/site-packages/django/template/base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "/Library/Python/2.7/site-packages/django/template/debug.py", line 80, in render_node
+    return node.render(context)
+  File "/Library/Python/2.7/site-packages/django/template/loader_tags.py", line 126, in render
+    return compiled_parent._render(context)
+  File "/Library/Python/2.7/site-packages/django/template/base.py", line 142, in _render
+    return self.nodelist.render(context)
+  File "/Library/Python/2.7/site-packages/django/template/base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "/Library/Python/2.7/site-packages/django/template/debug.py", line 80, in render_node
+    return node.render(context)
+  File "/Library/Python/2.7/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/Library/Python/2.7/site-packages/django/template/base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "/Library/Python/2.7/site-packages/django/template/debug.py", line 80, in render_node
+    return node.render(context)
+  File "/Library/Python/2.7/site-packages/django/template/loader_tags.py", line 150, in render
+    return template.render(context)
+  File "/Library/Python/2.7/site-packages/django/template/base.py", line 148, in render
+    return self._render(context)
+  File "/Library/Python/2.7/site-packages/django/template/base.py", line 142, in _render
+    return self.nodelist.render(context)
+  File "/Library/Python/2.7/site-packages/django/template/base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "/Library/Python/2.7/site-packages/django/template/debug.py", line 80, in render_node
+    return node.render(context)
+  File "/Library/Python/2.7/site-packages/django/template/loader_tags.py", line 126, in render
+    return compiled_parent._render(context)
+  File "/Library/Python/2.7/site-packages/django/template/base.py", line 142, in _render
+    return self.nodelist.render(context)
+  File "/Library/Python/2.7/site-packages/django/template/base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "/Library/Python/2.7/site-packages/django/template/debug.py", line 80, in render_node
+    return node.render(context)
+  File "/Library/Python/2.7/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/Library/Python/2.7/site-packages/django/template/base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "/Library/Python/2.7/site-packages/django/template/debug.py", line 80, in render_node
+    return node.render(context)
+  File "/Library/Python/2.7/site-packages/django/template/loader_tags.py", line 142, in render
+    template = get_template(template)
+  File "/Library/Python/2.7/site-packages/django/template/loader.py", line 144, in get_template
+    template, origin = find_template(template_name, dirs)
+  File "/Library/Python/2.7/site-packages/django/template/loader.py", line 132, in find_template
+    source, display_name = loader(name, dirs)
+  File "/Library/Python/2.7/site-packages/django/template/loader.py", line 44, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/Library/Python/2.7/site-packages/django/template/loader.py", line 50, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "/Library/Python/2.7/site-packages/django/template/loader.py", line 156, in get_template_from_string
+    return Template(source, origin, name)
+  File "/Library/Python/2.7/site-packages/django/template/base.py", line 132, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/Library/Python/2.7/site-packages/django/template/base.py", line 162, in compile_string
+    return parser.parse()
+  File "/Library/Python/2.7/site-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/Library/Python/2.7/site-packages/django/template/loader_tags.py", line 201, in do_extends
+    nodelist = parser.parse()
+  File "/Library/Python/2.7/site-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/Library/Python/2.7/site-packages/django/template/loader_tags.py", line 175, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "/Library/Python/2.7/site-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/Library/Python/2.7/site-packages/django/template/defaulttags.py", line 833, in do_for
+    nodelist_loop = parser.parse(('empty', 'endfor',))
+  File "/Library/Python/2.7/site-packages/django/template/base.py", line 288, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/Library/Python/2.7/site-packages/django/template/base.py", line 343, in invalid_block_tag
+    (command, get_text_list(["'%s'" % p for p in parse_until])))
+TemplateSyntaxError: Invalid block tag: 'endblock', expected 'empty' or 'endfor'
+Internal Server Error: /nexquality/profile/alexwals/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Python/2.7/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/views/profile/detail.py", line 14, in profile_detail
+    return render(request, "profile/detail.html", context)
+  File "/Library/Python/2.7/site-packages/django/shortcuts.py", line 50, in render
+    return HttpResponse(loader.render_to_string(*args, **kwargs),
+  File "/Library/Python/2.7/site-packages/django/template/loader.py", line 178, in render_to_string
+    return t.render(context_instance)
+  File "/Library/Python/2.7/site-packages/django/template/base.py", line 148, in render
+    return self._render(context)
+  File "/Library/Python/2.7/site-packages/django/template/base.py", line 142, in _render
+    return self.nodelist.render(context)
+  File "/Library/Python/2.7/site-packages/django/template/base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "/Library/Python/2.7/site-packages/django/template/debug.py", line 80, in render_node
+    return node.render(context)
+  File "/Library/Python/2.7/site-packages/django/template/loader_tags.py", line 126, in render
+    return compiled_parent._render(context)
+  File "/Library/Python/2.7/site-packages/django/template/base.py", line 142, in _render
+    return self.nodelist.render(context)
+  File "/Library/Python/2.7/site-packages/django/template/base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "/Library/Python/2.7/site-packages/django/template/debug.py", line 80, in render_node
+    return node.render(context)
+  File "/Library/Python/2.7/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/Library/Python/2.7/site-packages/django/template/base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "/Library/Python/2.7/site-packages/django/template/debug.py", line 80, in render_node
+    return node.render(context)
+  File "/Library/Python/2.7/site-packages/django/template/loader_tags.py", line 150, in render
+    return template.render(context)
+  File "/Library/Python/2.7/site-packages/django/template/base.py", line 148, in render
+    return self._render(context)
+  File "/Library/Python/2.7/site-packages/django/template/base.py", line 142, in _render
+    return self.nodelist.render(context)
+  File "/Library/Python/2.7/site-packages/django/template/base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "/Library/Python/2.7/site-packages/django/template/debug.py", line 80, in render_node
+    return node.render(context)
+  File "/Library/Python/2.7/site-packages/django/template/loader_tags.py", line 126, in render
+    return compiled_parent._render(context)
+  File "/Library/Python/2.7/site-packages/django/template/base.py", line 142, in _render
+    return self.nodelist.render(context)
+  File "/Library/Python/2.7/site-packages/django/template/base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "/Library/Python/2.7/site-packages/django/template/debug.py", line 80, in render_node
+    return node.render(context)
+  File "/Library/Python/2.7/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/Library/Python/2.7/site-packages/django/template/base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "/Library/Python/2.7/site-packages/django/template/debug.py", line 80, in render_node
+    return node.render(context)
+  File "/Library/Python/2.7/site-packages/django/template/loader_tags.py", line 150, in render
+    return template.render(context)
+  File "/Library/Python/2.7/site-packages/django/template/base.py", line 148, in render
+    return self._render(context)
+  File "/Library/Python/2.7/site-packages/django/template/base.py", line 142, in _render
+    return self.nodelist.render(context)
+  File "/Library/Python/2.7/site-packages/django/template/base.py", line 844, in render
+    bit = self.render_node(node, context)
+  File "/Library/Python/2.7/site-packages/django/template/debug.py", line 80, in render_node
+    return node.render(context)
+  File "/Library/Python/2.7/site-packages/django/template/loader_tags.py", line 104, in render
+    compiled_parent = self.get_parent(context)
+  File "/Library/Python/2.7/site-packages/django/template/loader_tags.py", line 101, in get_parent
+    return get_template(parent)
+  File "/Library/Python/2.7/site-packages/django/template/loader.py", line 144, in get_template
+    template, origin = find_template(template_name, dirs)
+  File "/Library/Python/2.7/site-packages/django/template/loader.py", line 136, in find_template
+    raise TemplateDoesNotExist(name)
+TemplateDoesNotExist: modules/table.html

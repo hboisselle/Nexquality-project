@@ -13,7 +13,7 @@ def get_field_calculation_value(user, field_name, calculation_field):
     calculations = user.profile.get_metrics_calculations()
 
     for calculation in calculations:
-        if calculation['field'] == field_name:
+        if calculation['field__name'] == field_name:
             return calculation[calculation_field]
 
 

@@ -7,7 +7,6 @@ from Nexquality.models.profile_type import ProfileType
 from Nexquality.models.project import Project
 from Nexquality.models.metric import Metric
 from Nexquality.models.badge import Badge
-from Nexquality.models.badge_category import BadgeCategory
 
 
 @python_2_unicode_compatible
@@ -30,7 +29,8 @@ class Profile(models.Model):
     def get_metrics_calculations(self):
         if Metric.objects.filter(commit__user=self.user).count() > 0:
             return Metric.objects.filter(commit__user=self.user).values(
-                'field__name', 'field__category__name', 'field__unit', 'field__unit', 'field__show_average', 'field__show_sum'
+                'field__name', 'field__category__name', 'field__unit',
+                'field__unit', 'field__show_average', 'field__show_sum'
             ).annotate(
                 sum=Sum("calculated"),
                 average=Avg("calculated")
@@ -52,5 +52,5 @@ class Profile(models.Model):
     def get_commits(self):
         return self.user.commit_set.all()
 
-    def get_total_badge_score(self):
-        return self.user.badgeuser_set.all().aggregate(sum=Sum('badge__score'))
+    def get_badge_score(self):
+        return self.user.badgeuser_set.all().aggregate(sum=Sum('badge__score'))['sum'] or 0

@@ -1,5 +1,5 @@
 <div class="progress" style="height: 25px">
      <div class="progress-bar  progress-bar-striped" role="progressbar" aria-valuenow="{{ current_value }}" aria-valuemin="0" aria-valuemax="{{ max_value }}" style="width: {% widthratio current_value max_value 100 %}%; min-width: 4em;">
-        <b>{{ current_value }}/{{ max_value }} ({% widthratio current_value max_value 100 %}%)</b>
+        <b>{{ current_value }} of {{ max_value }} ({% widthratio current_value max_value 100 %}%)</b>
     </div>
 </div>

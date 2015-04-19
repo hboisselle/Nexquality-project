@@ -9,7 +9,6 @@ from Nexquality.models import Badge
 def profile_detail(request, username):
     context = {}
     found_user = get_object_or_404(User, username=username)
-    if found_user:
-        context['badge_count'] = Badge.objects.all().count()
-        context['profile'] = found_user.profile
-        return render(request, "profile/detail.html", context)
+    context['badge_count'] = Badge.objects.all().count()
+    context['profile'] = found_user.profile
+    return render(request, "profile/detail.html", context)

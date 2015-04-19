@@ -1,0 +1,20 @@
+{% extends "modules/table/table.html" %}
+{% block table_head %}
+    <tr>
+        <th>Score</th>
+        <th>Name</th>
+        <th>Category</th>
+        <th>Description</th>
+        <th>Date</th>
+    </tr>
+{% endblock %}
+{% block table_body %}
+    {% for badgeuser in profile.user.badgeuser_set.all %}
+        <tr>
+            <td><i class="fa fa-trophy"></i>{{ badgeuser.badge.score }}</td>
+            <td>{{ badgeuser.badge.name }}</td>
+            <td>{{ badgeuser.badge.category.name }}</td>
+            <td>{{ badgeuser.badge.description }}</td>
+            <td>{{ badgeuser.attribution_date }}</td>
+    {% endfor %}
+{% endblock %}
