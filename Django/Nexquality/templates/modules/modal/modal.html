@@ -1,0 +1,21 @@
+<button class="btn btn-primary" data-toggle="modal" data-target="#{{ modal_title|slugify }}">{{ button_text }}</button>
+<div class="modal fade" id="{{ modal_title|slugify }}" tabindex="-1" role="dialog" aria-labelledby="{{ modal_title|slugify }}_label" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="{{ modal_title|slugify }}_label">{{ modal_title }}</h4>
+      </div>
+      <form id="modal_form" method="post" action="{% block form_action_url %}{% endblock %}">
+      <div class="modal-body">
+       {% block modal_body %}
+       {% endblock %}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <input type="submit" class="btn btn-primary" value="Save changes">
+      </div>
+      </form>
+    </div>
+  </div>
+</div>

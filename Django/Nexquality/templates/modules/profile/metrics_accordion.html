@@ -1,4 +1,5 @@
 {% extends "modules/accordion/accordion.html" %}
+{% load chartit %}
 {% block panel_attributes %} class="panel panel-primary" {% endblock %}
 {% block accordion_head %}
     {% include "modules/accordion/head/thick_with_logo.html" with logo_class="fa-bar-chart-o" %}
@@ -7,11 +8,84 @@
 <div role="tabpanel">
     <ul class="nav nav-tabs" role="tablist">
         <li role="presentation" class="active"><a href="#calculations" aria-controls="calculations" role="tab" data-toggle="tab">Numbers</a></li>
-        <li role="presentation"><a href="#linechart" aria-controls="linechart" role="tab" data-toggle="tab">Line chart</a></li>
+        <li id="linechart-tab"role="presentation"><a href="#linechart" aria-controls="linechart" role="tab" data-toggle="tab">Compare</a></li>
     </ul>
     <div class="tab-content">
-        <div role="tabpanel" class="tab-pane active" id="calculations">{% include "modules/profile/metrics_table.html" with calculations=profile.get_metrics_calculations %}</div>
-        <div role="tabpanel" class="tab-pane" id="linechart">Coming soon...</div>
+        <div role="tabpanel" class="tab-pane active" id="calculations">{% include "modules/profile/metrics_table.html" %}</div>
+        <div role="tabpanel" class="tab-pane" id="linechart">
+            <script>
+                function loadChart() { 
+                    metricChartOptions = {
+                        chart: {
+                            renderTo: 'chart_container',
+                            type: 'bar',
+                        },
+                        title: {
+                            text: 'Metrics comparison'
+                        },
+                        xAxis: {title: {text: null}},        
+                        yAxis: {title: {text: null}},
+                        series: [{}]
+                    };
+                    
+                    var calculation = $("#calculation_select").val();
+                    var field = $("#field_select").val();
+                    var comparedProfile = $("#comparedProfile").val()
+                    var showAverage = '';
+                    var showTolerance = '';
+                    if($("#showAverage").is(':checked')){
+                        showAverage = 'true';
+                    }
+                    if($("#showTolerance").is(':checked')){
+                        showTolerance = 'true';
+                    }
+                    
+                    var chartDataUrl = "{% url 'Nexquality:profile:chart_json_data' %}"
+                    +"?name=metrics&username={{profile.user.username}}&calculation="+calculation+"&field="+field+"&compared_profile="+comparedProfile+"&show_average="+showAverage+"&show_tolerance="+showTolerance;
+
+                    $.getJSON(chartDataUrl, 
+                        function(data){
+                            metricChartOptions.xAxis.categories = data['chart_data']['fields'];
+                            metricChartOptions.series = data['chart_data']['series'];
+                            var chart = new Highcharts.Chart(metricChartOptions)
+                        });
+                    $('#chart_container').highcharts();
+                };
+                $("#linechart-tab").click(loadChart);
+                
+            </script>
+            <br>
+            <select id="field_select" onchange="loadChart()" class="btn btn-default">
+                {% for calculation in calculations %}
+                    <option value="{{ calculation.field__name }}">{{ calculation.field__name }}</option>
+                {% endfor %}
+                </select>
+                <select id="calculation_select" onchange="loadChart()" class="btn btn-default">
+                    <option value="average">Average</option>
+                    <option value="sum">Sum</option>
+                    <option value="max">Maximum</option>
+                    <option value="min">Minimum</option>
+                </select>
+            <div id="chart_container" style="height:400px;">  
+            </div>
+            <form class="form-inline" onsubmit="loadChart(); return false;">
+            <div class="form-group">              
+                </div>
+                <div class="form-group">
+                <label for="comparedProfile">Compare to:</label>
+                <input class="form-control" name="comparedProfile" id="comparedProfile" type="text">
+                </div>
+                <div class="form-group">
+                <label for="showAverage">Show average of all users</label>
+                <input class="form-control" onchange="loadChart()" id="showAverage" type="checkbox">
+                </div>
+                <div class="form-group">
+                <label for="showTolerance">Show tolerance</label>
+                <input class="form-control" onchange="loadChart()" id="showTolerance" type="checkbox">
+                </div>
+            </form>
+            
+        </div>
     </div>
 </div>
 {% endblock %}

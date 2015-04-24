@@ -1,0 +1,18 @@
+{% extends "modules/modal/modal.html" %}
+{% block form_action_url %}
+    {% url "Nexquality:project:add_user" form.instance.id %}
+{% endblock %}
+{% block modal_body %}
+      <h5><b>Select users to add </b>(<em>Users who are already active will not be added</em>)</h5>
+      {% include "modules/datatable.html" with datatable_id="users" %}
+      {% include "modules/general/single_user_selection.html" with table_id="users"%}
+      <hr>
+      <h5><b>Choose their role</b></h5>
+      <center>
+      <select name="project_user_role" id="project_user_role" class="btn btn-default" form="modal_form">
+        {% for project_user_role in project_user_roles %}
+        <option value="{{ project_user_role.id }}">{{ project_user_role.name }}</option>
+        {% endfor %}
+      </select>
+      </center>
+{% endblock %}

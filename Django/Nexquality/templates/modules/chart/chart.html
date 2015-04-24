@@ -1,0 +1,17 @@
+<script>
+$(function () { 
+    metric_chart_options = {
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Gone bananas'
+        },
+        xAxis: {title: {text: null}},        
+        yAxis: {title: {text: null}},
+        series: [{}]
+    };
+    $('#chart_container').highcharts();
+});
+</script>
+<div id="chart_container" style="height:400px;"></div>

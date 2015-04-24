@@ -15,7 +15,7 @@
             <td>{{ project_user.in_date }}</td>
             <td>{{ project_user.out_date }}</td>
             <td>{{ project_user.role.name }}</td>
-            <td><a class="btn btn-default" href="{% url 'Nexquality:project:inactivate_user' project_user.project.id project_user.id %}">Inactivate</a></td>
+            <td><a class="btn btn-default btn-xs" href="{% url 'Nexquality:project:inactivate_user' project_user.project.id project_user.id %}">Inactivate</a></td>
         </tr>
     {% endfor %}
 {% endblock %}

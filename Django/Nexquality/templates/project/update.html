@@ -8,10 +8,11 @@
 </form>
 <br />
 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-    {% include "modules/project/projectuser_update_accordion.html" with accordion_title="Users" project=form.instance %}
+    {% include "modules/project/projectuser_update_accordion.html" with is_in=True accordion_title="Users" project=form.instance %}
 </div>
+
 <a class="btn btn-default" href="{% url 'Nexquality:project:detail' form.instance.id%}">Go back</a>
 {% if not form.instance.is_done %}
-	<a class="btn btn-primary" href="{% url 'Nexquality:project:add_user' form.instance.id %}">Add user</a>
+	{% include "modules/project/projectuser_modal.html" with modal_title="Add users" button_text="Add users" %}
 {% endif %}
 {% endblock %}

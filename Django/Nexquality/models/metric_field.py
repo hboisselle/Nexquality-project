@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from django.db import models
 from Nexquality.models.metric_category import MetricCategory
 

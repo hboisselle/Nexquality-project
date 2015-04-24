@@ -12,7 +12,7 @@
         <br />
         <div class="tab-content">
             <div role="tabpanel" class="tab-pane active" id="overview">
-                {% include "modules/profile/progress_overview_panel.html" with panel_title="Progress overview" %}
+                {% include "modules/profile/progress_overview_panel.html" with panel_title="Progress overview" id_on_click="badges"%}
                 {% include "modules/profile/recent_badges_panel.html" with panel_title="Recently earned" %}
             </div>
             {% include "modules/datatable.html" with datatable_id="badges" %}

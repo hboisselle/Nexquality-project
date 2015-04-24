@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from django.db import models
 from Nexquality.models.commit import Commit
 from Nexquality.models.metric_field import MetricField

@@ -1,4 +1,4 @@
-<table class="table table-hover" id="table{{ table_id|slugify }}">
+<table class="table table-responsive table-hover {% block table_class %}{% endblock %}" id="table{{ table_id|slugify }}" {% block table_attributes %}{% endblock %}>
     <thead>{% block table_head %}{% endblock %}</thead>
     <tbody>{% block table_body %}{% endblock %}</tbody>
 </table>

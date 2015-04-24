@@ -2,6 +2,6 @@
 {% block content %}
 <h2>{{ user.get_full_name }}'s projects</h2>
 <br/>
-{% include "modules/project/list.html" %}
+{% include "modules/project/project_list_panel_table.html" with panel_title="Projects"%}
 <a class="btn btn-primary" href="{% url 'Nexquality:project:create' %}">Create project</a>
 {% endblock %}

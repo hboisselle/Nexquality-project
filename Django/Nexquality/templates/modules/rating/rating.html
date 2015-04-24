@@ -5,10 +5,14 @@
     $(document).ready(function(){
         $('#score_div').raty({
             {% if score %}score: {{ score }},{% endif %}
-            starOff: '{% static "Nexquality/star-off.jpg" %}',
-            starOn: '{% static "Nexquality/star-on.jpg" %}',
+            size: 12,
+            starOff: '{% static "Nexquality/star-off.png" %}',
+            starOn: '{% static "Nexquality/star-on.png" %}',
+            starHalf: '{% static "Nexquality/star-half.png" %}',
             targetScore: '{{ form_input_accessor }}',
-            hints: '#hints'
+            hints: '#hints',
+            half: true,
+            size: 275
         });
     });
 </script>

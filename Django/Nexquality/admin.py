@@ -22,7 +22,7 @@ class ProfileModelAdmin(admin.ModelAdmin):
 
 
 class BadgeModelAdmin(admin.ModelAdmin):
-    fields = ('name', 'description', 'category', 'score', 'image', 'conditions', 'given_once')
+    fields = ('name', 'description', 'category', 'score', 'image', 'given_once', 'conditions')
 
 
 admin.site.register(models.Project, ProjectModelAdmin)

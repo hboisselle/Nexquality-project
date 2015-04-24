@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils import timezone
@@ -23,6 +24,9 @@ class Project(models.Model):
 
     def get_inactive_users(self):
         return self.projectuser_set.exclude(out_date=None)
+
+    def get_available_users(self):
+        return User.objects.filter
 
     def calculate_metrics(self):
         for commit in self.commit_set.all():

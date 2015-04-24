@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-{% include "modules/datatable.html" with datatable_id="Commits" %}
 <h2>{{ project }} commits</h2>
-{% include "modules/project/commit/list_table.html" with table_id="Commits" %}
+{% include "modules/project/commit/commit_list_panel_table.html" with panel_title="Commits" %}
 <a class="btn btn-default" href="{% url 'Nexquality:project:detail' project.id %}"><i class="fa fa-angle-double-left"></i> Go back</a>
 {% endblock %}

@@ -1,0 +1,20 @@
+{% extends "modules/table/table.html" %}
+{% block table_attributes %}
+    data-page-length="5"
+{% endblock %}
+{% block table_head %}
+<tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Select</th>
+</tr>
+{% endblock %}
+{% block table_body %}
+    {% for user in users %}
+    <tr>
+        <td>{{ user.get_full_name }}</td>
+        <td>{{ user.email }}</td>
+        <td><input name="user_id_{{user.id}}" type="checkbox"></td>
+    </tr>
+    {% endfor %}
+{% endblock %} 

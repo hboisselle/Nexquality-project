@@ -1,0 +1,5 @@
+{% extends "modules/panel/panel.html" %}
+{% block panel_body %}
+    {% include "modules/datatable.html" with datatable_id="commits"%}
+    {% include "modules/project/commit/commit_list_table.html" with table_id="commits"%}
+{% endblock %}

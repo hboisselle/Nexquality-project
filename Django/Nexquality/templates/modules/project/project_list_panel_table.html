@@ -1,0 +1,5 @@
+{% extends "modules/panel/panel.html" %}
+{% block panel_body %}
+    {% include "modules/datatable.html" with datatable_id="projects" %}
+    {% include "modules/project/project_list_table.html" with table_id="projects" %}
+{% endblock %}

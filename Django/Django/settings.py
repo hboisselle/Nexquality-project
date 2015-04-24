@@ -33,6 +33,7 @@ INSTALLED_APPS = (
     'Nexquality',
     'bootstrapform',
     'conditions',
+    'chartit',
     'data_importer.models',
     'django.contrib.admin',
     'django.contrib.auth',
