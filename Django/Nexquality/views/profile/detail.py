@@ -29,19 +29,22 @@ def chart_json_data(request):
     field_name = field_name.replace("_", " ")
     calculation = params.get('calculation', 'average')
     username = params.get('username', '')
-    compared_profile_username = params.get('compared_profile', '')
+    compared_profiles_usernames = params.get('compared_profiles', '')
     show_tolerance = bool(params.get('show_tolerance', False))
     show_average = bool(params.get('show_average', False))
 
     profile = Profile.objects.get(user__username=username)
-    compared_profile = None
-    if not compared_profile_username == '':
-        compared_profile = Profile.objects.get(
-            user__username=compared_profile_username)
+    compared_profiles = []
+    if not compared_profiles_usernames == '':
+        for compared_profile_username in compared_profiles_usernames.split("|"):
+            compared_profiles.append(Profile.objects.get(
+                user__username=compared_profile_username))
+
+    print(compared_profiles)
     field = MetricField.objects.get(name=field_name)
     if name == 'metrics':
         data['chart_data'] = ProfileChartData.get_field_metrics(
             profile=profile, field=field, calculation=calculation,
-            compared_profile=compared_profile, show_average=show_average,
+            compared_profiles=compared_profiles, show_average=show_average,
             show_tolerance=show_tolerance)
     return HttpResponse(json.dumps(data), content_type='application/json')

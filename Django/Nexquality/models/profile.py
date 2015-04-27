@@ -36,10 +36,10 @@ class Profile(models.Model):
             return filtered_metrics.values(
                 'field',
             ).annotate(
-                sum=Sum("calculated"),
-                average=Avg("calculated"),
-                max=Max("calculated"),
-                min=Min("calculated")
+                sum=Sum("calculated") or 0,
+                average=Avg("calculated") or 0,
+                max=Max("calculated") or 0,
+                min=Min("calculated") or 0
             ).values(
                 'field__name', 'field__category__name', 'field__tolerance',
                 'field__unit', 'field__show_average', 'field__show_sum',

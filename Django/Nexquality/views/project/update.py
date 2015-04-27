@@ -29,9 +29,10 @@ def add_user(request, project_id):
         role_id = request.POST.get('project_user_role', False)
         role = ProjectUserRole.objects.get(id=role_id)
         for key, value in request.POST.iteritems():
-            if 'user_id_' in key:
-                user_id = key[8:]
-                user = User.objects.get(id=user_id)
+            string_lookup = 'user_username_'
+            if string_lookup in key:
+                username = key[len(string_lookup):]
+                user = User.objects.get(username=username)
                 project_user, created = ProjectUser.objects.get_or_create(
                         user=user, project=project, role=role, out_date=None)
                 if created:

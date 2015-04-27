@@ -1,0 +1,9 @@
+{% extends "modules/modal/modal.html" %}
+{% block modal_body %}
+    {% include "modules/datatable.html" with datatable_id="user_selection" %}
+    {% include "modules/general/multi_user_selection.html" with table_id="user_selection" %}
+{% endblock %}
+{% block modal_footer %}
+    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="loadChart()">Okay</button>
+{% endblock %}

@@ -8,7 +8,7 @@ from Nexquality.models.condition_types import badge_conditions
 
 @python_2_unicode_compatible
 class Badge(models.Model):
-    name = models.CharField(max_length=50)
+    name = models.CharField(max_length=50, unique=True)
     description = models.CharField(max_length=250)
     conditions = ConditionsField(
         definitions=conditions_from_module(badge_conditions))

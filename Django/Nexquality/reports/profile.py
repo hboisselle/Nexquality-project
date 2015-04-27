@@ -17,9 +17,9 @@ class ProfileChartData(object):
     @classmethod
     def add_to_series(cls, series, name, data):
         series.append({
-                'name': name,
-                'data': data
-            })
+            'name': name,
+            'data': data
+        })
         return series
 
     @classmethod
@@ -28,7 +28,7 @@ class ProfileChartData(object):
         profile,
         field,
         calculation,
-        compared_profile=None,
+        compared_profiles=None,
         show_average=False,
         show_tolerance=False
     ):
@@ -40,13 +40,16 @@ class ProfileChartData(object):
             'data': [profile_calculations[0][calculation]]
         }]
 
-        if compared_profile is not None:
-            compared_profile_calculations = compared_profile.get_metrics_calculations(field=field)
-            series = cls.add_to_series(
-                series,
-                compared_profile.user.get_full_name(),
-                [compared_profile_calculations[0][calculation]]
-            )
+        if compared_profiles is not None:
+            for compared_profile in compared_profiles:
+                compared_profile_calculations = compared_profile.get_metrics_calculations(field=field)
+                if compared_profile_calculations:
+                    series = cls.add_to_series(
+                        series,
+                        compared_profile.user.get_full_name(),
+                        [compared_profile_calculations[0][calculation]]
+                    )
+
         if show_average:
             average_of_all_users = cls.calculate_average_of_all_users(field, calculation)
             series = cls.add_to_series(
