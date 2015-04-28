@@ -16943,3 +16943,15 @@ Traceback (most recent call last):
   File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/models/badge_user.py", line 25, in save
     raise ValidationError("Badge can only be given once.")
 ValidationError: [u'Badge can only be given once.']
+Internal Server Error: /nexquality/profile/chart_json_data/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/views/profile/detail.py", line 44, in chart_json_data
+    field = MetricField.objects.get(name=field_name)
+  File "/Library/Python/2.7/site-packages/django/db/models/manager.py", line 92, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 357, in get
+    self.model._meta.object_name)
+DoesNotExist: MetricField matching query does not exist.
+Not Found: /favicon.ico

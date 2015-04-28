@@ -51,7 +51,8 @@ class ProfileChartData(object):
                     )
 
         if show_average:
-            average_of_all_users = cls.calculate_average_of_all_users(field, calculation)
+            average_of_all_users = cls.calculate_average_of_all_users(
+                field, calculation)
             series = cls.add_to_series(
                 series,
                 'Average of all users',
