@@ -24,7 +24,7 @@ def save_to_model(model, field_set, node, save=True, get_or_create=False):
         model, save = model.objects.get_or_create(**result_set)
     else:
         model = model(**result_set)
-    if(save):
+    if save:
         model.save()
     return model
 

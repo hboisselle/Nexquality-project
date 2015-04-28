@@ -13,6 +13,8 @@
 
 <a class="btn btn-default" href="{% url 'Nexquality:project:detail' form.instance.id%}">Go back</a>
 {% if not form.instance.is_done %}
+<form style="display: inline" id="modal_form" method="post" action="{% url "Nexquality:project:add_user" form.instance.id %}">
 	{% include "modules/project/projectuser_modal.html" with modal_title="Add users" button_text="Add users" %}
+</form>
 {% endif %}
 {% endblock %}

@@ -28,8 +28,8 @@ def add_user(request, project_id):
     if request.method == 'POST':
         role_id = request.POST.get('project_user_role', False)
         role = ProjectUserRole.objects.get(id=role_id)
+        string_lookup = 'user_username_'
         for key, value in request.POST.iteritems():
-            string_lookup = 'user_username_'
             if string_lookup in key:
                 username = key[len(string_lookup):]
                 user = User.objects.get(username=username)

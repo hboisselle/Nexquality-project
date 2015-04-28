@@ -14,7 +14,7 @@
     <tr>
         <td>{{ user.get_full_name }}</td>
         <td>{{ user.email }}</td>
-        <td><input data="{{ user.username }}" class="user_checkbox" name="user_username_{{user.username}}" type="checkbox"></td>
+        <td><input class="user_checkbox" name="user_username_{{user.username}}" type="checkbox"></td>
     </tr>
     {% endfor %}
 {% endblock %} 

@@ -22,23 +22,24 @@ def profile_detail(request, username):
 
 def chart_json_data(request):
     data = {}
-    params = request.GET
+    params = request.POST
 
     name = params.get('name', 'metrics')
     field_name = params.get('field', 'Code Coverage')
-    field_name = field_name.replace("_", " ")
     calculation = params.get('calculation', 'average')
     username = params.get('username', '')
-    compared_profiles_usernames = params.get('compared_profiles', '')
     show_tolerance = bool(params.get('show_tolerance', False))
     show_average = bool(params.get('show_average', False))
 
     profile = Profile.objects.get(user__username=username)
     compared_profiles = []
-    if not compared_profiles_usernames == '':
-        for compared_profile_username in compared_profiles_usernames.split("|"):
+    string_lookup = 'user_username_'
+    for key, value in request.POST.iteritems():
+        if string_lookup in key:
+            username = key[len(string_lookup):]
             compared_profiles.append(Profile.objects.get(
-                user__username=compared_profile_username))
+                user__username=username)
+            )
 
     print(compared_profiles)
     field = MetricField.objects.get(name=field_name)
