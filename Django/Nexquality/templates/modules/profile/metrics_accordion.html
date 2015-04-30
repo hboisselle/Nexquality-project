@@ -27,7 +27,6 @@
                         yAxis: {title: {text: null}},
                         series: [{}]
                     };
-
                     $.post("{% url "Nexquality:profile:chart_json_data" %}", $("#modal_form").serialize(),
                         function(data){
                             metricChartOptions.xAxis.categories = data['chart_data']['fields'];
@@ -37,13 +36,12 @@
                     $('#chart_container').highcharts();
                 };
                 $("#linechart-tab").click(loadChart);
-                
             </script>
             <br>
             <div id="chart_container" style="height:400px;">  
             </div>   
             <form id="modal_form"> 
-                <label for="field">Field</label>
+                <label for="field">Metric</label>
                 <select class="form-control" name="field" onchange="loadChart()" class="btn btn-default">
                 {% for calculation in calculations %}
                     <option value="{{ calculation.field__name }}">{{ calculation.field__name }}</option>

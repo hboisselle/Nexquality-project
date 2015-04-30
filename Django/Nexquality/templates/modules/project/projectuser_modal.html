@@ -1,7 +1,4 @@
 {% extends "modules/modal/modal.html" %}
-{% block form_action_url %}
-    {% url "Nexquality:project:add_user" form.instance.id %}
-{% endblock %}
 {% block modal_body %}
       <h5><b>Select users to add </b>(<em>Users who are already active will not be added</em>)</h5>
       {% include "modules/datatable.html" with datatable_id="users" %}

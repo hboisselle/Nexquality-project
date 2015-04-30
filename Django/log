@@ -17232,3 +17232,50 @@ Traceback (most recent call last):
   File "/Library/Python/2.7/site-packages/django/db/models/query.py", line 357, in get
     self.model._meta.object_name)
 DoesNotExist: Profile matching query does not exist.
+Internal Server Error: /nexquality/profile/chart_json_data/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/views/profile/detail.py", line 50, in chart_json_data
+    show_tolerance=show_tolerance)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/reports/profile.py", line 40, in get_field_metrics
+    'data': [profile_calculations[0][calculation], profile_calculations[0]['minimum']]
+KeyError: 'minimum'
+Internal Server Error: /nexquality/profile/chart_json_data/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/views/profile/detail.py", line 50, in chart_json_data
+    show_tolerance=show_tolerance)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/reports/profile.py", line 40, in get_field_metrics
+    'data': [profile_calculations[0][calculation], profile_calculations[0]['min']]
+KeyError: 'minimum'
+Internal Server Error: /nexquality/profile/chart_json_data/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/views/profile/detail.py", line 50, in chart_json_data
+    show_tolerance=show_tolerance)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/reports/profile.py", line 40, in get_field_metrics
+    'data': [profile_calculations[0][calculation], profile_calculations[0]['minimum']]
+KeyError: 'minimum'
+Internal Server Error: /nexquality/profile/chart_json_data/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/views/profile/detail.py", line 50, in chart_json_data
+    show_tolerance=show_tolerance)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/reports/profile.py", line 40, in get_field_metrics
+    'data': [profile_calculations[0][calculation], profile_calculations[0]['average']]
+KeyError: 'minimum'
+Internal Server Error: /nexquality/profile/chart_json_data/
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/views/profile/detail.py", line 50, in chart_json_data
+    show_tolerance=show_tolerance)
+  File "/Volumes/External/ProjetFinal/Source/Django/Nexquality/reports/profile.py", line 70, in get_field_metrics
+    data['fields'].append('sum', 'average')
+TypeError: append() takes exactly one argument (2 given)
+Not Found: /favicon.ico
+Not Found: /favicon.ico
